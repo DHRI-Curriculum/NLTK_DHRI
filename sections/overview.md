@@ -39,8 +39,8 @@ Press **Shift** + **Enter** to run the cell (or click run at the top of the page
 If nothing happens, they are installed and you are ready to move on! If you get an error message, either you have a typo or they are not installed. If it is the latter, open the command line and type:
 
 ```python
-pip install nltk
-pip install matplotlib
+conda install nltk -y
+conda install matplotlib -y
 ```
 
 
