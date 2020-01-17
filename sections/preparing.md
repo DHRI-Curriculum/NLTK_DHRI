@@ -15,7 +15,7 @@ If you already have a projects folder, you can skip this step.
 Next, clone the text analysis session repository into your projects folder by entering this command:
 
 ```bash
-git clone git@github.com:DHRI-Curriculum/text-analysis.git ~/Desktop/projects/text-analysis
+git clone https://github.com/DHRI-Curriculum/text-analysis.git ~/Desktop/projects/text-analysis
 ```
 
 Then move to the new directory:
