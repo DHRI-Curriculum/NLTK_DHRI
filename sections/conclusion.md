@@ -12,6 +12,6 @@ At this point, you should have a familiarity with what is possible with text ana
 - [Classical Language Toolkit on GitHub](https://github.com/cltk), Natural Language Processing specifically for Classical languages.
 - ["A Bossy Sort of Voice"](https://medium.com/agatha-codes/a-bossy-sort-of-voice-3c3a18de3093), describes a Python/NLTK project quantifying gender bias in _Harry Pottery_ with Python and NLTK.
 - ["Finding Patterns in Gothic Literature"](https://kite.com/blog/python/python-digital-humanities-gothic-literature-nltk), describes a Python/NLTK project analyzing color in Gothic Literature. 
-- ["Python and NLTK FAQs"](https://www.pitt.edu/~naraehan/python3/faq.html), resources compiled from Na-Rae Han.
+- ["Python and NLTK FAQs"](https://www.pitt.edu/~naraehan/python3/faq.html), resources compiled by Na-Rae Han.
 
 [<<< Previous](make_corpus.md) | [Back to beginning >>>](../README.md)
