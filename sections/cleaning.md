@@ -1,4 +1,4 @@
-c[<<< Previous](built-in.md) | [Next >>>](make_corpus.md)
+[<<< Previous](built-in.md) | [Next >>>](make_corpus.md)
 
 # Making Your Own Corpus: Data Cleaning
 
