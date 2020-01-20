@@ -66,7 +66,7 @@ So let's find out the length of our set. just like in math, we can also nest our
 len(set(text1_tokens))
 ```
 
-Great! Now we can calculate the **lexical density** of *Moby Dick*. Statistical studies have shown that lexical density (the number of unique words per total words) is a [good metric to approximate lexical diversity](http://www.pjos.org/index.php/LWPL/article/viewFile/2273/1848)—the range of vocabulary an author uses. For our first pass at lexical density, we will simply divide the number of unique words by the total number of words:
+Great! Now we can calculate the **lexical density** of *Moby Dick*. Statistical studies have shown that lexical density (the number of unique words per total words) is a good metric to approximate lexical diversity— the range of vocabulary an author uses. For our first pass at lexical density, we will simply divide the number of unique words by the total number of words:
 
 ```python
 len(set(text1_tokens))/len(text1_tokens)
