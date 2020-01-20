@@ -2,7 +2,7 @@
 
 # Make Your Own Corpus
 
-Now that we have seen and implemented a series of text analysis techniques, let's go to the Internet to find a new text. You could just as easily use a txt file that is on your computer (say you have a txt copy of the [Hunger Games LINK TO GIT](LINK), for example. Or historic newspapers, or Supreme Court proceedings, and so on. Here, we will use [Project Gutenberg](http://www.gutenberg.org). Project Gutenberg is an archive of public domain written works, available in a wide variety of formats, including .txt. You can download these to your computer or access them via the url. We'll use the url method. We found *Don Quixote* in the archive, and will work with that.
+Now that we have seen and implemented a series of text analysis techniques, let's go to the Internet to find a new text. You could just as easily use a txt file that is on your computer (say you have a txt copy of the [Hunger Games](https://archive.org/stream/1.hungerGamesCatchingFire/1.hunger_games_-_catching_fire_djvu.txt), for example. Or historic newspapers, or Supreme Court proceedings, and so on. Here, we will use [Project Gutenberg](http://www.gutenberg.org). Project Gutenberg is an archive of public domain written works, available in a wide variety of formats, including .txt. You can download these to your computer or access them via the url. We'll use the url method. We found *Don Quixote* in the archive, and will work with that.
 
 The Python package, urllib, comes installed with Python, but is inactive by default, so we still need to import it to utilize the functions. Since we are only going to use the urlopen function, we will just import that one.
 
