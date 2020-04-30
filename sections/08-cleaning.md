@@ -1,4 +1,4 @@
-[<<< Previous](built-in.md) | [Next >>>](make_corpus.md)
+[<<< Previous](07-built-in.md) | [Next >>>](09-make_corpus.md)
 
 # Making Your Own Corpus: Data Cleaning
 
@@ -8,10 +8,9 @@ Thus far, we have been asking questions that take stopwords and grammatical feat
 2. Remove stop words.
 3. Lemmatize (or stem) our words, i.e. "jumping" and "jumps" become "jump."
 
-
 ## Adding Stopwords
 
-We already completed step one, and are now working with our `text1_tokens`. Remember, this variable,  `text1_tokens`, contains a list of strings that we will work with. We want to remove the stop words from that list. The NLTK library comes with fairly comprehensive lists of stop words for many languages. Stop words are function words that contribute very little semantic meaning and most often have grammatical functions. Usually, these are function words such as determiners, prepositions, auxiliaries, and others.
+We already completed step one, and are now working with our `text1_tokens`. Remember, this variable, `text1_tokens`, contains a list of strings that we will work with. We want to remove the stop words from that list. The NLTK library comes with fairly comprehensive lists of stop words for many languages. Stop words are function words that contribute very little semantic meaning and most often have grammatical functions. Usually, these are function words such as determiners, prepositions, auxiliaries, and others.
 
 To use NLTK's stop words, we need to import the list of words from the corpus. (We could have done this at the beginning of our program, and in more fully developed code, we would put it up there, but this works, too.) In the next cell, type:
 
@@ -34,13 +33,12 @@ for t in text1_tokens:
     else:
         pass
 ```
-        
-A faster option, using list comprehensions, discussed in the previous section: 
+
+A faster option, using list comprehension, discussed in [the previous section](07-built-in.md):
 
 ```python
 text1_tokens = [t for t in text1_tokens if t not in stops]
 ```
-
 
 ### Verifying List Contents
 
@@ -58,12 +56,11 @@ For reference, let's also check how many unique words there are. We will do this
 len(set(text1_tokens))
 ```
 
-
 ## Lemmatizing Words
 
-Now that we've removed the stop words from our corpus, the next step is to stem or lemmatize the remaining words. This means that we will strip off the grammatical structure from the words. For example, cats --> cat, and walked --> walk. If that was all we had to do, we could stem the corpus and achieve the correct result, because stemming (as the name implies) really just means cutting off affixes to find the root (or the stem). Very quickly, however, this gets complicated, such as in the case of men --> man and sang --> sing. Lemmatization deals with this by looking up the word in a reference and finding the appropriate root (though note that this still is not entirely accurate). Lemmatization, therefore, takes a relatively long time, since each word must be looked up in a reference. NLTK comes with pre-built stemmers and lemmatizers.
+Now that we've removed the stop words from our corpus, the next step is to stem or lemmatize the remaining words. This means that we will strip off the grammatical structure from the words. For example, `cats —> cat`, and `walked —> walk`. If that was all we had to do, we could stem the corpus and achieve the correct result, because stemming (as the name implies) really just means cutting off affixes to find the root (or the stem). Very quickly, however, this gets complicated, such as in the case of `men —> man` and `sang —> sing`. Lemmatization deals with this by looking up the word in a reference and finding the appropriate root (though note that this still is not entirely accurate). Lemmatization, therefore, takes a relatively long time, since each word must be looked up in a reference. NLTK comes with pre-built stemmers and lemmatizers.
 
-We will use the WordNet Lemmatizer from the NLTK Stem library, so let's import that now: 
+We will use the WordNet Lemmatizer from the NLTK Stem library, so let's import that now:
 
 ```python
 from nltk.stem import WordNetLemmatizer
@@ -81,8 +78,7 @@ Now we will lemmatize the words in the list. This time, we will only use the fas
 text1_clean = [wordnet_lemmatizer.lemmatize(t) for t in text1_tokens]
 ```
 
-
-### Verifying List Contents
+### Verifying Clean List Contents
 
 Let's check now to see how long our final, cleaned version of the data is and then check the unique set of words:
 
@@ -92,16 +88,15 @@ len(text1_clean)
 len(set(text1_clean))
 ```
 
-This set should be much smaller than the set before we lemmatized. Now if we were to calculate lexical density, we would be looking at how many word stems with semantic content are represented in *Moby Dick*, which gets at a different question than our first analysis of lexical density.
+This set should be much smaller than the set before we lemmatized. Now if we were to calculate lexical density, we would be looking at how many word stems with semantic content are represented in _Moby Dick_, which gets at a different question than our first analysis of lexical density.
 
-Now let's have a look at the words Melville uses in *Moby Dick*. We'd like to look at all of the *types*, but not necessarily all of the *tokens.* We will order this set so that it is in an order we can handle. In the next cell, type:
+Now let's have a look at the words Melville uses in _Moby Dick_. We'd like to look at all of the _types_, but not necessarily all of the _tokens_. We will order this set so that it is in an order we can handle. In the next cell, type:
 
 ```python
 sorted(set(text1_clean))
 ```
 
-A list of all the words in *Moby Dick* should appear. The list begins with 'a', which we might have expected to be removed in the stemming process, and some words we wouldn't have expected, such as "abbreviate" and "abbreviation". As we mentioned before, lemmatizing looks up the dictionary form of the word, and these would be different entries. A better example is with 'meaning' and 'meanness.' A lemmatizer would retain these two as separate words. A stemmer would not. We will stick with the output of the Lemmatizer, but just for illustration, we can try it out with a stemmer instead (Porter is the most common).  
-
+A list of all the words in _Moby Dick_ should appear. The list begins with "a," which we might have expected to be removed in the stemming process, and some words we wouldn't have expected, such as "abbreviate" and "abbreviation". As we mentioned before, lemmatizing looks up the dictionary form of the word, and these would be different entries. A better example is with "meaning" and "meanness." A lemmatizer would retain these two as separate words. A stemmer would not. We will stick with the output of the Lemmatizer, but just for illustration, we can try it out with a stemmer instead (Porter is the most common).
 
 ## Stemming Words
 
@@ -130,16 +125,16 @@ type(my_dist)
 The result should say it is an nltk probability distribution. It doesn't matter too much right now what it is, only that it worked. We can now plot this with the matplotlib function, `plot`. We want to plot the first 50 entries of the my_dist object, but we don't want it to be cumulative. (If we were working with financial data, we might want cumulative.)
 
 ```python
-my_dist.plot(50,cumulative=False)
+my_dist.plot(50, cumulative=False)
 ```
 
-We've made a nice image here, but it might be easier to comprehend as a list. Because this is a special probability distribution object we can call the "most common" on this, too. Let's find the twenty most common words:
+We've made a nice image here, but it might be easier to comprehend as a list. Because this is a special probability distribution object we can call the `most_common` on this, too. Let's find the twenty most common words:
 
 ```python
 my_dist.most_common(20)
 ```
 
-What about if we are interested in a list of specific words—perhaps to identify texts that have biblical references. Let's make a (short) list of words that might suggest a biblical reference and see if they appear in *Moby Dick*. Set this list equal to a variable:
+What about if we are interested in a list of specific words—perhaps to identify texts that have biblical references. Let's make a (short) list of words that might suggest a biblical reference and see if they appear in _Moby Dick_. Set this list equal to a variable:
 
 ```python
 b_words = ['god', 'apostle', 'angel']
@@ -154,7 +149,7 @@ for word in b_words:
         my_list.append(word)
     else:
         pass
-```		
+```
 
 And then we will print the results.
 
@@ -162,7 +157,6 @@ And then we will print the results.
 print(my_list)
 ```
 
-You can obviously do this with much larger lists and even compare entire novels if you wish, though it would take a while with this approach. You can use this to get similarity measures and answer related questions. 
+You can obviously do this with much larger lists and even compare entire novels if you wish, though it would take a while with this approach. You can use this to get similarity measures and answer related questions.
 
-
-[<<< Previous](built-in.md) | [Next >>>](make_corpus.md)
+[<<< Previous](07-built-in.md) | [Next >>>](09-make_corpus.md)

@@ -1,4 +1,4 @@
-[<<< Previous](make_corpus.md) | [Next >>>](conclusion.md)
+[<<< Previous](09-make_corpus.md) | [Next >>>](11-conclusion.md)
 
 # Part-of-Speech Tagging
 
@@ -15,7 +15,7 @@ Therefore, part of speech is as much related to the word itself as its relations
 
 - Wanda was entertaining last night.
 
-Part of Speech tagging can be done very simply: with a very small Tag Set, or in a very complex way: with a much more elaborate tag set. We are going to implement a compromise, and use a neither small nor large tag set, the [Penn Tree Bank POS Tag Set](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html).
+Part of Speech tagging can be done very simply: with a very small _tag set_, or in a very complex way: with a much more elaborate tag set. We are going to implement a compromise, and use a neither small nor large tag set, the [Penn Tree Bank POS Tag Set](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html).
 
 This is the tag set that is pre-loaded into NLTK. When we call the tagger, we expect it to return an object with the word and the tag associated. Because POS tagging is dependent upon the stop words, we have to use a text that includes the stop words. Therefore, we will go back to using the `dq_text` object for this section. Let's try it out. Type:
 
@@ -29,19 +29,19 @@ Let's inspect what we have:
 print(dq_tagged[:10])
 ```
 
-This is a list of ordered tuples. (A tuple is like a list, but can't be changed once it is created.) Each element in the list is a pairing of `(word, POS-tag)`. (Tuples are denoted with parentheses, rather than square brackets.) This is great, but it is very detailed. I would like to know how many Nouns, Verbs, and Adjectives I have. 
+This is a list of ordered tuples. (A tuple is like two variables connected to one another, that can't be changed once it is created.) Each element in the list is a pairing of `(word, POS-tag)`. (Tuples are denoted with parentheses, rather than square brackets.) This is great, but it is very detailed. I would like to know how many Nouns, Verbs, and Adjectives I have.
 
 First, I'll make an empty dictionary to hold my results. Then I will go through this list of tuples and count the number of times each tag appears. Every time I encounter a new tag, I'll add it to a dictionary and then increment by one every time I encounter that tag again. Let's see what that looks like in code:
 
 ```python
 tag_dict = {}
-#for every word/tag combo in my list, 
+# For every word/tag pair in my list,
 for (word, tag) in dq_tagged:
-    if tag in tag_dict: 
+    if tag in tag_dict:
         tag_dict[tag]+=1
     else:
         tag_dict[tag] = 1
-```		
+```
 
 Now let's see what we got:
 
@@ -56,6 +56,12 @@ from collections import OrderedDict
 tag_dict = OrderedDict(sorted(tag_dict.items(), key=lambda t: t[1], reverse=True))
 ```
 
-Now check out what we have. It looks like NN is the most common tag, we can look up what that is back at the [Penn Tree Bank](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). Looks like that is a Noun, singular or mass. Great! This information will likely help us with genre classification (as you will do in the Machine Learning tutorial), or identifying the author of a text, or a variety of other functions.
+Now check out what we have:
 
-[<<< Previous](make_corpus.md) | [Next >>>](conclusion.md)
+```python
+tag_dict
+```
+
+It looks like NN is the most common tag, we can look up what that is back at the [Penn Tree Bank](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). Looks like that is a Noun, singular or mass. Great! This information will likely help us with genre classification (as you will do in the [Machine Learning tutorial](https://www.github.com/DHRI-Curriculum/machine-learning)), or identifying the author of a text, or a variety of other functions.
+
+[<<< Previous](09-make_corpus.md) | [Next >>>](11-conclusion.md)
