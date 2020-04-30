@@ -35,7 +35,7 @@ raw = file.read()
 This file is in bytes, so we need to decode it into a string. In the next cell, type:
 
 ```python
-don=raw.decode()
+don = raw.decode()
 ```
 
 Now let's check on what kind of object we have in the "don" variable. Type:
