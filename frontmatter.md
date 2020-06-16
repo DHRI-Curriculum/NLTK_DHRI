@@ -30,7 +30,7 @@ In this workshop, you will learn the following skills:
 ### Pre-reading suggestions
 
 - [A Beginner’s Tutorial to Jupyter Notebooks](https://towardsdatascience.com/a-beginners-tutorial-to-jupyter-notebooks-1b2f8705888a)
-- [What is text analysis](https://www.scribbr.com/methodology/textual-analysis/) [//]: <> (Not a great link, but haven't found one better yet)
+- [What is text analysis](https://www.scribbr.com/methodology/textual-analysis/) <!--- I don't love this one, but haven't found a better one yet -->
 
 ### Projects that use these skills
 
@@ -47,11 +47,10 @@ In this workshop, you will learn the following skills:
 
 - [Installing Anaconda](https://github.com/DHRI-Curriculum/install/blob/master/sections/python.md)
 - [Installing NLTK](https://github.com/DHRI-Curriculum/install/blob/master/sections/nltk.md)
-- [Shortcuts, tips and tricks](http://maxmelnick.com/2016/04/19/python-beginner-tips-and-tricks.html)
+- [Jupyter Notebook shortcuts, tips and tricks](http://maxmelnick.com/2016/04/19/python-beginner-tips-and-tricks.html)
 
 ## Acknowledgements
 
-- list each person who have contributed to this repository as a bullet point
 - [Michelle McSweeney](https://github.com/michellejm)
 - [Rachel Rakov](https://github.com/rachelrakov)
 - [Rafael Davis Portela](https://github.com/rafadavis)

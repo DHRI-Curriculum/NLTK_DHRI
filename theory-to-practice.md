@@ -2,8 +2,6 @@
 
 ## Suggested Further Readings
 
-(For instance)[https://github.com/DHRI-Curriculum/ethics/blob/master/sections/resources.md]
-
 - [A bit more advanced Jupyter Notebook tips and tricks](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/)
 - [The NLTK documentation](https://www.nltk.org/)
 
@@ -16,7 +14,7 @@
 
 ## Projects or Challenges to Try
 
-- *Our Machine Learning workshop?*
+- [*Our Machine Learning workshop?*](https://github.com/DHRI-Curriculum/machine-learning)
 - [Exercises to practice working with strings](https://www.w3resource.com/python-exercises/string/)
 - [Work on your Regular Expressions skills](https://regexone.com/)
 
