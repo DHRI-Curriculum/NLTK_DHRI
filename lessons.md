@@ -75,7 +75,7 @@ When we think of "data," we often think of numbers, things that can be summarize
 
 ## Corpora
 
-The first step in gathering insights from texts is to create a **corpus**. A corpus is a collection of texts that are somehow related to each other. For example, the [Corpus of Contemporary American English](https://corpus.byu.edu/coca/), [Donald Trump's Tweets](http://www.trumptwitterarchive.com/), [digitized newspapers](https://chroniclingamerica.loc.gov/newspapers/), or [books](https://www.gutenberg.org/) in the public domain are all corpora. There are infinitely many corpora, and, sometimes, you will want to make your own—that is, one that best fits your research question.
+The first step in gathering insights from texts is to create a **corpus**. A corpus is a collection of texts that are somehow related to each other. For example, the [Corpus of Contemporary American English](https://corpus.byu.edu/coca/), [Donald Trump's Tweets](http://www.trumptwitterarchive.com/), [text messages](https://byts.commons.gc.cuny.edu/) sent by bilingual young adults, [digitized newspapers](https://chroniclingamerica.loc.gov/newspapers/), or [books](https://www.gutenberg.org/) in the public domain are all corpora. There are infinitely many corpora, and, sometimes, you will want to make your own—that is, one that best fits your research question.
 
 The route you take from here will depend on your research question. Let's say, for example, that you want to examine gender differences in writing style. Based on previous linguistic research, you hypothesize that male-identified authors use more definitives than female-identified. So you collect two corpora—one written by men, one written by women—and you count the number of *the*s, *this*s, and *that*s compared to the number of *a*s, *an*s, and *one*s. Maybe you find a difference, maybe you don't. We can already see that this is a relatively crude way of going about answering this question, but it is a start. (More likely, you'd use a _supervised classification task_, which you will learn about in the [Machine Learning Tutorial](https://www.github.com/DHRI-Curriculum/machine-learning).)
 
@@ -156,6 +156,8 @@ If it's your first time opening the notebook, you may be prompted to enter a URL
 Finally, in the Jupyter Notebook file browser, find the notebook file and open it. It should be called `TextAnalysis.ipynb`. You will use this file for reference in case you get stuck in the next few sections, so keep it open.
 
 Return to the Jupyter Home Tab in your Browser (or Launch the Jupyter Notebook again), and start a New Python3 Notebook using the `New` button in the upper right corner.
+
+Even though Jupyter Notebook doesn't force you to do so, it is very important to name your file, or you will end up later with a bunch of untitled files and you will have no idea what they are about. In the top left, click in the word "Untitled" and give your file a name such as "intro_nltk".
 
 In the first blank cell, type the following to import the NLTK library:
 
@@ -271,7 +273,7 @@ text1.count("Whale")
 
 This gets at a distinction between **type** and **token**. "Whale" and "whale" are different types (as of now) because they do not match identically. Every instance of "whale" in the corpus is another **token**—it is an instance of the type, "whale." Therefore, there are 906 tokens of "whale" in our corpus.
 
-Let's fix this by making all of the words lowercase. We will make a new list of words, and call it text1_tokens. We will fill this list with all the words in text1, but in their lowercase form. Python has a built-in function, `lower()` that takes all letters and makes them lowercase. In this same step, we are going to do a kind of tricky move, and only keep the words that are alphabetical and pass over anything that is punctuation or numbers. There is a built-in function, `isalpha()`, that will allow is to save only those words that are made of letters. If `isalpha()` is true, we'll make the word lowercase, and keep the word. If not, we'll pass over it and move to the next one.
+Let's fix this by making all of the words lowercase. We will make a new list of words, and call it text1_tokens. We will fill this list with all the words in text1, but in their lowercase form. Python has a built-in function, `lower()` that takes all letters and makes them lowercase. In this same step, we are going to do a kind of tricky move, and only keep the words that are alphabetical and pass over anything that is punctuation or numbers. There is a built-in function, `isalpha()`, that will allow us to save only those words that are made of letters. If `isalpha()` is true, we'll make the word lowercase, and keep the word. If not, we'll pass over it and move to the next one.
 
 Type the following code into a new cell in your notebook. Pay special attention to the indentation, which must appear as below.
 
@@ -285,7 +287,7 @@ for t in text1:
 
 ![code](images/for_loop_tokens.png)
 
-Another way to perform the same action more tersely is to use what's called a **list comprehension**. A list comprehension is a shorter, faster way to write a for-loop, but is syntactically a little more difficult to read (for a human). But, in this case, it's much faster to process:
+Another way to perform the same action more tersely is to use what's called a [list comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions). A list comprehension is a shorter, faster way to write a for-loop, but is syntactically a little more difficult to read (for a human). But, in this case, it's much faster to process:
 
 ```python
 text1_tokens = [t.lower() for t in text1 if t.isalpha()]
@@ -315,7 +317,7 @@ So let's find out the length of our set. just like in math, we can also nest our
 len(set(text1_tokens))
 ```
 
-Great! Now we can calculate the **lexical density** of _Moby Dick_. Statistical studies have shown that lexical density (the number of unique words per total words) is a good metric to approximate lexical diversity—the range of vocabulary an author uses. For our first pass at lexical density, we will simply divide the number of unique words by the total number of words:
+Great! Now we can calculate the **lexical density** of _Moby Dick_. [Statistical studies](https://pdfs.semanticscholar.org/c2a8/56959d7f5880c98ccd4cfeb4b4f5b7133ec7.pdf) have shown that lexical density (the number of unique words per total words) is a good metric to approximate lexical diversity—the range of vocabulary an author uses. For our first pass at lexical density, we will simply divide the number of unique words by the total number of words:
 
 ```python
 len(set(text1_tokens))/len(text1_tokens)
@@ -337,13 +339,14 @@ len(set(text1_slice)) / len(text1_slice)
 
 This is a much higher number, though the number itself is arbitrary. When comparing different texts, this step is essential to get an accurate measure.
 
-If we wanted to perform the same set of steps with *Sense and Sensibility*, we could do the following:
+## Challenge
+
+Let's compare the lexical density of *Moby Dick* with *Sense and Sensibility*. Make sure to:
 
 1. Make all the words lowercase and remove punctuation.
 2. Make a slice of the first 10,000 words.
 3. Calculate lexical density by dividing the length of the set of the slice by the length of the slice.
 
-After taking these steps to find Austen's lexical density, we could compare Melville's range of vocabulary to Austen's.
 
 # Making Your Own Corpus: Data Cleaning
 
@@ -353,7 +356,7 @@ Thus far, we have been asking questions that take stopwords and grammatical feat
 2. Remove stop words.
 3. Lemmatize (or stem) our words, i.e. "jumping" and "jumps" become "jump."
 
-## Adding Stopwords
+## Removing Stopwords
 
 We already completed step one, and are now working with our `text1_tokens`. Remember, this variable, `text1_tokens`, contains a list of strings that we will work with. We want to remove the stop words from that list. The NLTK library comes with fairly comprehensive lists of stop words for many languages. Stop words are function words that contribute very little semantic meaning and most often have grammatical functions. Usually, these are function words such as determiners, prepositions, auxiliaries, and others.
 
@@ -369,28 +372,40 @@ We need to specify the English list, and save it into its own variable that we c
 stops = stopwords.words('english')
 ```
 
+Now let's take a look at those words:
+
+```python
+print(stops)
+```
+
 Now we want to go through all of the words in our text, and if that word is in the stop words list, remove it from our list. Otherwise, skip it. The code below is VERY slow (there's a faster option beneath it). The way we write this in Python is:
 
 ```python
+text1_stops = []
 for t in text1_tokens:
-    if t in stops:
-        text1_tokens.remove(t)
-    else:
-        pass
+    if t not in stops:
+        text1_stops.append(t)
 ```
 
-A faster option, using list comprehension, discussed in [the previous section](07-built-in.md):
+A faster option, using [list comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions): 
 
 ```python
-text1_tokens = [t for t in text1_tokens if t not in stops]
+text1_stops = [t for t in text1_tokens if t not in stops]
 ```
+
+To check the result:
+
+```python
+print(text1_stops[:30])
+```
+
 
 ### Verifying List Contents
 
 Now that we removed our stop words, let's see how many words are left in our list:
 
 ```python
-len(text1_tokens)
+len(text1_stops)
 ```
 
 You should get a much lower number.
@@ -398,7 +413,7 @@ You should get a much lower number.
 For reference, let's also check how many unique words there are. We will do this by making a set of words. Sets are the same in Python as they are in math, they are all of the unique words rather than all the words. So, if "whale" appears 200 times in the list of words, it will only appear once in the set.
 
 ```python
-len(set(text1_tokens))
+len(set(text1_stops))
 ```
 
 ## Lemmatizing Words
@@ -417,15 +432,45 @@ Because of the way that it is written "under the hood," an instance of the lemma
 wordnet_lemmatizer = WordNetLemmatizer()
 ```
 
-Now we will lemmatize the words in the list. This time, we will only use the faster version because it takes a long time.
+Let's quickly see what lemmatizing does.
 
 ```python
-text1_clean = [wordnet_lemmatizer.lemmatize(t) for t in text1_tokens]
+wordnet_lemmatizer.lemmatize("children")
+```
+
+Now try this one:
+
+```python
+wordnet_lemmatizer.lemmatize("better")
+```
+
+It didn't work, but...
+
+```python
+wordnet_lemmatizer.lemmatize("better", pos='a')
+```
+
+... sometimes we can get better results if we define a specific part of speech(pos). "a" is for "adjective", as we learned [here](http://www.nltk.org/_modules/nltk/corpus/reader/wordnet.html).
+
+Now we will lemmatize the words in the list.
+
+```python
+text1_clean = []
+for t in text1_stops:
+    t_lem = wordnet_lemmatizer.lemmatize(t)
+    text1_clean.append(t_lem)
+```
+
+And again, there is a faster version for you to use once you feel comfortable with list comprehensions:
+
+
+```python
+text1_clean = [wordnet_lemmatizer.lemmatize(t) for t in text1_stops]
 ```
 
 ### Verifying Clean List Contents
 
-Let's check now to see how long our final, cleaned version of the data is and then check the unique set of words:
+Let's check now to see the length of our final, cleaned version of the data, and then check the unique set of words:
 
 ```python
 len(text1_clean)
@@ -433,15 +478,19 @@ len(text1_clean)
 len(set(text1_clean))
 ```
 
-This set should be much smaller than the set before we lemmatized. Now if we were to calculate lexical density, we would be looking at how many word stems with semantic content are represented in _Moby Dick_, which gets at a different question than our first analysis of lexical density.
+If everything went right, you should have the same length as before, but a smaller number of unique words. That makes sense since we did not remove any word, we only changed some of them.
 
-Now let's have a look at the words Melville uses in _Moby Dick_. We'd like to look at all of the _types_, but not necessarily all of the _tokens_. We will order this set so that it is in an order we can handle. In the next cell, type:
+Now if we were to calculate lexical density, we would be looking at how many word stems with semantic content are represented in *Moby Dick*, which is a different question than the one in our first analysis of lexical density.
+
+Why don't you try that by yourself? Try to remember how to calculate lexical density without looking back first. It is ok if you have forgotten.
+
+Now let's have a look at the words Melville uses in _Moby Dick_. We'd like to look at all of the _types_, but not necessarily all of the _tokens._ We will order this set so that it is in an order we can handle. In the next cell, type:
 
 ```python
-sorted(set(text1_clean))
+sorted(set(text1_clean))[:30]
 ```
 
-A list of all the words in _Moby Dick_ should appear. The list begins with "a," which we might have expected to be removed in the stemming process, and some words we wouldn't have expected, such as "abbreviate" and "abbreviation". As we mentioned before, lemmatizing looks up the dictionary form of the word, and these would be different entries. A better example is with "meaning" and "meanness." A lemmatizer would retain these two as separate words. A stemmer would not. We will stick with the output of the Lemmatizer, but just for illustration, we can try it out with a stemmer instead (Porter is the most common).
+`Sorted` + `set` should give us a list of list of all the words in *Moby Dick* in alphabetical order, but we only want to see the first ones. Notice how there are some words we wouldn't have expected, such as 'abandon', 'abandoned', 'abandonedly', and 'abandonment'. This process is far from perfect, but it is useful. However, depending on your goal, a different process, like _stemming_ might be better. We will stick with the output of the Lemmatizer, but just for an illustration, we can try it out with a stemmer instead (Porter is the most common).  
 
 ## Stemming Words
 
@@ -450,12 +499,55 @@ The code to implement this and view the output is below:
 ```python
 from nltk.stem import PorterStemmer
 porter_stemmer = PorterStemmer()
+```
+
+```
+
+Let's see what stemming does to words and compare it with lemmatizers:
+
+```python
+print(porter_stemmer.stem('berry'))
+print(porter_stemmer.stem('berry'))
+print(wordnet_lemmatizer.lemmatize("berry"))
+print(wordnet_lemmatizer.lemmatize("berry"))
+```
+
+Stemmer doesn't look so good, right? But how about checking how stemmer handles some of the words that our lemmatized "failed" us?
+
+```python
+print(porter_stemmer.stem('abandon'))
+print(porter_stemmer.stem('abandoned'))
+print(porter_stemmer.stem('abandonedly'))
+print(porter_stemmer.stem('abandonment'))
+```
+
+Still not perfect, but a bit better. How to choose between stemming and lemmatizing? As many things in text analysis, that depends. As a general rule, stemming is faster while lemmatizing is more accurate. For academics, usually the choice goes for the latter.
+
+Anyway, let's stem our text:
+
+```python
+t1_porter = []
+for t in text1_clean:
+    t_stemmed = porter_stemmer.stem(t)
+    t1_porter.append(t_stemmed)
+```
+
+Or, if we want a faster way:
+
+```python
 t1_porter = [porter_stemmer.stem(t) for t in text1_tokens]
+```
+
+And let's check the results:
+
+```python
 print(len(set(t1_porter)))
 print(sorted(set(t1_porter)))
 ```
 
-A very different list of words is produced. This list is shorter than the list produced by the lemmatizer, but is also more accurate because it avoids collapsing synonyms. You might also notice that some of the words are transformed. Stemmers each have their own rules, the Porter stemmer takes a word like "berry" and "berries" and makes them both "berri" whereas a lemmatizer would return it as "berry". Stemmers are faster than lemmatizers, so when speed matters more than accuracy, go with a stemmer. When accuracy matters more, go with a lemmatizer. In an academic research setting, the choice is clear. We will proceed with our lemmatized corpus.
+A very different list of words is produced. This list is shorter than the list produced by the lemmatizer, but is also less accurate, and some of the words will completely change their meaning (like 'berry' becoming 'berri').
+
+Now that we've seen some of the differences between both, we will proceed using our lemmatized corpus, which we saved as "text1_clean":
 
 ```python
 my_dist = FreqDist(text1_clean)
@@ -467,10 +559,10 @@ If nothing happened, that is normal. Check to make sure it is there by calling f
 type(my_dist)
 ```
 
-The result should say it is an nltk probability distribution. It doesn't matter too much right now what it is, only that it worked. We can now plot this with the matplotlib function, `plot`. We want to plot the first 50 entries of the my_dist object, but we don't want it to be cumulative. (If we were working with financial data, we might want cumulative.)
+The result should say it is an nltk probability distribution. It doesn't matter too much right now what it is, only that it worked. We can now plot this with the matplotlib function, `plot`. We want to plot the first 20 entries of the my_dist object.
 
 ```python
-my_dist.plot(50, cumulative=False)
+my_dist.plot(20)
 ```
 
 We've made a nice image here, but it might be easier to comprehend as a list. Because this is a special probability distribution object we can call the `most_common` on this, too. Let's find the twenty most common words:
@@ -506,11 +598,9 @@ You can obviously do this with much larger lists and even compare entire novels 
 
 # Make Your Own Corpus
 
-Now that we have seen and implemented a series of text analysis techniques, let's go to the Internet to find a new text. You could just as easily use a txt file that is on your computer (say you have a .txt copy of the [Hunger Games](https://archive.org/stream/1.hungerGamesCatchingFire/1.hunger_games_-_catching_fire_djvu.txt), for example. Or historic newspapers, or Supreme Court proceedings, and so on).
+Now that we have seen and implemented a series of text analysis techniques, let's go to the Internet to find a new text. You could use something such as historic newspapers, or Supreme Court proceedings, or use any txt file on your computer. Here we will use [Project Gutenberg](http://www.gutenberg.org). Project Gutenberg is an archive of public domain written works, available in a wide variety of formats, including .txt. You can download these to your computer or access them via the url. We'll use the url method. We found *Don Quixote* in the archive, and will work with that.
 
-Here, we will use [Project Gutenberg](http://www.gutenberg.org). Project Gutenberg is an archive of public domain written works, available in a wide variety of formats, including .txt. You can download these to your computer or access them via the url. We'll use the url method. We found _Don Quixote_ in the archive, and will work with that.
-
-The Python package, `urllib`, comes installed with Python, but is inactive by default, so we still need to import it to utilize the functions. Since we are only going to use the `urlopen` function, we will just import that one.
+The Python package, urllib, comes installed with Python, but is inactive by default, so we still need to import it to utilize the functions. Since we are only going to use the urlopen function, we will just import that one.
 
 In the next cell, type:
 
@@ -525,7 +615,7 @@ Now let's specify which URL we are going to use. Though you might be able to fin
 Set the URL we want to a variable:
 
 ```python
-my_url = "http://www.gutenberg.org/cache/epub/996/pg996.txt"
+my_url = "http://www.gutenberg.org/files/996/996-0.txt"
 ```
 
 We still need to open the file and read the file. You will have to do this with files stored locally as well. (in which case, you would type the path to the file (i.e., `data/texts/mytext.txt`) in place of `my_url`)
@@ -566,10 +656,10 @@ Since this is a list, we can look at any slice of it that we want. Let's inspect
 don_tokens[:10]
 ```
 
-That looks like metadata—not what we want to analyze. We will strip this off before proceeding. If you were doing this to many texts, you would want to use [Regular Expressions](https://regexone.com/). Regular Expressions are an extremely powerful way to match text in a document. However, we are just using this text, so we could either guess, or cut and paste the text into a text reader and identify the position of the first content (i.e., how many words in is the first word). That is the route we are going to take. We found that the first word of the story begins at word 120, so let's make a slice of the text from word position 120 to the end.
+That looks like metadata—not what we want to analyze. We will strip this off before proceeding. If you were doing this to many texts, you would want to use [Regular Expressions](https://regexone.com/). Regular Expressions are an extremely powerful way to match text in a document. However, we are just using this text, so we could either guess, or cut and paste the text into a text reader and identify the position of the first content (i.e., how many words in is the first word). That is the route we are going to take. We found that the content begins at word 315, so let's make a slice of the text from word position 315 to the end.
 
 ```python
-dq_text = don_tokens[120:]
+dq_text = don_tokens[315:]
 ```
 
 Finally, if we want to use the NLTK specific functions:
@@ -587,28 +677,29 @@ dq_nltk_text = nltk.Text(dq_text)
 
 If we wanted to use the built-in Python functions, we can just stick with our list of words in `dq_text`. Since we've already covered all of those functions, we are going to move ahead with cleaning our text.
 
-Just as we did earlier, we are going to remove the stopwords based on a list provided by NLTK, remove punctuation, and capitalization, and lemmatize the words. The code for each step follows:
+Just as we did earlier, we are going to remove the stopwords based on a list provided by NLTK, remove punctuation, and capitalization, and lemmatize the words. You can do it one by one as we did before, and that is totally fine. You can also merge some of the steps as you see below.
 
-1. Remove stop words
+1\. Lowercase, remove punctuation and stopwords
 
-   ```python
-   mystops = stopwords.words('english')
-   dq_clean = [w for w in dq_text if w not in mystops]
-   ```
+```python
+dq_clean = []
+for w in dq_text:
+    if w.isalpha():
+        if w.lower() not in stops:
+            dq_clean.append(w.lower())
+print(dq_clean[:50])
+```
 
-2. Lowercase and remove punctuation
+2\. Lemmatize
 
-    ```python
-    dq_clean = [t.lower() for t in dq_clean if t.isalpha()]
-    ```
+```python
+from nltk.stem import WordNetLemmatizer
+wordnet_lemmatizer = WordNetLemmatizer()
 
-3. Lemmatize
-
-    ```python
-    from nltk.stem import WordNetLemmatizer
-    wordnet_lemmatizer = WordNetLemmatizer()
-    dq_clean = [wordnet_lemmatizer.lemmatize(t) for t in dq_clean]
-    ```
+dq_lemmatized = []
+for t in dq_clean:
+    dq_lemmatized.append(wordnet_lemmatizer.lemmatize(t))
+```
 
 From here, you could perform all of the operations that we did after cleaning our text in the previous session. Instead, we will perform another type of analysis: part-of-speech (POS) tagging.
 
@@ -641,7 +732,7 @@ Let's inspect what we have:
 print(dq_tagged[:10])
 ```
 
-This is a list of ordered tuples. (A tuple is like two variables connected to one another, that can't be changed once it is created.) Each element in the list is a pairing of `(word, POS-tag)`. (Tuples are denoted with parentheses, rather than square brackets.) This is great, but it is very detailed. I would like to know how many Nouns, Verbs, and Adjectives I have.
+This is a list of ordered tuples. (A tuple is like a list, but can't be changed once it is created.) Each element in the list is a pairing of `(word, POS-tag)`. (Tuples are denoted with parentheses, rather than square brackets.) This is great, but it is very detailed. I would like to know how many Nouns, Verbs, and Adjectives I have. 
 
 First, I'll make an empty dictionary to hold my results. Then I will go through this list of tuples and count the number of times each tag appears. Every time I encounter a new tag, I'll add it to a dictionary and then increment by one every time I encounter that tag again. Let's see what that looks like in code:
 
@@ -661,20 +752,17 @@ Now let's see what we got:
 tag_dict
 ```
 
-This would be better with some order to it, so let's organize our dictionary to find out what the most common tag is. We need the OrderedDict function. Just like with the url.request library, the 'collections' package comes built-in with Python, but needs to be imported to be used. We will only need the `OrderedDict`, so that's all we will import. Then we will pass the `OrderedDict` function our dictionary with a set of parameters, to tell it exactly how we want it to be ordered, and in which direction. We know what to do for this function because we [read the docs](https://docs.python.org/3/library/collections.html#collections.OrderedDict).
+This would be better with some order to it, but dictionaries are made to be unordered. When we google "sort dictionaries python" we find a solution in our great friend [stack overflow](https://stackoverflow.com/a/613218). Even though we cannot sort a dictionary, we can get a representation of a dictionary that is sorted. Let's do it and find out what the most common tag is.
 
 ```python
-from collections import OrderedDict
-tag_dict = OrderedDict(sorted(tag_dict.items(), key=lambda t: t[1], reverse=True))
+tag_dict_sorted = sorted(tag_dict.items(),
+			 reverse=True,
+			 key=lambda kv: kv[1])
+print(tag_dict_sorted)
 ```
 
-Now check out what we have:
+Now check out what we have. It looks like NN is the most common tag. We can look up what NN means in the [Penn Tree Bank](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). Looks like NN is a Noun, singular or mass. Great! This information will likely help us with genre classification, or identifying the author of a text, or a variety of other functions.
 
-```python
-tag_dict
-```
-
-It looks like NN is the most common tag, we can look up what that is back at the [Penn Tree Bank](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). Looks like that is a Noun, singular or mass. Great! This information will likely help us with genre classification (as you will do in the [Machine Learning tutorial](https://www.github.com/DHRI-Curriculum/machine-learning)), or identifying the author of a text, or a variety of other functions.
 
 # Conclusion
 
