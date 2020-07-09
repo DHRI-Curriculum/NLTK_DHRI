@@ -2,10 +2,6 @@
 
 This tutorial will give a brief overview of the considerations and tools involved in basic text analysis with Python. By completing this tutorial, you will have a general sense of how to turn text into data using the Python package, NLTK. You will also be able to take publicly available text files and transform them into a corpus that you can perform your own analysis on. Finally, you will have some insight into the types of questions that can be addressed with text analysis.
 
-## Cloning the repository
-
-Before getting started, clone [this repository](https://github.com/DHRI-Curriculum/text-analysis) to your local machine. Instructions for cloning Git repositories can be found [here](https://github.com/DHRI-Curriculum/git/blob/master/sections/cloning.md).
-
 ## Setup and installation
 
 If you have not already installed the [Anaconda](https://www.anaconda.com/download/) distribution of Python 3, please do so.
@@ -16,7 +12,7 @@ Find Anaconda Navigator on your computer (it should be located in the folder wit
 
 ![jupyter](images/jupyter.png)
 
-It will open in the browser. All of the directories (folders) in your home directory will appear - we'll get to that later. For now, select 'New' >> Python3 in the upper right corner.
+It will open in the browser. All of the directories (folders) in your home directory will appear — we'll get to that later. For now, select `New` >> `Python3` in the upper right corner.
 
 ![jupyter](images/jupyter1.png)
 
@@ -31,7 +27,7 @@ import nltk
 import matplotlib
 ```
 
-Press **Shift** + **Enter** to run the cell (or click run at the top of the page). Don't worry too much about what this is doing - that will be explained later in this tutorial. For now, we just want to make sure the packages we will need are installed.
+Press `**Shift**` + `**Enter**` to run the cell (or click run at the top of the page). Don't worry too much about what this is doing - that will be explained later in this tutorial. For now, we just want to make sure the packages we will need are installed.
 
 ![jupyter](images/jupyter3.png)
 
@@ -53,7 +49,7 @@ nltk.download()
 
 and run the cell.
 
-The NLTK downloader should appear. Please install all of the packages. If you are short on time, focus on book" for this tutorial—you can download the other packages at another time for later use.
+The NLTK downloader should appear. Please install all of the packages. If you are short on time, focus on "book" for this tutorial—you can download the other packages at another time for later use.
 
 Yours will look a little different, but the same interface. Click on the 'all' option and then 'Download'. Once they all trun green, you can close the Downloader dialogue box.
 
@@ -67,7 +63,7 @@ from nltk.book import *
 
 A list of books should appear. If this happens, great! If not, return to the downloader to make sure everything is ok.
 
-Close this Notebook without saving - the only purpose was to check if we have the appropriate packages installed.
+Close this Notebook without saving — the only purpose was to check if we have the appropriate packages installed.
 
 # Text as Data
 
@@ -157,7 +153,7 @@ Finally, in the Jupyter Notebook file browser, find the notebook file and open i
 
 Return to the Jupyter Home Tab in your Browser (or Launch the Jupyter Notebook again), and start a New Python3 Notebook using the `New` button in the upper right corner.
 
-Even though Jupyter Notebook doesn't force you to do so, it is very important to name your file, or you will end up later with a bunch of untitled files and you will have no idea what they are about. In the top left, click in the word "Untitled" and give your file a name such as "intro_nltk".
+Even though Jupyter Notebook doesn't force you to do so, it is very important to name your file, or you will end up later with a bunch of untitled files and you will have no idea what they are about. In the top left, click in the word `Untitled` and give your file a name such as "intro_nltk".
 
 In the first blank cell, type the following to import the NLTK library:
 
@@ -183,7 +179,7 @@ Finally, because of a quirk of Jupyter notebooks, we need to specify that matplo
 
 All three of these commands can be written in the same cell and run all at once (`Shift + Enter`) or in different cells.
 
-![Image showing that the three lines given above should be written in a single cell in the Jupyter notebook, one after another](images/imports.png)
+![Image showing that the three lines given above can be written in a single cell in the Jupyter notebook, one after another](images/imports.png)
 
 If you don't see an error when you run the notebook—that is, if nothing happens—you can move on to the next step.
 
@@ -239,7 +235,7 @@ If you are interested in this type of analysis, take a look at the `common_conte
 
 # Positioning Words
 
-In many ways, `concordance` and `similar` are heightened word searches that tell us something about what is happening near the target words. Another metric we can use is to visualize where the words appear in the text. In the case of _Moby Dick_, we want to compare where "whale" and "monster" appear throughout the text. In this case, the text is functioning as a list of words, and will make a mark where each word appears, offset from the first word. We will _pass_ this _function_ a _list_ of _strings_ to plot. This will likely help us develop a visual of the story - where the whale goes from being a whale to being a monster to being a whale again. In the next cell, type:
+In many ways, `concordance` and `similar` are heightened word searches that tell us something about what is happening near the target words. Another metric we can use is to visualize where the words appear in the text. In the case of _Moby Dick_, we want to compare where "whale" and "monster" appear throughout the text. In this case, the text is functioning as a list of words, and will make a mark where each word appears, offset from the first word. We will _pass_ this _function_ a _list_ of _strings_ to plot. This will likely help us develop a visual of the story — where the whale goes from being a whale to being a monster to being a whale again. In the next cell, type:
 
 ```python
 text1.dispersion_plot(["whale", "monster"])
@@ -273,9 +269,9 @@ text1.count("Whale")
 
 This gets at a distinction between **type** and **token**. "Whale" and "whale" are different types (as of now) because they do not match identically. Every instance of "whale" in the corpus is another **token**—it is an instance of the type, "whale." Therefore, there are 906 tokens of "whale" in our corpus.
 
-Let's fix this by making all of the words lowercase. We will make a new list of words, and call it text1_tokens. We will fill this list with all the words in text1, but in their lowercase form. Python has a built-in function, `lower()` that takes all letters and makes them lowercase. In this same step, we are going to do a kind of tricky move, and only keep the words that are alphabetical and pass over anything that is punctuation or numbers. There is a built-in function, `isalpha()`, that will allow us to save only those words that are made of letters. If `isalpha()` is true, we'll make the word lowercase, and keep the word. If not, we'll pass over it and move to the next one.
+Let's fix this by making all of the words lowercase. We will make a new list of words, and call it "text1_tokens". We will fill this list with all the words in text1, but in their lowercase form. Python has a built-in function, `lower()` that takes all letters and makes them lowercase. In this same step, we are going to do a kind of tricky move, and only keep the words that are alphabetical and pass over anything that is punctuation or numbers. There is a built-in function, `isalpha()`, that will allow us to save only those words that are made of letters. If `isalpha()` is true, we'll make the word lowercase, and keep the word. If not, we'll pass over it and move to the next one.
 
-Type the following code into a new cell in your notebook. Pay special attention to the indentation, which must appear as below.
+Type the following code into a new cell in your notebook. Pay special attention to the indentation, which must appear as below. (Note that in Jupyter Notebook, indentation usually comes automatically. If not, make sure to type the `space` key 4 times)
 
 ```python
 text1_tokens = []
@@ -287,7 +283,7 @@ for t in text1:
 
 ![code](images/for_loop_tokens.png)
 
-Another way to perform the same action more tersely is to use what's called a [list comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions). A list comprehension is a shorter, faster way to write a for-loop, but is syntactically a little more difficult to read (for a human). But, in this case, it's much faster to process:
+Another way to perform the same action more tersely is to use what's called a [list comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions). A list comprehension is a shorter, faster way to write a for-loop. It is syntactically a little more difficult to read (for a human), but, in this case, it's much faster to process. Don't worry too much about understanding the syntax of list comprehensions right now. For every example, we will show both the for loop and list comprehension options.
 
 ```python
 text1_tokens = [t.lower() for t in text1 if t.isalpha()]
@@ -311,7 +307,7 @@ We see there are over 218,000 words in _Moby Dick_ (including metadata). But thi
 
 In order to get unique words, rather than just all words in general, we will make a **set** from the list. A `set` in Python work just like it would [in math](https://en.wikipedia.org/wiki/Set_(mathematics)), it's all the unique values, with any duplicate items removed.
 
-So let's find out the length of our set. just like in math, we can also nest our functions. So, rather than saying `x = set(text1_tokens)` and then finding the length of x, we can do it all in one step.
+So let's find out the length of our set. just like in math, we can also nest our functions. So, rather than saying `x = set(text1_tokens)` and then finding the length of "x", we can do it all in one step.
 
 ```python
 len(set(text1_tokens))
@@ -378,7 +374,7 @@ Now let's take a look at those words:
 print(stops)
 ```
 
-Now we want to go through all of the words in our text, and if that word is in the stop words list, remove it from our list. Otherwise, skip it. The code below is VERY slow (there's a faster option beneath it). The way we write this in Python is:
+Now we want to go through all of the words in our text, and if that word is in the stop words list, remove it from our list. Otherwise, we want it to skip it. (The code below is VERY slow, so it may take some time to process). The way we can write this in Python is:
 
 ```python
 text1_stops = []
@@ -387,7 +383,7 @@ for t in text1_tokens:
         text1_stops.append(t)
 ```
 
-A faster option, using [list comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions): 
+A faster option, if you are feeling bold, would be using [list comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions): 
 
 ```python
 text1_stops = [t for t in text1_tokens if t not in stops]
@@ -490,7 +486,7 @@ Now let's have a look at the words Melville uses in _Moby Dick_. We'd like to lo
 sorted(set(text1_clean))[:30]
 ```
 
-`Sorted` + `set` should give us a list of list of all the words in *Moby Dick* in alphabetical order, but we only want to see the first ones. Notice how there are some words we wouldn't have expected, such as 'abandon', 'abandoned', 'abandonedly', and 'abandonment'. This process is far from perfect, but it is useful. However, depending on your goal, a different process, like _stemming_ might be better. We will stick with the output of the Lemmatizer, but just for an illustration, we can try it out with a stemmer instead (Porter is the most common).  
+`Sorted` + `set` should give us a list of list of all the words in *Moby Dick* in alphabetical order, but we only want to see the first ones. Notice how there are some words we wouldn't have expected, such as 'abandon', 'abandoned', 'abandonedly', and 'abandonment'. This process is far from perfect, but it is useful. However, depending on your goal, a different process, like `stemming` might be better. We will stick with the output of the Lemmatizer, but just for an illustration, we can try it out with a stemmer instead (Porter is the most common).  
 
 ## Stemming Words
 
@@ -499,8 +495,6 @@ The code to implement this and view the output is below:
 ```python
 from nltk.stem import PorterStemmer
 porter_stemmer = PorterStemmer()
-```
-
 ```
 
 Let's see what stemming does to words and compare it with lemmatizers:
