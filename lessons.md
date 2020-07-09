@@ -10,15 +10,15 @@ You will also need [`nltk`](https://github.com/DHRI-Curriculum/install/blob/mast
 
 Find Anaconda Navigator on your computer (it should be located in the folder with your other applications), and from Acadonda Navigator's interface, launch a Jupyter Notebook.
 
-![jupyter](images/jupyter.png)
+![jupyter notebook launch screen](images/jupyter.png)
 
 It will open in the browser. All of the directories (folders) in your home directory will appear — we'll get to that later. For now, select `New` >> `Python3` in the upper right corner.
 
-![jupyter](images/jupyter1.png)
+![jupyter notebook "open new file" screen](images/jupyter1.png)
 
 A blank page with an empty box should appear.
 
-![jupyter](images/jupyter2.png)
+![empty box on jupyter notebook new file](images/jupyter2.png)
 
 In the box, type:
 
@@ -27,9 +27,9 @@ import nltk
 import matplotlib
 ```
 
-Press `**Shift**` + `**Enter**` to run the cell (or click run at the top of the page). Don't worry too much about what this is doing - that will be explained later in this tutorial. For now, we just want to make sure the packages we will need are installed.
+Press `Shift + Enter` to run the cell (or click run at the top of the page). Don't worry too much about what this is doing - that will be explained later in this tutorial. For now, we just want to make sure the packages we will need are installed.
 
-![jupyter](images/jupyter3.png)
+![commands above in a jupyter notebook cell](images/jupyter3.png)
 
 If nothing happens, they are installed and you are ready to move on! If you get an error message, either you have a typo or they are not installed. If it is the latter, open the command line and type:
 
@@ -53,7 +53,7 @@ The NLTK downloader should appear. Please install all of the packages. If you ar
 
 Yours will look a little different, but the same interface. Click on the 'all' option and then 'Download'. Once they all trun green, you can close the Downloader dialogue box.
 
-![nltk downloader](images/nltk.png)
+![nltk downloader screen](images/nltk.png)
 
 Return to your Jupyter Notebook and type:
 
@@ -191,7 +191,7 @@ from nltk.book import *
 
 The pre-loaded NLTK texts should appear again. These are preformatted data sets. We will still have to do some minor processing, but having the data in this format saves us a few steps. At the end of this tutorial, we will make our own corpus. This is a special type of python object specific to NLTK (it isn't a string, list, or dictionary). Sometimes it will behave like a string, and sometimes like a list of words. How it is behaving is noted for each function as we try it out.
 
-![Image showing a second cell with the "from nltk.book import *" line and another line defining some text data](images/nltkbook.png)
+![Image showing a second cell with the output of "from nltk.book import *"](images/nltkbook.png)
 
 Let's start by analyzing _Moby Dick_, which is `text1` for NLTK.
 
@@ -281,7 +281,7 @@ for t in text1:
     text1_tokens.append(t)
 ```
 
-![code](images/for_loop_tokens.png)
+![image with code above in a jupyter notebook cell](images/for_loop_tokens.png)
 
 Another way to perform the same action more tersely is to use what's called a [list comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions). A list comprehension is a shorter, faster way to write a for-loop. It is syntactically a little more difficult to read (for a human), but, in this case, it's much faster to process. Don't worry too much about understanding the syntax of list comprehensions right now. For every example, we will show both the for loop and list comprehension options.
 
@@ -466,12 +466,11 @@ text1_clean = [wordnet_lemmatizer.lemmatize(t) for t in text1_stops]
 
 ### Verifying Clean List Contents
 
-Let's check now to see the length of our final, cleaned version of the data, and then check the unique set of words:
+Let's check now to see the length of our final, cleaned version of the data, and then check the unique set of words. Notice how we will use the `print` function this time. Jupyter Notebook does print commands without the `print` function, but it will only print one thing per cell (the last command), and we wanted to print two different things:
 
 ```python
-len(text1_clean)
-
-len(set(text1_clean))
+print(len(text1_clean))
+print(len(set(text1_clean)))
 ```
 
 If everything went right, you should have the same length as before, but a smaller number of unique words. That makes sense since we did not remove any word, we only changed some of them.
@@ -486,7 +485,7 @@ Now let's have a look at the words Melville uses in _Moby Dick_. We'd like to lo
 sorted(set(text1_clean))[:30]
 ```
 
-`Sorted` + `set` should give us a list of list of all the words in *Moby Dick* in alphabetical order, but we only want to see the first ones. Notice how there are some words we wouldn't have expected, such as 'abandon', 'abandoned', 'abandonedly', and 'abandonment'. This process is far from perfect, but it is useful. However, depending on your goal, a different process, like `stemming` might be better. We will stick with the output of the Lemmatizer, but just for an illustration, we can try it out with a stemmer instead (Porter is the most common).  
+`Sorted` + `set` should give us a list of list of all the words in *Moby Dick* in alphabetical order, but we only want to see the first ones. Notice how there are some words we wouldn't have expected, such as 'abandon', 'abandoned', 'abandonedly', and 'abandonment'. This process is far from perfect, but it is useful. However, depending on your goal, a different process, like `stemming` might be better. 
 
 ## Stemming Words
 
@@ -497,13 +496,13 @@ from nltk.stem import PorterStemmer
 porter_stemmer = PorterStemmer()
 ```
 
-Let's see what stemming does to words and compare it with lemmatizers:
+The Porter is the most common Stemmer. Let's see what stemming does to words and compare it with lemmatizers:
 
 ```python
 print(porter_stemmer.stem('berry'))
-print(porter_stemmer.stem('berry'))
+print(porter_stemmer.stem('berries'))
 print(wordnet_lemmatizer.lemmatize("berry"))
-print(wordnet_lemmatizer.lemmatize("berry"))
+print(wordnet_lemmatizer.lemmatize("berries"))
 ```
 
 Stemmer doesn't look so good, right? But how about checking how stemmer handles some of the words that our lemmatized "failed" us?
@@ -515,9 +514,11 @@ print(porter_stemmer.stem('abandonedly'))
 print(porter_stemmer.stem('abandonment'))
 ```
 
-Still not perfect, but a bit better. How to choose between stemming and lemmatizing? As many things in text analysis, that depends. As a general rule, stemming is faster while lemmatizing is more accurate. For academics, usually the choice goes for the latter.
+Still not perfect, but a bit better. So the question is, how to choose between stemming and lemmatizing? As many things in text analysis, that depends. The best way to go is experimenting, seeing the results and chosing the one that better fits your goals.
 
-Anyway, let's stem our text:
+As a general rule, stemming is faster while lemmatizing is more accurate (but not always, as we just saw). For academics, usually the choice goes for the latter.
+
+Anyway, let's stem our text with the Porter Stemmer:
 
 ```python
 t1_porter = []
@@ -529,17 +530,19 @@ for t in text1_clean:
 Or, if we want a faster way:
 
 ```python
-t1_porter = [porter_stemmer.stem(t) for t in text1_tokens]
+t1_porter = [porter_stemmer.stem(t) for t in text1_clean]
 ```
 
 And let's check the results:
 
 ```python
 print(len(set(t1_porter)))
-print(sorted(set(t1_porter)))
+print(sorted(set(t1_porter))[:30])
 ```
 
 A very different list of words is produced. This list is shorter than the list produced by the lemmatizer, but is also less accurate, and some of the words will completely change their meaning (like 'berry' becoming 'berri').
+
+## Back to the Lemmatized text
 
 Now that we've seen some of the differences between both, we will proceed using our lemmatized corpus, which we saved as "text1_clean":
 
@@ -553,11 +556,13 @@ If nothing happened, that is normal. Check to make sure it is there by calling f
 type(my_dist)
 ```
 
-The result should say it is an nltk probability distribution. It doesn't matter too much right now what it is, only that it worked. We can now plot this with the matplotlib function, `plot`. We want to plot the first 20 entries of the my_dist object.
+The result should say it is a nltk probability distribution (`nltk.probability.FreqDist`). It doesn't matter too much right now what that is, only that it worked. We can now plot this with the matplotlib function, `plot`. We want to plot the first 20 entries of the my_dist object.
 
 ```python
 my_dist.plot(20)
 ```
+
+![nltk plot distribution](images/nltk_plot.png)
 
 We've made a nice image here, but it might be easier to comprehend as a list. Because this is a special probability distribution object we can call the `most_common` on this, too. Let's find the twenty most common words:
 
@@ -661,7 +666,7 @@ Finally, if we want to use the NLTK specific functions:
 - `concordance`
 - `similar`
 - `dispersion_plot`
-- others from the [NLTK book](https://www.nltk.org/book/)
+- or others from the [NLTK book](https://www.nltk.org/book/)
 
 we would have to make a specific NLTK `Text` object.
 
@@ -746,7 +751,9 @@ Now let's see what we got:
 tag_dict
 ```
 
-This would be better with some order to it, but dictionaries are made to be unordered. When we google "sort dictionaries python" we find a solution in our great friend [stack overflow](https://stackoverflow.com/a/613218). Even though we cannot sort a dictionary, we can get a representation of a dictionary that is sorted. Let's do it and find out what the most common tag is.
+This would be better with some order to it, but dictionaries are made to be unordered. When we google "sort dictionaries python" we find a solution in our great friend [stack overflow](https://stackoverflow.com/a/613218). Even though we cannot sort a dictionary, we can get a representation of a dictionary that is sorted. Don't worry too much about understanding the following code, as it uses things we have not discussed, and are out of the scope of this course. It is useful to see how we can reuse pieces of code even when we don't fully understand them.
+
+Now let's do it and find out what the most common tag is.
 
 ```python
 tag_dict_sorted = sorted(tag_dict.items(),
