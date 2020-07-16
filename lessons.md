@@ -33,9 +33,9 @@ Press `Shift + Enter` to run the cell (or click run at the top of the page). Don
 
 If nothing happens, they are installed and you are ready to move on! If you get an error message, either you have a typo or they are not installed. If it is the latter, open the command line and type:
 
-```bash
-conda install nltk -y
-conda install matplotlib -y
+```console
+$ conda install nltk -y
+$ conda install matplotlib -y
 ```
 
 
@@ -124,7 +124,7 @@ All of the code for this section is in a Jupyter Notebook in the GitHub reposito
 To open the notebook, first create a `projects` folder if you don't already have one by entering this command in your terminal:
 
 ```console
-mkdir -p ~/Desktop/projects
+$ mkdir -p ~/Desktop/projects
 ```
 
 If you already have a projects folder, you can skip this step.
@@ -132,19 +132,19 @@ If you already have a projects folder, you can skip this step.
 Next, clone the text analysis session repository into your projects folder by entering this command:
 
 ```console
-git clone https://github.com/DHRI-Curriculum/text-analysis.git ~/Desktop/projects/text-analysis
+$ git clone https://github.com/DHRI-Curriculum/text-analysis.git ~/Desktop/projects/text-analysis
 ```
 
 Then move to the new directory:
 
 ```console
-cd ~/Desktop/projects/text-analysis
+$ cd ~/Desktop/projects/text-analysis
 ```
 
 Now launch the Jupyter Notebook application by typing this into the terminal:
 
 ```console
-jupyter notebook
+$ jupyter notebook
 ```
 
 If it's your first time opening the notebook, you may be prompted to enter a URL into your browser. Copy out the URL and paste it into the Firefox or Google Chrome search bar.
@@ -259,17 +259,22 @@ First, let's find out how many times a given word appears in the corpus. In this
 text1.count("whale")
 ```
 
-We see that "whale" occurs 906 times, but that seems a little low. Let's check on "Whale" and see how often that appears:
+We see that "whale" occurs 906 times, but that seems a little low. Let's check the same thing, but now for "Whale" and "WHALE":
 
 ```python
 text1.count("Whale")
 ```
 
-"Whale" with a capital "W" appears 282 times. This is a problem for us—we actually want them to be collapsed into one word, since "whale" and "Whale" really are the same for our purposes. We will deal with that in a moment. For the time being, we will accept that we have two entries for "whale."
+```python
+text1.count("WHALE")
+```
 
-This gets at a distinction between **type** and **token**. "Whale" and "whale" are different types (as of now) because they do not match identically. Every instance of "whale" in the corpus is another **token**—it is an instance of the type, "whale." Therefore, there are 906 tokens of "whale" in our corpus.
+What is clear here is that the `count` method is case-sensitive.
+"Whale" with a capital "W" appears 282 times, and "WHALE" another 38 times. Depending on the type of analysis, this distinction can be a problem, and we might want "whale", "Whale" and "WHALE" to be collapsed into one single word. We will deal with that in a moment. For the time being, we will accept that we have three different entries for "whale."
 
-Let's fix this by making all of the words lowercase. We will make a new list of words, and call it "text1_tokens". We will fill this list with all the words in text1, but in their lowercase form. Python has a built-in function, `lower()` that takes all letters and makes them lowercase. In this same step, we are going to do a kind of tricky move, and only keep the words that are alphabetical and pass over anything that is punctuation or numbers. There is a built-in function, `isalpha()`, that will allow us to save only those words that are made of letters. If `isalpha()` is true, we'll make the word lowercase, and keep the word. If not, we'll pass over it and move to the next one.
+This gets at a distinction between **type** and **token**. "Whale" and "whale" are different types (as of now) because they do not match identically. Every instance of "whale" in the corpus is another **token**—it is an instance of the type, "whale." Therefore, there are 906 tokens of "whale" in our corpus, 282 tokens of "Whale" and 38 tokens of "WHALE".
+
+But that's not what we want. Let's fix this by making all of the words lowercase. We will make a new list of words, and call it "text1_tokens". We will fill this list with all the words in text1, but in their lowercase form. Python has a built-in function, `lower()` that takes all letters and makes them lowercase. In this same step, we are going to do a kind of tricky move, and only keep the words that are alphabetical and pass over anything that is punctuation or numbers. There is a built-in function, `isalpha()`, that will allow us to save only those words that are made of letters. If `isalpha()` is true, we'll make the word lowercase, and keep the word. If not, we'll pass over it and move to the next one.
 
 Type the following code into a new cell in your notebook. Pay special attention to the indentation, which must appear as below. (Note that in Jupyter Notebook, indentation usually comes automatically. If not, make sure to type the `space` key 4 times)
 
@@ -289,7 +294,13 @@ Another way to perform the same action more tersely is to use what's called a [l
 text1_tokens = [t.lower() for t in text1 if t.isalpha()]
 ```
 
-Great! Now `text1_tokens` is a list of all of the tokens in our corpus, with the punctuation removed, and all the words in lowercase.
+Great! Now `text1_tokens` is a list of all of the tokens in our corpus, with the punctuation removed, and all the words in lowercase. Let's check it:
+
+```python
+text1.count("whale")
+```
+
+And now we have 1226 tokens for "whale", which is the exact some of the counts we did before. To double check, count "Whale" and "WHALE" again and you should see no results for them. 
 
 Now we want to know how many words there are in our corpus—that is, how many tokens in total. Therefore, we want to ask, "What is the length of that list of words?" Python has a built-in `len` function that allows you to find out the length of many types. Pass it a list, and it will tell you how many items are in the list. Pass it a string, and it will tell you how many characters are in the string. Pass it a dictionary, and it will tell you how many items are in the dictionary. In the next cell, type:
 
@@ -595,6 +606,24 @@ print(my_list)
 
 You can obviously do this with much larger lists and even compare entire novels if you wish, though it would take a while with this approach. You can use this to get similarity measures and answer related questions.
 
+## Challenge
+
+a) Try to get the same result of the loop above (the one with "my_list"), but this time with a list comprehension. Save this other list as "my_list2".
+
+b) Compare both lists to see if they are identical.
+
+## Solution
+
+a)
+```python
+my_list2 = [word for word in b_words if word in text1_clean]
+```
+
+b)
+```python
+my_list == mylist_2
+```
+
 # Make Your Own Corpus
 
 Now that we have seen and implemented a series of text analysis techniques, let's go to the Internet to find a new text. You could use something such as historic newspapers, or Supreme Court proceedings, or use any txt file on your computer. Here we will use [Project Gutenberg](http://www.gutenberg.org). Project Gutenberg is an archive of public domain written works, available in a wide variety of formats, including .txt. You can download these to your computer or access them via the url. We'll use the url method. We found *Don Quixote* in the archive, and will work with that.
@@ -674,18 +703,29 @@ we would have to make a specific NLTK `Text` object.
 dq_nltk_text = nltk.Text(dq_text)
 ```
 
-If we wanted to use the built-in Python functions, we can just stick with our list of words in `dq_text`. Since we've already covered all of those functions, we are going to move ahead with cleaning our text.
+But if we only need to use the built-in Python functions, we can just stick with our list of words in `dq_text`.
 
-Just as we did earlier, we are going to remove the stopwords based on a list provided by NLTK, remove punctuation, and capitalization, and lemmatize the words. You can do it one by one as we did before, and that is totally fine. You can also merge some of the steps as you see below.
+## Challenge
+
+Using the `dq_text` variable:
+
+- Remove the stopwords
+- Remove punctuation
+- Remove capitalization
+- Lemmatize the words
+
+If you want to spice your challenge up, do the first three operations *in a single if statement*. Google "python nested if statements" for examples.
+
+## Solution
 
 1\. Lowercase, remove punctuation and stopwords
 
 ```python
 dq_clean = []
-for w in dq_text:
-    if w.isalpha():
-        if w.lower() not in stops:
-            dq_clean.append(w.lower())
+for word in dq_text:
+    if word.isalpha():
+        if word.lower() not in stops:
+            dq_clean.append(word.lower())
 print(dq_clean[:50])
 ```
 
@@ -699,8 +739,6 @@ dq_lemmatized = []
 for t in dq_clean:
     dq_lemmatized.append(wordnet_lemmatizer.lemmatize(t))
 ```
-
-From here, you could perform all of the operations that we did after cleaning our text in the previous session. Instead, we will perform another type of analysis: part-of-speech (POS) tagging.
 
 # Part-of-Speech Tagging
 
