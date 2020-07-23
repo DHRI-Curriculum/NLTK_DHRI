@@ -20,4 +20,7 @@
 
 ## Discussion Questions
 
-- Content TBD
+- How can your research benefit from text analysis?
+- What are the limits of the kind of text analysis we just went throught? What is it good for? What is it not well suited to do?
+- What are the potential pitfalls for using massive data?
+- How can we use text analysis in teaching?

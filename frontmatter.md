@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Digital technologies have made vast amounts of text available to researchers, and this same technological moment has provided us with the capacity to analyze that text. The first step in that analysis is to transform texts designed for human consumption into a form a computer can analyze. Using Python and the Natural Language ToolKit (commonly called NLTK), this workshop introduces strategies to turn qualitative texts into quantitative objects. Through that process, we will present a variety of strategies for simple analysis of text-based data.
+Digital technologies have made vast amounts of text available to researchers, and this same technological moment has provided us with the capacity to analyze that text faster than humanly possible. The first step in that analysis is to transform texts designed for human consumption into a form a computer can analyze. Using Python and the Natural Language ToolKit (commonly called NLTK), this workshop introduces strategies to turn qualitative texts into quantitative objects. Through that process, we will present a variety of strategies for simple analysis of text-based data.
 
 ## Learning Objectives
 
@@ -12,7 +12,7 @@ In this workshop, you will learn the following skills:
 - Explain what a concordance is, how to find one, and why it matters
 - Compare frequency distribution of words in a text to quantify the narrative arc
 - Explain what stop words are and why they are often removed
-- Remove stop words in a variety of languages
+- Remove stop words from different languages (English, Spanish, Arabic, etc)
 - Utilize Part-of-Speech tagging to gather insights about a text
 - Transform any document that you have (or have access to) in a .txt format into a text that can be analyzed computationally
 
@@ -22,8 +22,10 @@ In this workshop, you will learn the following skills:
 
 ## Prerequisites
 
-- Intro to Python workshop
-- Basic knowledge on Jupyter Notebook
+- Intro to Python workshop (required)
+- Command Line workshop (recommended)
+- Basic knowledge on Jupyter Notebook (recommended)
+
 
 ## Contexts
 

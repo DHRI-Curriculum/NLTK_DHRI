@@ -31,7 +31,7 @@ Press `Shift + Enter` to run the cell (or click run at the top of the page). Don
 
 ![commands above in a jupyter notebook cell](images/jupyter3.png)
 
-If nothing happens, they are installed and you are ready to move on! If you get an error message, either you have a typo or they are not installed. If it is the latter, open the command line and type:
+If nothing happens, they are installed and you are ready to move on! If you get an error message, either you have a typo or they are not installed. If it is the latter, open the `command line` and type:
 
 ```console
 $ conda install nltk -y
@@ -67,13 +67,15 @@ Close this Notebook without saving — the only purpose was to check if we have 
 
 # Text as Data
 
-When we think of "data," we often think of numbers, things that can be summarized, statisticized, and graphed. Rarely when I ask people "what is data?" do they respond "_Moby Dick_." And yet, more and more, text is data. Whether it is _Moby Dick_, or every romance novel written since 1750, or today's newspaper or twitter feed, we are able to transform written (and spoken) language into data that can be quantified and visualized.
+When we think of "data," we often think of numbers, things that can be summarized, statisticized, and graphed. Rarely when I ask people "what is data?" do they respond "_Moby Dick_." And yet, more and more, text is data. Whether it is _Moby Dick_, or every romance novel written since 1750, or today's newspaper or twitter feed, we are able to transform written (and spoken) language into data that can be quantified and visualized. That has been done for a while, but now we can do it in a much larger scale, in a much faster way.
 
 ## Corpora
 
 The first step in gathering insights from texts is to create a **corpus**. A corpus is a collection of texts that are somehow related to each other. For example, the [Corpus of Contemporary American English](https://corpus.byu.edu/coca/), [Donald Trump's Tweets](http://www.trumptwitterarchive.com/), [text messages](https://byts.commons.gc.cuny.edu/) sent by bilingual young adults, [digitized newspapers](https://chroniclingamerica.loc.gov/newspapers/), or [books](https://www.gutenberg.org/) in the public domain are all corpora. There are infinitely many corpora, and, sometimes, you will want to make your own—that is, one that best fits your research question.
 
 The route you take from here will depend on your research question. Let's say, for example, that you want to examine gender differences in writing style. Based on previous linguistic research, you hypothesize that male-identified authors use more definitives than female-identified. So you collect two corpora—one written by men, one written by women—and you count the number of *the*s, *this*s, and *that*s compared to the number of *a*s, *an*s, and *one*s. Maybe you find a difference, maybe you don't. We can already see that this is a relatively crude way of going about answering this question, but it is a start. (More likely, you'd use a _supervised classification task_, which you will learn about in the [Machine Learning Tutorial](https://www.github.com/DHRI-Curriculum/machine-learning).)
+
+Keep in mind that, oftentimes our analysis of gender assumes pre-existing gender roles that reproduce gender as a binary system. Some digital humanists have pointed out that, if gender is binary, then the relation between male and female will likely be one of opposition. As [Laura Mandell](https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/5d9c1b63-7b60-42dd-8cda-bde837f638f4#ch01) says, the categories of "male" and "female" are socially constructed, and quantitative analysis practitioners should avoid jumping to conclusions about "male" and "female" styles of thinking and writing "as if the M/F terms were simple pointers to an unproblematic reality, transparently referential and not discursively constituted."
 
 There has been some research about how the [linguistic complexity of written language](http://science.sciencemag.org/content/sci/331/6014/176.full.pdf) in long-form pieces (i.e., books, articles, letters, etc.) has decreased over time. Simply put, people today use shorter sentences with fewer embedded clauses and complex tense constructions than people did in the past. (Note that this is not necessarily a bad or good thing.) Based on this research, we want to know if short-form platforms are emblematic of the change (we predict that they are based on our own experience with short-form platforms like email and Twitter). One way to do this would be to use Part-of-Speech tagging. Part-of-Speech (POS) tagging is a way to identify the category of words in a given text.
 
@@ -113,13 +115,19 @@ In going from the first sentence to the normalized words, we removed the stop wo
 
 Again, this will be covered more in depth in the Machine Learning Tutorial, but for the time being, we just need to know that there is "clean" and "dirty" versions of text data. Sometimes our questions are about the clean data, but sometimes our questions are in the "dirt."
 
+A Note on Ethics:
+
+The act of cleaning/normalizing subscribes text to predetermined categories of meaning, forcing meaning into existing "boxes," so to speak. This doesn't mean that we should avoid cleaning or normalizing text, but that we should be aware of how some textual reductions have the potential to affect meaning. How does quantification reinforce differences or stratifications within our data? We have to be careful about the kinds of questions we are asking, and how we might be reproducing some of our assumptions in our inquiry.
+
+To read more about ethics and text analysis, see Lauren Klein's "[Distant Reading After Moretti](https://arcade.stanford.edu/blogs/distant-reading-after-moretti)," where she questions, "Instead of first asking what can be modeled—what phenomena we can track at scale—we might instead ask: what might be hidden in this corpus?”
+
 ## Words into numbers
 
 In the next section, we are going to go through a series of methods that come built-in to NLTK that allow us to turn our words into numbers and visualizations. This is just scratching the surface, but should give you an idea of what is possible beyond just counting words.
 
 # NLTK Methods with the NLTK Corpus
 
-All of the code for this section is in a Jupyter Notebook in the GitHub repository. I encourage you to follow along by retyping all of the code, but if you get lost, or want another reference, the code is there as well.
+All of the code for this section is in a Jupyter Notebook in the [GitHub repository](https://github.com/DHRI-Curriculum/text-analysis). I encourage you to follow along by retyping all of the code, but if you get lost, or want another reference, the code is there as well.
 
 To open the notebook, first create a `projects` folder if you don't already have one by entering this command in your terminal:
 
@@ -147,7 +155,6 @@ Now launch the Jupyter Notebook application by typing this into the terminal:
 $ jupyter notebook
 ```
 
-If it's your first time opening the notebook, you may be prompted to enter a URL into your browser. Copy out the URL and paste it into the Firefox or Google Chrome search bar.
 
 Finally, in the Jupyter Notebook file browser, find the notebook file and open it. It should be called `TextAnalysis.ipynb`. You will use this file for reference in case you get stuck in the next few sections, so keep it open.
 
@@ -181,7 +188,7 @@ All three of these commands can be written in the same cell and run all at once 
 
 ![Image showing that the three lines given above can be written in a single cell in the Jupyter notebook, one after another](images/imports.png)
 
-If you don't see an error when you run the notebook—that is, if nothing happens—you can move on to the next step.
+If you don't see an error when you run the notebook—that is, if there is no output—you can move on to the next step. It is not rare in programming that when you do things right, the result will be nothing happening. This is what we like to call a _silent success_.
 
 Next, we need to load all of the NLTK corpora into our program. Even though we downloaded them to our computer, we need to tell Python we want to use them.
 
@@ -243,13 +250,25 @@ text1.dispersion_plot(["whale", "monster"])
 
 A graph should appear with a tick mark everywhere that "whale" appears and everywhere that "monster" appears. Knowing the story, we can interpret this graph and align it to what we know of how the narrative progresses. If we did not know the story, this could give us a picture of the narrative arc.
 
-Try this with `text2`, _Sense and Sensibility_. Some relevant words are "marriage," "love," "home," "mother," "husband," "sister," and "wife." Pick a few to compare. You can compare an unlimited number, but it's easier to read a few at a time. (Note that the comma in our writing here is _inside_ the quotation mark but for Python, this would be unreadable and you would have to put commas outside of quotation marks to create a _list_.)
+## Challenge
+
+Try this with `text2`, _Sense and Sensibility_, [as we saw here](#searching-for-words). Some relevant words are "marriage," "love," "home," "mother," "husband," "sister," and "wife." Pick a few to compare. You can compare an unlimited number, but it's easier to read a few at a time. (Note that the comma in our writing here is _inside_ the quotation mark, because that is how proper English grammar works. However, in Python, you would have to put commas _outside_ of the quotation marks to create a _list_.)
 
 NLTK has many more functions built-in, but some of the most powerful functions are related to cleaning, part-of-speech tagging, and other stages in the text analysis pipeline (where the pipeline refers to the process of loading, cleaning, and analyzing text).
 
+## Solution
+
+```python
+text2.dispersion_plot(["love", "marriage"])
+```
+
+```python
+text2.dispersion_plot(["husband", "wife"])
+```
+
 # Built-In Python Functions
 
-We will now turn our attention away from the NLTK library and work with our text using the built-in Python functions—the ones that come included with the Python language, rather than the NLTK library.
+We will now turn our attention away from the NLTK library and work with our text using the built-in Python functions—the ones that come included with the Python language, rather than the NLTK library. (This difference is relevant because built-in python functions will work with any list of strings, while some of the functions that are specific to the NLTK library will require you to make your text "nltk ready". Don't worry about that now, we will show you how to do it later in this workshop).
 
 ## Types vs. tokens
 
@@ -297,7 +316,7 @@ text1_tokens = [t.lower() for t in text1 if t.isalpha()]
 Great! Now `text1_tokens` is a list of all of the tokens in our corpus, with the punctuation removed, and all the words in lowercase. Let's check it:
 
 ```python
-text1.count("whale")
+text1_tokens.count("whale")
 ```
 
 And now we have 1226 tokens for "whale", which is the exact some of the counts we did before. To double check, count "Whale" and "WHALE" again and you should see no results for them. 
@@ -354,6 +373,21 @@ Let's compare the lexical density of *Moby Dick* with *Sense and Sensibility*. M
 2. Make a slice of the first 10,000 words.
 3. Calculate lexical density by dividing the length of the set of the slice by the length of the slice.
 
+Remember to be aware of the ethical implications for the conclusions that we might draw about our data. What assumptions might we be reifying about these writers?
+
+## Solution
+
+```python
+text2_tokens = []
+for t in text2:
+  if t.isalpha():
+    t = t.lower()
+    text2_tokens.append(t)
+
+text2_slice = text2_tokens[0:10000]
+
+len(set(text2_slice)) / len(text2_slice)
+```
 
 # Making Your Own Corpus: Data Cleaning
 
@@ -621,12 +655,12 @@ my_list2 = [word for word in b_words if word in text1_clean]
 
 b)
 ```python
-my_list == mylist_2
+my_list == mylist2
 ```
 
 # Make Your Own Corpus
 
-Now that we have seen and implemented a series of text analysis techniques, let's go to the Internet to find a new text. You could use something such as historic newspapers, or Supreme Court proceedings, or use any txt file on your computer. Here we will use [Project Gutenberg](http://www.gutenberg.org). Project Gutenberg is an archive of public domain written works, available in a wide variety of formats, including .txt. You can download these to your computer or access them via the url. We'll use the url method. We found *Don Quixote* in the archive, and will work with that.
+Now that we have seen and implemented a series of text analysis techniques, let's go to the Internet to find a new text. You could use something such as historic newspapers, or Supreme Court proceedings, or use any txt file on your computer. Here we will use [Project Gutenberg](http://www.gutenberg.org). Project Gutenberg is an archive of public domain written works, available in a wide variety of formats, including .txt. You can download these to your computer or access them via the url. We'll use the `url method`. We found *Don Quixote* in the archive, and will work with that.
 
 The Python package, urllib, comes installed with Python, but is inactive by default, so we still need to import it to utilize the functions. Since we are only going to use the urlopen function, we will just import that one.
 
@@ -744,7 +778,7 @@ for t in dq_clean:
 
 *Note that we are going to use the pre-cleaned, `dq_text` object for this section.*
 
-POS tagging is going through a text and identifying which part of speech each word belongs to (i.e., Noun, Verb, or Adjective). Every word belongs to a part of speech, but some words can be confusing.
+POS (Part-of-Speech) tagging is going through a text and identifying which part of speech each word belongs to (i.e., Noun, Verb, or Adjective). Every word belongs to a part of speech, but some words can be confusing.
 
 - Floyd is happy.
 - Happy is a state of being.
