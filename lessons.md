@@ -8,7 +8,7 @@ If you have not already installed the [Anaconda](https://www.anaconda.com/downlo
 
 You will also need [`nltk`](https://github.com/DHRI-Curriculum/install/blob/master/sections/nltk.md) and [`matplotlib`](https://github.com/DHRI-Curriculum/install/blob/master/sections/conda.md) to complete this tutorial. Both packages come installed with Anaconda. To check to be sure you have them, open a new Jupyter Notebook (or any IDE to run Python).
 
-Find Anaconda Navigator on your computer (it should be located in the folder with your other applications), and from Acadonda Navigator's interface, launch a Jupyter Notebook.
+Find Anaconda Navigator on your computer (it should be located in the folder with your other applications), and from Anaconda Navigator's interface, launch a Jupyter Notebook.
 
 ![jupyter notebook launch screen](images/jupyter.png)
 
@@ -27,7 +27,7 @@ import nltk
 import matplotlib
 ```
 
-Press `Shift + Enter` to run the cell (or click run at the top of the page). Don't worry too much about what this is doing - that will be explained later in this tutorial. For now, we just want to make sure the packages we will need are installed.
+Press `Shift + Enter` to run the cell (or click `run` at the top of the page). Don't worry too much about what this is doing — that will be explained later in this tutorial. For now, we just want to make sure the packages we will need are installed.
 
 ![commands above in a jupyter notebook cell](images/jupyter3.png)
 
@@ -38,6 +38,7 @@ $ conda install nltk -y
 $ conda install matplotlib -y
 ```
 
+## Downloading the corpus
 
 Now we need to install the nltk corpus. This is very large and may take some time if you are on a weak connection.
 
@@ -63,6 +64,8 @@ from nltk.book import *
 
 A list of books should appear. If this happens, great! If not, return to the downloader to make sure everything is ok.
 
+![list of nltk books](images/nltk_books_download.png)
+
 Close this Notebook without saving — the only purpose was to check if we have the appropriate packages installed.
 
 # Text as Data
@@ -73,7 +76,7 @@ When we think of "data," we often think of numbers, things that can be summarize
 
 The first step in gathering insights from texts is to create a **corpus**. A corpus is a collection of texts that are somehow related to each other. For example, the [Corpus of Contemporary American English](https://corpus.byu.edu/coca/), [Donald Trump's Tweets](http://www.trumptwitterarchive.com/), [text messages](https://byts.commons.gc.cuny.edu/) sent by bilingual young adults, [digitized newspapers](https://chroniclingamerica.loc.gov/newspapers/), or [books](https://www.gutenberg.org/) in the public domain are all corpora. There are infinitely many corpora, and, sometimes, you will want to make your own—that is, one that best fits your research question.
 
-The route you take from here will depend on your research question. Let's say, for example, that you want to examine gender differences in writing style. Based on previous linguistic research, you hypothesize that male-identified authors use more definitives than female-identified. So you collect two corpora—one written by men, one written by women—and you count the number of *the*s, *this*s, and *that*s compared to the number of *a*s, *an*s, and *one*s. Maybe you find a difference, maybe you don't. We can already see that this is a relatively crude way of going about answering this question, but it is a start. (More likely, you'd use a _supervised classification task_, which you will learn about in the [Machine Learning Tutorial](https://www.github.com/DHRI-Curriculum/machine-learning).)
+The route you take from here will depend on your research question. Let's say, for example, that you want to examine gender differences in writing style. Based on previous linguistic research, you hypothesize that male-identified authors use more definitives than female-identified. So you collect two corpora—one written by men, one written by women—and you count the number of *the*s, *this*s, and *that*s compared to the number of *a*s, *an*s, and *one*s. Maybe you find a difference, maybe you don't. We can already see that this is a relatively crude way of going about answering this question, but it is a start.
 
 Keep in mind that, oftentimes our analysis of gender assumes pre-existing gender roles that reproduce gender as a binary system. Some digital humanists have pointed out that, if gender is binary, then the relation between male and female will likely be one of opposition. As [Laura Mandell](https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/5d9c1b63-7b60-42dd-8cda-bde837f638f4#ch01) says, the categories of "male" and "female" are socially constructed, and quantitative analysis practitioners should avoid jumping to conclusions about "male" and "female" styles of thinking and writing "as if the M/F terms were simple pointers to an unproblematic reality, transparently referential and not discursively constituted."
 
@@ -113,7 +116,7 @@ The first has more information about tense, and which house in particular, but t
 
 In going from the first sentence to the normalized words, we removed the stop words (_the_ and _is_), and removed punctuation and case, and lemmatized what was left (_burning_ becomes _burn_—though we might have stemmed this, its impossible to tell from the example). This results in what is essentially a "bag of words," or a corpus of words without any structure. Because normalizing your text reduces the number of words (and therefore the number of dimensions in your data), and keeps only the words that contribute meaning to the document, this cleaning is usually desirable.
 
-Again, this will be covered more in depth in the Machine Learning Tutorial, but for the time being, we just need to know that there is "clean" and "dirty" versions of text data. Sometimes our questions are about the clean data, but sometimes our questions are in the "dirt."
+This is a very important topic in Machine Learning tutorials. For the time being, we just need to know that there is "clean" and "dirty" versions of text data. Sometimes our questions are about the clean data, but sometimes our questions are in the "dirt."
 
 A Note on Ethics:
 
@@ -132,7 +135,7 @@ All of the code for this section is in a Jupyter Notebook in the [GitHub reposit
 To open the notebook, first create a `projects` folder if you don't already have one by entering this command in your terminal:
 
 ```console
-$ mkdir -p ~/Desktop/projects
+$ mkdir -p ~/Documents/projects
 ```
 
 If you already have a projects folder, you can skip this step.
@@ -140,13 +143,13 @@ If you already have a projects folder, you can skip this step.
 Next, clone the text analysis session repository into your projects folder by entering this command:
 
 ```console
-$ git clone https://github.com/DHRI-Curriculum/text-analysis.git ~/Desktop/projects/text-analysis
+$ git clone https://github.com/DHRI-Curriculum/text-analysis.git ~/Documents/projects/text-analysis
 ```
 
 Then move to the new directory:
 
 ```console
-$ cd ~/Desktop/projects/text-analysis
+$ cd ~/Documents/projects/text-analysis
 ```
 
 Now launch the Jupyter Notebook application by typing this into the terminal:
@@ -156,9 +159,9 @@ $ jupyter notebook
 ```
 
 
-Finally, in the Jupyter Notebook file browser, find the notebook file and open it. It should be called `TextAnalysis.ipynb`. You will use this file for reference in case you get stuck in the next few sections, so keep it open.
+Finally, in the Jupyter Notebook file browser, you should be able to see a notebook file (with the `ipynb` extension) named `TextAnalysis.ipynb`. In this file you will find all of the workshop commands and the expected outputs. If you ever feel stuck or can't seem to be able to advance in the workshop, you can open this file and see how we did it. Feel free to open the file right now (click on it), take a look at its contents if you want, and close it.
 
-Return to the Jupyter Home Tab in your Browser (or Launch the Jupyter Notebook again), and start a New Python3 Notebook using the `New` button in the upper right corner.
+Now you will create your Jupyter notebook file, in which you will run the workshop. Return to the Jupyter Home Tab in your Browser (or, if you closed it completely, launch the Jupyter Notebook again), and start a New Python3 Notebook using the `New` button in the upper right corner.
 
 Even though Jupyter Notebook doesn't force you to do so, it is very important to name your file, or you will end up later with a bunch of untitled files and you will have no idea what they are about. In the top left, click in the word `Untitled` and give your file a name such as "intro_nltk".
 
@@ -252,7 +255,7 @@ A graph should appear with a tick mark everywhere that "whale" appears and every
 
 ## Challenge
 
-Try this with `text2`, _Sense and Sensibility_, [as we saw here](#searching-for-words). Some relevant words are "marriage," "love," "home," "mother," "husband," "sister," and "wife." Pick a few to compare. You can compare an unlimited number, but it's easier to read a few at a time. (Note that the comma in our writing here is _inside_ the quotation mark, because that is how proper English grammar works. However, in Python, you would have to put commas _outside_ of the quotation marks to create a _list_.)
+Try this with `text2`, _Sense and Sensibility_, [as we saw here](#downloading-the-corpus). Some relevant words are "marriage," "love," "home," "mother," "husband," "sister," and "wife." Pick a few to compare. You can compare an unlimited number, but it's easier to read a few at a time. (Note that the comma in our writing here is _inside_ the quotation mark, because that is how proper English grammar works. However, in Python, you would have to put commas _outside_ of the quotation marks to create a _list_.)
 
 NLTK has many more functions built-in, but some of the most powerful functions are related to cleaning, part-of-speech tagging, and other stages in the text analysis pipeline (where the pipeline refers to the process of loading, cleaning, and analyzing text).
 
