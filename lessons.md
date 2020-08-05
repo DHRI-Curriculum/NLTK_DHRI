@@ -269,11 +269,9 @@ text2.dispersion_plot(["love", "marriage"])
 text2.dispersion_plot(["husband", "wife"])
 ```
 
-# Built-In Python Functions
+# Types vs. tokens
 
-We will now turn our attention away from the NLTK library and work with our text using the built-in Python functions—the ones that come included with the Python language, rather than the NLTK library. (This difference is relevant because built-in python functions will work with any list of strings, while some of the functions that are specific to the NLTK library will require you to make your text "nltk ready". Don't worry about that now, we will show you how to do it later in this workshop).
-
-## Types vs. tokens
+We will now turn our attention away from the NLTK library and work with our text using the /built-in Python functions/—the ones that come included with the Python language, rather than the NLTK library. (This difference is relevant because built-in python functions will work with any list of strings, while some of the functions that are specific to the NLTK library will require you to make your text "nltk ready". Don't worry about that now, we will show you how to do it later in this workshop).
 
 First, let's find out how many times a given word appears in the corpus. In this case (and all cases going forward), our text will be treated as a list of words. Therefore, we will use the `count` function. We could just as easily do this with a text editor, but performing this in Python allows us to save it to a variable and then utilize this statistic in other calculations (for example, if we want to know what percentage of words in a corpus are 'lol', we would need a count of the 'lol's). In the next cell, type:
 
@@ -316,6 +314,18 @@ Another way to perform the same action more tersely is to use what's called a [l
 text1_tokens = [t.lower() for t in text1 if t.isalpha()]
 ```
 
+Let's take a breath, because this was a difficulty spike. For loops are weird and not super intuitive. It usually takes some time for us to get used to them.
+
+I suggest going back to the loop above, review it, try to understand why all indentations are where they are. 
+
+Feel like you understand it? Try deleting it and writing the loop yourself without looking at this guide.
+
+You can also copy the whole loop to a new jupyter notebook cell and play around with it. What happens when you change the order of the commands? How about the indentation? Don't be afraid to break it.
+
+If you feel like you are done playing with the loop, time to move to the next section to see the results.
+
+# Length and unique words
+
 Great! Now `text1_tokens` is a list of all of the tokens in our corpus, with the punctuation removed, and all the words in lowercase. Let's check it:
 
 ```python
@@ -346,7 +356,9 @@ So let's find out the length of our set. just like in math, we can also nest our
 len(set(text1_tokens))
 ```
 
-Great! Now we can calculate the **lexical density** of _Moby Dick_. [Statistical studies](https://pdfs.semanticscholar.org/c2a8/56959d7f5880c98ccd4cfeb4b4f5b7133ec7.pdf) have shown that lexical density (the number of unique words per total words) is a good metric to approximate lexical diversity—the range of vocabulary an author uses. For our first pass at lexical density, we will simply divide the number of unique words by the total number of words:
+# Lexical density
+
+Now we can calculate the **lexical density**, the number of unique words per total words. [Statistical studies](https://pdfs.semanticscholar.org/c2a8/56959d7f5880c98ccd4cfeb4b4f5b7133ec7.pdf) have shown that lexical density is a good metric to approximate lexical diversity—the range of vocabulary an author uses. For our first pass at lexical density, we will simply divide the number of unique words by the total number of words:
 
 ```python
 len(set(text1_tokens))/len(text1_tokens)
@@ -392,15 +404,13 @@ text2_slice = text2_tokens[0:10000]
 len(set(text2_slice)) / len(text2_slice)
 ```
 
-# Making Your Own Corpus: Data Cleaning
+# Data Cleaning: removing Stopwords
 
 Thus far, we have been asking questions that take stopwords and grammatical features into account. For the most part, we want to exclude these features since they don't actually contribute very much semantic content to our models. Therefore, we will:
 
 1. Remove capitalization and punctuation (we've already done this).
 2. Remove stop words.
 3. Lemmatize (or stem) our words, i.e. "jumping" and "jumps" become "jump."
-
-## Removing Stopwords
 
 We already completed step one, and are now working with our `text1_tokens`. Remember, this variable, `text1_tokens`, contains a list of strings that we will work with. We want to remove the stop words from that list. The NLTK library comes with fairly comprehensive lists of stop words for many languages. Stop words are function words that contribute very little semantic meaning and most often have grammatical functions. Usually, these are function words such as determiners, prepositions, auxiliaries, and others.
 
@@ -444,7 +454,7 @@ print(text1_stops[:30])
 ```
 
 
-### Verifying List Contents
+## Verifying List Contents
 
 Now that we removed our stop words, let's see how many words are left in our list:
 
@@ -460,7 +470,7 @@ For reference, let's also check how many unique words there are. We will do this
 len(set(text1_stops))
 ```
 
-## Lemmatizing Words
+# Data cleaning: Lemmatizing Words
 
 Now that we've removed the stop words from our corpus, the next step is to stem or lemmatize the remaining words. This means that we will strip off the grammatical structure from the words. For example, `cats —> cat`, and `walked —> walk`. If that was all we had to do, we could stem the corpus and achieve the correct result, because stemming (as the name implies) really just means cutting off affixes to find the root (or the stem). Very quickly, however, this gets complicated, such as in the case of `men —> man` and `sang —> sing`. Lemmatization deals with this by looking up the word in a reference and finding the appropriate root (though note that this still is not entirely accurate). Lemmatization, therefore, takes a relatively long time, since each word must be looked up in a reference. NLTK comes with pre-built stemmers and lemmatizers.
 
@@ -512,7 +522,7 @@ And again, there is a faster version for you to use once you feel comfortable wi
 text1_clean = [wordnet_lemmatizer.lemmatize(t) for t in text1_stops]
 ```
 
-### Verifying Clean List Contents
+## Verifying Clean List Contents
 
 Let's check now to see the length of our final, cleaned version of the data, and then check the unique set of words. Notice how we will use the `print` function this time. Jupyter Notebook does print commands without the `print` function, but it will only print one thing per cell (the last command), and we wanted to print two different things:
 
@@ -535,7 +545,7 @@ sorted(set(text1_clean))[:30]
 
 `Sorted` + `set` should give us a list of list of all the words in *Moby Dick* in alphabetical order, but we only want to see the first ones. Notice how there are some words we wouldn't have expected, such as 'abandon', 'abandoned', 'abandonedly', and 'abandonment'. This process is far from perfect, but it is useful. However, depending on your goal, a different process, like `stemming` might be better. 
 
-## Stemming Words
+# Data cleaning: Stemming Words
 
 The code to implement this and view the output is below:
 
@@ -590,7 +600,7 @@ print(sorted(set(t1_porter))[:30])
 
 A very different list of words is produced. This list is shorter than the list produced by the lemmatizer, but is also less accurate, and some of the words will completely change their meaning (like 'berry' becoming 'berri').
 
-## Back to the Lemmatized text
+# Data cleaning: results
 
 Now that we've seen some of the differences between both, we will proceed using our lemmatized corpus, which we saved as "text1_clean":
 
