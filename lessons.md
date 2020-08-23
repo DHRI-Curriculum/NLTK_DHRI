@@ -8,11 +8,17 @@ If you have not already installed the [Anaconda](https://www.anaconda.com/downlo
 
 You will also need [`nltk`](https://github.com/DHRI-Curriculum/install/blob/master/sections/nltk.md) and [`matplotlib`](https://github.com/DHRI-Curriculum/install/blob/master/sections/conda.md) to complete this tutorial. Both packages come installed with Anaconda. To check to be sure you have them, open a new Jupyter Notebook (or any IDE to run Python).
 
+We suggest that you create a directory for the text analysis workshop. You might want to have this directory inside the `Documents` directory, or maybe you already have a `projects` directory. That is really up to you, and your personal preference. This workshop will assume you will create a folder called `text_analysis` on your `Documents` folder, but you should do as you wish. Note: the terms `directories` and `folders` are used interchangeably in the computing world, and we will do the same here.
+
 Find Anaconda Navigator on your computer (it should be located in the folder with your other applications), and from Anaconda Navigator's interface, launch a Jupyter Notebook.
 
 ![jupyter notebook launch screen](images/jupyter.png)
 
-It will open in the browser. All of the directories (folders) in your home directory will appear — we'll get to that later. For now, select `New` >> `Python3` in the upper right corner.
+It will open in the browser. All of the directories (folders) in your `home` directory will appear. (This may vary depending on what OS you are using, as the file structure can be different)
+
+We will now open a new file. It is very important that you make sure to open the file in the right place, so you can find it later. Navigate on the directories clicking on them until you are on the desired directory: in our case, `text_analysis`.
+
+Once you are in the right place, select `New` >> `Python3` in the upper right corner.
 
 ![jupyter notebook "open new file" screen](images/jupyter1.png)
 
@@ -27,11 +33,11 @@ import nltk
 import matplotlib
 ```
 
-Press `Shift + Enter` to run the cell (or click `run` at the top of the page). Don't worry too much about what this is doing — that will be explained later in this tutorial. For now, we just want to make sure the packages we will need are installed.
+Press `Shift + Enter` to run the cell (or click `run` at the top of the page). We just want to make sure the packages we will need are installed.
 
 ![commands above in a jupyter notebook cell](images/jupyter3.png)
 
-If nothing happens, they are installed and you are ready to move on! If you get an error message, either you have a typo or they are not installed. If it is the latter, open the `command line` and type:
+If nothing happens, they are installed and you are ready to move on! If you get an error message, check for possible typos. If you typed everything correctly and still got an error message, you probably don't have `nltk` and/or `matplotlib` installed. (As we mentioned before, both should come by default when you install `Anaconda`. A quick possible fix is to open your `terminal` (NOT the Jupyter Notebook file) and type:
 
 ```console
 $ conda install nltk -y
@@ -66,7 +72,7 @@ A list of books should appear. If this happens, great! If not, return to the dow
 
 ![list of nltk books](images/nltk_books_download.png)
 
-Close this Notebook without saving — the only purpose was to check if we have the appropriate packages installed.
+Close this Notebook without saving — the only purpose was to check if we have the appropriate packages installed. You can save it if you want to come back in the future and see how you did it, but once you have them installed in your computer, you will not have to do that again.
 
 # Text as Data
 
@@ -91,6 +97,14 @@ has one pronoun, one verb, one determiner, one adjective, and one noun.
 > (I : Pronoun), (like : Verb), (the : Determiner), (red : Adjective), (bicycle : Noun)
 
 NLTK uses the [Penn Tree Bank Tag Set](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). This is a very detailed tag list that goes far beyond just nouns, verbs, and adjectives, but gives insight into different types of nouns, prepositions, and verbs as well. Virtually all POS taggers will create a list of (word, POS) pairs. If newspaper articles have a higher ratio of function words (prepositions, auxiliaries, determiners, etc.) to semantic words (nouns, verbs, adjectives), than tweets, then we have one piece of evidence supporting our hypothesis. It's important to note here that we must use either ratios or otherwise normalized data (in the sense that raw numbers will not work). Because of the way that language works (function words are often repeated, for example), a sample of 100 words will have more unique words than a sample of 1,000. Therefore, to compare different data types (articles vs. tweets), this fact should be taken into account.
+
+## Evaluation
+
+Check all sentences below that are correct:
+
+- A text is not data in itself, but can produce data if converted into numbers.
+- Part-of-Speech (POS) tagging can help identifying verbs, adjectives and nouns in a text.
+- A corpus is any collection of texts, independently of being related to each other or not.
 
 # Cleaning and Normalizing
 
@@ -124,42 +138,36 @@ The act of cleaning/normalizing subscribes text to predetermined categories of m
 
 To read more about ethics and text analysis, see Lauren Klein's "[Distant Reading After Moretti](https://arcade.stanford.edu/blogs/distant-reading-after-moretti)," where she questions, "Instead of first asking what can be modeled—what phenomena we can track at scale—we might instead ask: what might be hidden in this corpus?”
 
-## Words into numbers
+## Evaluation
 
-In the next section, we are going to go through a series of methods that come built-in to NLTK that allow us to turn our words into numbers and visualizations. This is just scratching the surface, but should give you an idea of what is possible beyond just counting words.
+Check all sentences below that are correct:
 
-# NLTK Methods with the NLTK Corpus
+- Stop words are useless for text analysis, therefore the first step in any project is to remove them from the text.
 
-All of the code for this section is in a Jupyter Notebook in the [GitHub repository](https://github.com/DHRI-Curriculum/text-analysis). I encourage you to follow along by retyping all of the code, but if you get lost, or want another reference, the code is there as well.
+- In text analysis, as in other types of data analysis, we usually want to cleanse the data in order to prepare it for the analysis. In text analysis, this process is called "text normalization" and can involve tasks such as removing undesired words and punctuation.
 
-To open the notebook, first create a `projects` folder if you don't already have one by entering this command in your terminal:
+- Textual alterations can potentially change the original intended meaning. Therefore, we must strive to work with the data exactly as it is in the source.
 
-```console
-$ mkdir -p ~/Documents/projects
-```
+# Using the NLTK Corpus
 
-If you already have a projects folder, you can skip this step.
+In the following sections, we are going to learn how to work with the NLTK Corpus and go through a series of methods that come built-in to NLTK that allow us to turn our words into numbers and visualizations.
 
-Next, clone the text analysis session repository into your projects folder by entering this command:
+All of the code for this section is in a [Jupyter Notebook file: NEED LINK](https://github.com/DHRI-Curriculum/text-analysis). You should download it and save it on your desired folder. Here, we are assuming you are saving in on the `text_analysis` folder.
 
-```console
-$ git clone https://github.com/DHRI-Curriculum/text-analysis.git ~/Documents/projects/text-analysis
-```
+In this file you will find all of the workshop commands and the expected outputs. If you ever feel stuck or can't seem to be able to advance in the workshop, you can open this file and see how we did it. Feel free to open the file right now (click on it), take a peek at its contents if you want, and close it.
 
-Then move to the new directory:
+To do it, open your Jupyter Notebook, just like you did in the [Install instructions - NEED LINK](www.temporarylinktonltkinstructions.fake), and navigate to the `text_analysis` directory. Click on the `TextAnalysisWalkthrough.ipynb` file. Once you are done, just close the tab. 
 
-```console
-$ cd ~/Documents/projects/text-analysis
-```
+For the best possible experience, we suggest/encourage you to:
 
-Now launch the Jupyter Notebook application by typing this into the terminal:
+  - Create an ipynb file and follow the workshop typing all the code yourself.
+  - Avoid copying/pasting the code. Much of learning has to do with you typing yourself.
+  - Only check the `TextAnalysisWalkthrough.ipynb` file if you get lost or if you are not able to get the right output. Before opening it, put some time trying to figure out by yourself why it isn't working. A big part of coding is learning to identify what we are doing wrong.
+  - I would also caution you against working with both files open at the same time. It is easy to get confused and start modifying the wrong one.
 
-```console
-$ jupyter notebook
-```
+But those are only suggestions. Maybe they will work for you, maybe they won't, so feel free to do as it best suit you. You are in charge here! 
 
-
-Finally, in the Jupyter Notebook file browser, you should be able to see a notebook file (with the `ipynb` extension) named `TextAnalysis.ipynb`. In this file you will find all of the workshop commands and the expected outputs. If you ever feel stuck or can't seem to be able to advance in the workshop, you can open this file and see how we did it. Feel free to open the file right now (click on it), take a look at its contents if you want, and close it.
+## Creating a Jupyter Notebook file
 
 Now you will create your Jupyter notebook file, in which you will run the workshop. Return to the Jupyter Home Tab in your Browser (or, if you closed it completely, launch the Jupyter Notebook again), and start a New Python3 Notebook using the `New` button in the upper right corner.
 
@@ -199,15 +207,19 @@ Next, we need to load all of the NLTK corpora into our program. Even though we d
 from nltk.book import *
 ```
 
-The pre-loaded NLTK texts should appear again. These are preformatted data sets. We will still have to do some minor processing, but having the data in this format saves us a few steps. At the end of this tutorial, we will make our own corpus. This is a special type of python object specific to NLTK (it isn't a string, list, or dictionary). Sometimes it will behave like a string, and sometimes like a list of words. How it is behaving is noted for each function as we try it out.
+The pre-loaded NLTK texts should appear again. These are preformatted data sets. We will still have to do some minor processing, but having the data in this format saves us a few steps. At the end of this tutorial, we will make our own corpus. This is a special type of python object specific to NLTK (it isn't a string, list, or dictionary). Sometimes it will behave like a string, and sometimes like a list of words.
 
 ![Image showing a second cell with the output of "from nltk.book import *"](images/nltkbook.png)
 
-Let's start by analyzing _Moby Dick_, which is `text1` for NLTK.
+If you got any error messages, check the code and make sure you typed everything correctly. Even spaces before words matter!
+
+If you are sure you are running the code correctly, you probably have an installing issue, so you might have to go back to the instalation instructions to figure it out.
 
 # Searching For Words
 
-The first function we will look at is `concordance`. "Concordance" in this context means the characters on either side of the word. Our text is behaving like a string. As discussed in the [Python tutorial LINK](https://github.com/DHRI-Curriculum/python), Python does not _evaluate_ strings, so it just counts the number of characters on either side. By default, this is 25 characters on either side of our target word (including spaces).
+Let's start by analyzing _Moby Dick_, which is `text1` for NLTK.
+
+The first function we will look at is `concordance`. "Concordance" in this context means the characters on either side of the word. Our text is behaving like one giant string, so concordance will just count the number of characters on either side. By default, this is 25 characters on either side of our target word (including spaces), but [you can change that if you want](http://www.nltk.org/_modules/nltk/text.html#Text.concordance).
 
 In the Jupyter Notebook, type:
 
@@ -223,7 +235,7 @@ Let's now see which words appear in similar contexts as the word "love." NLTK ha
 text1.similar("love")
 ```
 
-Behind the scenes, Python found all the contexts where the word "love" appears. It also finds similar environments, and then what words were common among the similar contexts. This gives a sense of what other words appear in similar contexts. This is somewhat interesting, but more interesting if we can compare it to something else. Let's take a look at another text. What about _Sense and Sensibility_? Let's see what words are similar to "love" in Jane Austen's writing. In the next cell, type:
+Behind the scenes, Python found all the contexts where the word "love" appears. It also finds similar environments, and then what words were common among the similar contexts. This gives a sense of what other words appear in similar contexts. This is somewhat interesting in itself, but more interesting if we compare it to something else. Let's take a look at another text. What about _Sense and Sensibility_? Let's see what words are similar to "love" in Jane Austen's writing. In the next cell, type:
 
 ```python
 text2.similar("love")
@@ -243,15 +255,24 @@ The resulting list is a lot of greetings, indicating that "lol" probably has mor
 
 If you are interested in this type of analysis, take a look at the `common_contexts` function in the [NLTK book](https://www.nltk.org/book/) or in the [NLTK docs](https://www.nltk.org/).
 
+## Evaluation
+
+Check all sentences below that are correct:
+
+
+- The similar method brings a list of words that are similiar in writing, but not necessarily in meaning, like "whale" and "while".
+
+- Using the `concordance` method with a specific word, such as "whale", returns the words that surround "whale" in different sentences, helping us to get a glimpse of the contexts in which the word "whale" shows up.
+
 # Positioning Words
 
-In many ways, `concordance` and `similar` are heightened word searches that tell us something about what is happening near the target words. Another metric we can use is to visualize where the words appear in the text. In the case of _Moby Dick_, we want to compare where "whale" and "monster" appear throughout the text. In this case, the text is functioning as a list of words, and will make a mark where each word appears, offset from the first word. We will _pass_ this _function_ a _list_ of _strings_ to plot. This will likely help us develop a visual of the story — where the whale goes from being a whale to being a monster to being a whale again. In the next cell, type:
+In many ways, `concordance` and `similar` are heightened word searches that tell us something about what is happening near the target words. Another metric we can use is to visualize where the words appear in the text. In the case of _Moby Dick_, we want to compare where "whale" and "monster" appear throughout the text. In this case, the text is functioning as a list of words, and will make a mark where each word appears, offset from the first word. We will _pass_ this _function_ a _list_ of _strings_ to plot. In the next cell, type:
 
 ```python
 text1.dispersion_plot(["whale", "monster"])
 ```
 
-A graph should appear with a tick mark everywhere that "whale" appears and everywhere that "monster" appears. Knowing the story, we can interpret this graph and align it to what we know of how the narrative progresses. If we did not know the story, this could give us a picture of the narrative arc.
+A graph should appear with a tick mark everywhere that "whale" appears and everywhere that "monster" appears. Knowing the story, we can interpret this graph and align it to what we know of how the narrative progresses, helping us develop a visual of the story — where the whale goes from being a whale to being a monster to being a whale again. If we did not know the story, this could give us hints of the narrative arc.
 
 ## Challenge
 
@@ -269,9 +290,17 @@ text2.dispersion_plot(["love", "marriage"])
 text2.dispersion_plot(["husband", "wife"])
 ```
 
+## Evaluation
+
+- You can get a visual representation of ocurrences of a word with the dispersion_plot `method`.
+
+- The `dispersion_plot` method allows you to input a list of strings, as long as you split them with commas.
+
+- Contrary to grammar rule, in a list of strings, the commas must come outside of the quotation marks.
+
 # Types vs. tokens
 
-We will now turn our attention away from the NLTK library and work with our text using the /built-in Python functions/—the ones that come included with the Python language, rather than the NLTK library. (This difference is relevant because built-in python functions will work with any list of strings, while some of the functions that are specific to the NLTK library will require you to make your text "nltk ready". Don't worry about that now, we will show you how to do it later in this workshop).
+We will now turn our attention away from the NLTK library and work with our text using the /built-in Python functions/, the ones that come included with the Python language, rather than the NLTK library. (This difference is relevant because built-in python functions will work with any list of strings, while some of the functions that are specific to the NLTK library will require you to make your text "nltk ready". Don't worry about that now, we will show you how to do it later in this workshop).
 
 First, let's find out how many times a given word appears in the corpus. In this case (and all cases going forward), our text will be treated as a list of words. Therefore, we will use the `count` function. We could just as easily do this with a text editor, but performing this in Python allows us to save it to a variable and then utilize this statistic in other calculations (for example, if we want to know what percentage of words in a corpus are 'lol', we would need a count of the 'lol's). In the next cell, type:
 
@@ -308,7 +337,7 @@ for t in text1:
 
 ![image with code above in a jupyter notebook cell](images/for_loop_tokens.png)
 
-Another way to perform the same action more tersely is to use what's called a [list comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions). A list comprehension is a shorter, faster way to write a for-loop. It is syntactically a little more difficult to read (for a human), but, in this case, it's much faster to process. Don't worry too much about understanding the syntax of list comprehensions right now. For every example, we will show both the for loop and list comprehension options.
+Another way to perform the same action more tersely is to use what's called a [list comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions). A list comprehension is a shorter, faster way to write a for-loop. It is syntactically a little more difficult to read (for a human), but, in this case, it's much faster to process. Don't worry too much about understanding the syntax of list comprehensions right now, just try to recognize on it the elements you've seen in the for loop. For every example, we will show both the for loop and list comprehension options.
 
 ```python
 text1_tokens = [t.lower() for t in text1 if t.isalpha()]
@@ -323,6 +352,18 @@ Feel like you understand it? Try deleting it and writing the loop yourself witho
 You can also copy the whole loop to a new jupyter notebook cell and play around with it. What happens when you change the order of the commands? How about the indentation? Don't be afraid to break it.
 
 If you feel like you are done playing with the loop, time to move to the next section to see the results.
+
+## Evaluation
+
+Check all sentences below that are correct:
+
+- "Whale", "WHALE", and "whale" are all different tokens of the same type.
+
+- The `lower()` method returns the lowercase form of all of the alphabetical characters in a string.
+
+- The `isalpha()` method transforms integers in alphabetical strings.
+
+- The `append()` method adds an item to the end of the list.
 
 # Length and unique words
 
@@ -404,6 +445,16 @@ text2_slice = text2_tokens[0:10000]
 len(set(text2_slice)) / len(text2_slice)
 ```
 
+## Evaluation
+
+Check all sentences below that are correct:
+
+- The `len` method returns the length of the input, which can mean different things depending on its type. If it is a string, it will return the number of characters; if it is a list or dictionary, it will return the number of items.
+
+- The lexical density measures the number of unique words per total word, and it is an objective measure of writing quality.
+
+- Comparing the lexical density between texts of different sizes can give a problematic result. A possible solution is to use list slice and compare parts of both texts of a similar size.
+
 # Data Cleaning: removing Stopwords
 
 Thus far, we have been asking questions that take stopwords and grammatical features into account. For the most part, we want to exclude these features since they don't actually contribute very much semantic content to our models. Therefore, we will:
@@ -432,7 +483,7 @@ Now let's take a look at those words:
 print(stops)
 ```
 
-Now we want to go through all of the words in our text, and if that word is in the stop words list, remove it from our list. Otherwise, we want it to skip it. (The code below is VERY slow, so it may take some time to process). The way we can write this in Python is:
+Now we want to go through all of the words in our text, and if that word is in the stop words list, remove it from our list. Otherwise, we want it to skip it. (The code below is slow, so it may take some time to process). The way we can write this in Python is:
 
 ```python
 text1_stops = []
@@ -441,7 +492,7 @@ for t in text1_tokens:
         text1_stops.append(t)
 ```
 
-A faster option, if you are feeling bold, would be using [list comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions): 
+A faster option, if you are feeling bold, would be using list comprehension: 
 
 ```python
 text1_stops = [t for t in text1_tokens if t not in stops]
@@ -452,7 +503,6 @@ To check the result:
 ```python
 print(text1_stops[:30])
 ```
-
 
 ## Verifying List Contents
 
@@ -469,6 +519,16 @@ For reference, let's also check how many unique words there are. We will do this
 ```python
 len(set(text1_stops))
 ```
+
+## Evaluation
+
+Check all sentences below that are correct:
+
+- Stop words are words that usually don't contribute with much semantic content, like prepositions, determiners, etc.
+
+- To use stopwords we need to import them from the nltk corpus, using the following code: `import stopwords from nltk.corpus`
+
+- List comprehensions are faster ways of iterating and creating lists when compared with for loops.
 
 # Data cleaning: Lemmatizing Words
 
@@ -545,6 +605,15 @@ sorted(set(text1_clean))[:30]
 
 `Sorted` + `set` should give us a list of list of all the words in *Moby Dick* in alphabetical order, but we only want to see the first ones. Notice how there are some words we wouldn't have expected, such as 'abandon', 'abandoned', 'abandonedly', and 'abandonment'. This process is far from perfect, but it is useful. However, depending on your goal, a different process, like `stemming` might be better. 
 
+
+## Evaluation
+
+Check all sentences below that are correct:
+
+- Stemming and Lemmatizing are different forms of reducing word variations to their roots.
+
+- `sorted(set(list_of_strings))` returns the unique items of `list_of_strings` in alphabetical order.
+
 # Data cleaning: Stemming Words
 
 The code to implement this and view the output is below:
@@ -599,6 +668,14 @@ print(sorted(set(t1_porter))[:30])
 ```
 
 A very different list of words is produced. This list is shorter than the list produced by the lemmatizer, but is also less accurate, and some of the words will completely change their meaning (like 'berry' becoming 'berri').
+
+## Evaluation
+
+Check all sentences below that are correct:
+
+- Both Stemming and Lemmatizing are far from perfect, so they must be used with caution.
+
+- There is no obvious best choice between Stemmers and Lemmatizers, so the best way to go is experimenting and seeing what results better fit your goals.
 
 # Data cleaning: results
 
@@ -670,6 +747,14 @@ b)
 ```python
 my_list == mylist2
 ```
+
+## Evaluation
+
+Check all sentences below that are correct:
+
+- We can create a frequency distribution of a list of strings with `FreqDist` and plot it with the `plot` method.
+
+- `my_dist.most_common(50)` will check the first 50 words in the distribution and return you the most common one among them.
 
 # Make Your Own Corpus
 
@@ -787,6 +872,16 @@ for t in dq_clean:
     dq_lemmatized.append(wordnet_lemmatizer.lemmatize(t))
 ```
 
+## Evaluation
+
+Check all sentences below that are correct:
+
+- `urlopen` can save the contents of a webpage into a variable
+
+- To use NLTK functions on a string we have, we can transform it into a NLTK Text object.
+
+- NLTK let's you tokenize split a giant string into a list of substrings, considering punctuations and edge cases like `don't`.
+
 # Part-of-Speech Tagging
 
 *Note that we are going to use the pre-cleaned, `dq_text` object for this section.*
@@ -849,6 +944,15 @@ print(tag_dict_sorted)
 
 Now check out what we have. It looks like NN is the most common tag. We can look up what NN means in the [Penn Tree Bank](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). Looks like NN is a Noun, singular or mass. Great! This information will likely help us with genre classification, or identifying the author of a text, or a variety of other functions.
 
+## Evaluation
+
+Check all sentences below that are correct:
+
+- POS tagging does not work well with stop words, therefore you should always clean your text from stop words before using it.
+
+- Tuples are like lists, but you can't change their value once created.
+
+- `nltk.pos_tag` returns tuples of two values, the first being the word, and the second the tagging. 
 
 # Conclusion
 
