@@ -45,7 +45,7 @@ In this workshop, you will learn the following skills:
 - In working with massive amounts of text, it is natural to lose the original context. We must be aware of that and be careful when analizing it.
 - It is important to constantly question our assumptions and the indexes we are using. Numbers and graphs do not tell the story, our analysis does. We must be careful not to draw hasty and simplistic conclusions for things that are complex. Just because we found out that author A uses more unique words than author B, does it mean that A is a better writer than B?
 
-## Resources (optional)
+## Resources
 
 - [Installing Anaconda](https://github.com/DHRI-Curriculum/install/blob/master/sections/python.md)
 - [Installing NLTK](https://github.com/DHRI-Curriculum/install/blob/master/sections/nltk.md)

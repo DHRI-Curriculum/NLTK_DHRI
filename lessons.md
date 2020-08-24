@@ -1,78 +1,3 @@
-# Overview
-
-This tutorial will give a brief overview of the considerations and tools involved in basic text analysis with Python. By completing this tutorial, you will have a general sense of how to turn text into data using the Python package, NLTK. You will also be able to take publicly available text files and transform them into a corpus that you can perform your own analysis on. Finally, you will have some insight into the types of questions that can be addressed with text analysis.
-
-## Setup and installation
-
-If you have not already installed the [Anaconda](https://www.anaconda.com/download/) distribution of Python 3, please do so.
-
-You will also need [`nltk`](https://github.com/DHRI-Curriculum/install/blob/master/sections/nltk.md) and [`matplotlib`](https://github.com/DHRI-Curriculum/install/blob/master/sections/conda.md) to complete this tutorial. Both packages come installed with Anaconda. To check to be sure you have them, open a new Jupyter Notebook (or any IDE to run Python).
-
-We suggest that you create a directory for the text analysis workshop. You might want to have this directory inside the `Documents` directory, or maybe you already have a `projects` directory. That is really up to you, and your personal preference. This workshop will assume you will create a folder called `text_analysis` on your `Documents` folder, but you should do as you wish. Note: the terms `directories` and `folders` are used interchangeably in the computing world, and we will do the same here.
-
-Find Anaconda Navigator on your computer (it should be located in the folder with your other applications), and from Anaconda Navigator's interface, launch a Jupyter Notebook.
-
-![jupyter notebook launch screen](images/jupyter.png)
-
-It will open in the browser. All of the directories (folders) in your `home` directory will appear. (This may vary depending on what OS you are using, as the file structure can be different)
-
-We will now open a new file. It is very important that you make sure to open the file in the right place, so you can find it later. Navigate on the directories clicking on them until you are on the desired directory: in our case, `text_analysis`.
-
-Once you are in the right place, select `New` >> `Python3` in the upper right corner.
-
-![jupyter notebook "open new file" screen](images/jupyter1.png)
-
-A blank page with an empty box should appear.
-
-![empty box on jupyter notebook new file](images/jupyter2.png)
-
-In the box, type:
-
-```python
-import nltk
-import matplotlib
-```
-
-Press `Shift + Enter` to run the cell (or click `run` at the top of the page). We just want to make sure the packages we will need are installed.
-
-![commands above in a jupyter notebook cell](images/jupyter3.png)
-
-If nothing happens, they are installed and you are ready to move on! If you get an error message, check for possible typos. If you typed everything correctly and still got an error message, you probably don't have `nltk` and/or `matplotlib` installed. (As we mentioned before, both should come by default when you install `Anaconda`. A quick possible fix is to open your `terminal` (NOT the Jupyter Notebook file) and type:
-
-```console
-$ conda install nltk -y
-$ conda install matplotlib -y
-```
-
-## Downloading the corpus
-
-Now we need to install the nltk corpus. This is very large and may take some time if you are on a weak connection.
-
-In the next cell, type:
-
-```python
-nltk.download()
-```
-
-and run the cell.
-
-The NLTK downloader should appear. Please install all of the packages. If you are short on time, focus on "book" for this tutorial—you can download the other packages at another time for later use.
-
-Yours will look a little different, but the same interface. Click on the 'all' option and then 'Download'. Once they all trun green, you can close the Downloader dialogue box.
-
-![nltk downloader screen](images/nltk.png)
-
-Return to your Jupyter Notebook and type:
-
-```python
-from nltk.book import *
-```
-
-A list of books should appear. If this happens, great! If not, return to the downloader to make sure everything is ok.
-
-![list of nltk books](images/nltk_books_download.png)
-
-Close this Notebook without saving — the only purpose was to check if we have the appropriate packages installed. You can save it if you want to come back in the future and see how you did it, but once you have them installed in your computer, you will not have to do that again.
 
 # Text as Data
 
@@ -158,6 +83,8 @@ In this file you will find all of the workshop commands and the expected outputs
 
 To do it, open your Jupyter Notebook, just like you did in the [Install instructions - NEED LINK](www.temporarylinktonltkinstructions.fake), and navigate to the `text_analysis` directory. Click on the `TextAnalysisWalkthrough.ipynb` file. Once you are done, just close the tab. 
 
+![image of jupyter notebook walkthrough](images/TextAnalysisWalkthrough.png)
+
 For the best possible experience, we suggest/encourage you to:
 
   - Create an ipynb file and follow the workshop typing all the code yourself.
@@ -172,6 +99,8 @@ But those are only suggestions. Maybe they will work for you, maybe they won't, 
 Now you will create your Jupyter notebook file, in which you will run the workshop. Return to the Jupyter Home Tab in your Browser (or, if you closed it completely, launch the Jupyter Notebook again), and start a New Python3 Notebook using the `New` button in the upper right corner.
 
 Even though Jupyter Notebook doesn't force you to do so, it is very important to name your file, or you will end up later with a bunch of untitled files and you will have no idea what they are about. In the top left, click in the word `Untitled` and give your file a name such as "intro_nltk".
+
+![image of a new jupyter notebook file](images/change_title.jpg)
 
 In the first blank cell, type the following to import the NLTK library:
 
@@ -211,11 +140,13 @@ The pre-loaded NLTK texts should appear again. These are preformatted data sets.
 
 ![Image showing a second cell with the output of "from nltk.book import *"](images/nltkbook.png)
 
+Notice that each of the texts already have a variable name. "Moby Dick" is `text1`, "Sense and Sensibility" is `text2`, and so on. When we want to work with those books, we will call them by their variable name, as you'll see soon.
+
 If you got any error messages, check the code and make sure you typed everything correctly. Even spaces before words matter!
 
 If you are sure you are running the code correctly, you probably have an installing issue, so you might have to go back to the instalation instructions to figure it out.
 
-# Searching For Words
+# Searching for Words
 
 Let's start by analyzing _Moby Dick_, which is `text1` for NLTK.
 
@@ -235,7 +166,7 @@ Let's now see which words appear in similar contexts as the word "love." NLTK ha
 text1.similar("love")
 ```
 
-Behind the scenes, Python found all the contexts where the word "love" appears. It also finds similar environments, and then what words were common among the similar contexts. This gives a sense of what other words appear in similar contexts. This is somewhat interesting in itself, but more interesting if we compare it to something else. Let's take a look at another text. What about _Sense and Sensibility_? Let's see what words are similar to "love" in Jane Austen's writing. In the next cell, type:
+Behind the scenes, Python found all the contexts where the word "love" appears. It also finds similar environments, and then what words were common among the similar contexts. This gives a sense of what other words appear in similar contexts. This is somewhat interesting in itself, but more interesting if we compare it to something else. Let's take a look at another text. What about _Sense and Sensibility_ (text2)? Let's see what words are similar to "love" in Jane Austen's writing. In the next cell, type:
 
 ```python
 text2.similar("love")
@@ -335,9 +266,11 @@ for t in text1:
     text1_tokens.append(t)
 ```
 
-![image with code above in a jupyter notebook cell](images/for_loop_tokens.png)
+If everything went right, you should get no output. Remember the "silent success?"
 
-Another way to perform the same action more tersely is to use what's called a [list comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions). A list comprehension is a shorter, faster way to write a for-loop. It is syntactically a little more difficult to read (for a human), but, in this case, it's much faster to process. Don't worry too much about understanding the syntax of list comprehensions right now, just try to recognize on it the elements you've seen in the for loop. For every example, we will show both the for loop and list comprehension options.
+Another way to perform the same action more tersely is to use what's called a [list comprehension](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions). A list comprehension is a shorter, faster way to write a for-loop. It is syntactically a little more difficult to read (for a human), but, in this case, it's much faster to process. 
+
+Don't worry too much about understanding the syntax of list comprehensions right now, just try to recognize on it the elements you've seen in the for loop. For every example, we will show both the for loop and list comprehension options so you can slowly get used to the latter.
 
 ```python
 text1_tokens = [t.lower() for t in text1 if t.isalpha()]
@@ -402,7 +335,7 @@ len(set(text1_tokens))
 Now we can calculate the **lexical density**, the number of unique words per total words. [Statistical studies](https://pdfs.semanticscholar.org/c2a8/56959d7f5880c98ccd4cfeb4b4f5b7133ec7.pdf) have shown that lexical density is a good metric to approximate lexical diversity—the range of vocabulary an author uses. For our first pass at lexical density, we will simply divide the number of unique words by the total number of words:
 
 ```python
-len(set(text1_tokens))/len(text1_tokens)
+len(set(text1_tokens)) / len(text1_tokens)
 ```
 
 If we want to use this metric to compare texts, we immediately notice a problem. Lexical density is dependent upon the length of a text and therefore is strictly a comparative measure. It is possible to compare 100 words from one text to 100 words from another, but because language is finite and repetitive, it is not possible to compare 100 words from one to 200 words from another. Even with these restrictions, lexical density is a useful metric in grade level estimations, [vocabulary use](http://www.mdpi.com/2226-471X/2/3/7) and genre classification, and a reasonable proxy for lexical diversity.
@@ -628,8 +561,8 @@ The Porter is the most common Stemmer. Let's see what stemming does to words and
 ```python
 print(porter_stemmer.stem('berry'))
 print(porter_stemmer.stem('berries'))
-print(wordnet_lemmatizer.lemmatize("berry"))
-print(wordnet_lemmatizer.lemmatize("berries"))
+print(wordnet_lemmatizer.lemmatize('berry'))
+print(wordnet_lemmatizer.lemmatize('berries'))
 ```
 
 Stemmer doesn't look so good, right? But how about checking how stemmer handles some of the words that our lemmatized "failed" us?
@@ -745,7 +678,7 @@ my_list2 = [word for word in b_words if word in text1_clean]
 
 b)
 ```python
-my_list == mylist2
+my_list == my_list2
 ```
 
 ## Evaluation
@@ -816,10 +749,16 @@ Since this is a list, we can look at any slice of it that we want. Let's inspect
 don_tokens[:10]
 ```
 
-That looks like metadata—not what we want to analyze. We will strip this off before proceeding. If you were doing this to many texts, you would want to use [Regular Expressions](https://regexone.com/). Regular Expressions are an extremely powerful way to match text in a document. However, we are just using this text, so we could either guess, or cut and paste the text into a text reader and identify the position of the first content (i.e., how many words in is the first word). That is the route we are going to take. We found that the content begins at word 315, so let's make a slice of the text from word position 315 to the end.
+That looks like metadata—not what we want to analyze. We will strip this off before proceeding. If you were doing this to many texts, you would want to use [Regular Expressions](https://regexone.com/). Regular Expressions are an extremely powerful way to match text in a document. However, we are just using this text, so we could either guess, or cut and paste the text into a text reader and identify the position of the first content (i.e., how many words in is the first word). That is the route we are going to take. We found that the content begins at word 320, so let's make a slice of the text from word position 320 to the end.
 
 ```python
-dq_text = don_tokens[315:]
+dq_text = don_tokens[320:]
+```
+
+Now print the first 30 words to see if it worked:
+
+```python
+print(dq_text[:30]
 ```
 
 Finally, if we want to use the NLTK specific functions:
@@ -833,6 +772,12 @@ we would have to make a specific NLTK `Text` object.
 
 ```python
 dq_nltk_text = nltk.Text(dq_text)
+```
+
+And we could check that it worked by running:
+
+```python
+type(dq_nltk_text)
 ```
 
 But if we only need to use the built-in Python functions, we can just stick with our list of words in `dq_text`.
@@ -913,7 +858,7 @@ print(dq_tagged[:10])
 
 This is a list of ordered tuples. (A tuple is like a list, but can't be changed once it is created.) Each element in the list is a pairing of `(word, POS-tag)`. (Tuples are denoted with parentheses, rather than square brackets.) This is great, but it is very detailed. I would like to know how many Nouns, Verbs, and Adjectives I have. 
 
-First, I'll make an empty dictionary to hold my results. Then I will go through this list of tuples and count the number of times each tag appears. Every time I encounter a new tag, I'll add it to a dictionary and then increment by one every time I encounter that tag again. Let's see what that looks like in code:
+First, I'll make an empty dictionary to hold my results. (If you don't know what a dictionary is and how they work, you can check a quick explanation [here](https://realpython.com/python-dicts/) ) Then I will go through this list of tuples and count the number of times each tag appears. Every time I encounter a new tag, I'll add it to a dictionary and then increment by one every time I encounter that tag again. Let's see what that looks like in code:
 
 ```python
 tag_dict = {}
@@ -931,7 +876,9 @@ Now let's see what we got:
 tag_dict
 ```
 
-This would be better with some order to it, but dictionaries are made to be unordered. When we google "sort dictionaries python" we find a solution in our great friend [stack overflow](https://stackoverflow.com/a/613218). Even though we cannot sort a dictionary, we can get a representation of a dictionary that is sorted. Don't worry too much about understanding the following code, as it uses things we have not discussed, and are out of the scope of this course. It is useful to see how we can reuse pieces of code even when we don't fully understand them.
+This would be better with some order to it, but dictionaries are made to be unordered. When we google "sort dictionaries python" we find a solution in our great friend [stack overflow](https://stackoverflow.com/a/613218). Even though we cannot sort a dictionary, we can get a representation of a dictionary that is sorted. 
+
+Don't worry too much about understanding the following code, as it uses things we have not discussed, and are out of the scope of this course. It is useful to learn to reuse pieces of code even when we don't fully understand them.
 
 Now let's do it and find out what the most common tag is.
 
@@ -954,17 +901,3 @@ Check all sentences below that are correct:
 
 - `nltk.pos_tag` returns tuples of two values, the first being the word, and the second the tagging. 
 
-# Conclusion
-
-At this point, you should have a familiarity with what is possible with text analysis, and some of the most important functions (i.e., cleaning and part-of-speech tagging). Yet, this tutorial has only scratched the surface of what is possible with text analysis and natural language processing. It is a rapidly growing field, if you are interested, be sure to work through the online [NLTK Book](https://www.nltk.org/book/) as well as peruse the resources in the Zotero Library.
-
-## More Resources
-
-- [NLTK Documentation](http://www.nltk.org/index.html)
-- [FreeLing](http://nlp.lsi.upc.edu/freeling/index.php), an open source language analysis tool suite.
-- ["Sentiment Analysis for Exploratory Data Analysis"](https://programminghistorian.org/en/lessons/sentiment-analysis), a lesson to conduct ‘sentiment analysis’ on texts with Python and NLTK.
-- [Journal of Digital Humanities, Vol. 2, No. 1 Winter 2012](http://journalofdigitalhumanities.org/2-1/) contains interesting several interesting articles about topic modeling and text analysis.
-- [Classical Language Toolkit on GitHub](https://github.com/cltk), Natural Language Processing specifically for Classical languages.
-- ["A Bossy Sort of Voice"](https://medium.com/agatha-codes/a-bossy-sort-of-voice-3c3a18de3093), describes a Python/NLTK project quantifying gender bias in _Harry Pottery_ with Python and NLTK.
-- ["Finding Patterns in Gothic Literature"](https://kite.com/blog/python/python-digital-humanities-gothic-literature-nltk), describes a Python/NLTK project analyzing color in Gothic Literature.
-- ["Python and NLTK FAQs"](https://www.pitt.edu/~naraehan/python3/faq.html), resources compiled by Na-Rae Han.
