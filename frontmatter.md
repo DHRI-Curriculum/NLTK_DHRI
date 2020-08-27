@@ -6,15 +6,16 @@ Digital technologies have made vast amounts of text available to researchers, an
 
 ## Learning Objectives
 
-In this workshop, you will learn the following skills:
+In this workshop, you will learn skills like:
 
-- Identify strategies for transforming texts into numbers
-- Explain what a concordance is, how to find one, and why it matters
+- How to prepare texts for computational analysis, including strategies for transforming texts into numbers
+- How to use NLTK methods such as `concordance` and `similar` 
+- How to clean and standardize your data, including powerful tools such as stemmers and lemmatizers
 - Compare frequency distribution of words in a text to quantify the narrative arc
-- Explain what stop words are and why they are often removed
-- Remove stop words from different languages (English, Spanish, Arabic, etc)
+- Understand stop words and how to remove them when needed.
 - Utilize Part-of-Speech tagging to gather insights about a text
 - Transform any document that you have (or have access to) in a .txt format into a text that can be analyzed computationally
+- How to tokenize your data and put it in nltk compatible format.
 
 ## Estimated time
 
