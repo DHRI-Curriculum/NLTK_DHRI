@@ -84,11 +84,11 @@ Check all sentences below that are correct:
 
 In the following sections, we are going to learn how to work with the NLTK Corpus and go through a series of methods that come built-in to NLTK that allow us to turn our words into numbers and visualizations.
 
-All of the code for this section is in a [Jupyter Notebook file: NEED LINK](https://github.com/DHRI-Curriculum/text-analysis). You should download it and save it on your desired folder. Here, we are assuming you are saving in on the `text_analysis` folder.
+All of the code for this section is in a [Jupyter Notebook file](TextAnalysisWalkthrough.ipynb). You should download it and save it on your desired folder. Here, we are assuming you are saving in on the `text_analysis` folder.
 
 In this file you will find all of the workshop commands and the expected outputs. If you ever feel stuck or can't seem to be able to advance in the workshop, you can open this file and see how we did it. Feel free to open the file right now (click on it), take a peek at its contents if you want, and close it.
 
-To do it, open your Jupyter Notebook, just like you did in the [Install instructions - NEED LINK](www.temporarylinktonltkinstructions.fake), and navigate to the `text_analysis` directory. Click on the `TextAnalysisWalkthrough.ipynb` file. Once you are done, just close the tab. 
+To do it, open your Jupyter Notebook, and navigate to the `text_analysis` directory. Click on the `TextAnalysisWalkthrough.ipynb` file. Once you are done, just close the tab. 
 
 ![image of jupyter notebook walkthrough](images/TextAnalysisWalkthrough.png)
 
