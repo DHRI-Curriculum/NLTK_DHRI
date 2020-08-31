@@ -54,12 +54,13 @@ In this workshop, you will learn skills like:
 
 ## Acknowledgements
 
-- [Michelle McSweeney](https://github.com/michellejm)
-- [Rachel Rakov](https://github.com/rachelrakov)
-- [Rafael Davis Portela](https://github.com/rafadavis)
-- [Kalle Westerling](https://github.com/kallewesterling)
-- [Patrick Smyth](https://github.com/smythp)
-- [Hannah Aizenman](https://github.com/story645)
-- [Lisa Rhody](https://github.com/lmrhody)
-- [Kelsey Chatlosh](https://github.com/kchatlosh)
-- [Filipa Calado](https://github.com/gofilipa)
+- Current author: [Rafael Davis Portela](https://github.com/rafadavis)
+- Past contributor: [Michelle McSweeney](https://github.com/michellejm)
+- Past contributor: [Rachel Rakov](https://github.com/rachelrakov)
+- Past contributor: [Kalle Westerling](https://github.com/kallewesterling)
+- Past contributor: [Patrick Smyth](https://github.com/smythp)
+- Past contributor: [Hannah Aizenman](https://github.com/story645)
+- Past contributor: [Kelsey Chatlosh](https://github.com/kchatlosh)
+- Reviewer: [Filipa Calado](https://github.com/gofilipa)
+- Editor: [Lisa Rhody](https://github.com/lmrhody)
+- Editor: [Kalle Westerling](https://github.com/kallewesterling)
