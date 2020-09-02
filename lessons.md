@@ -37,7 +37,7 @@ If you are planning to work with other languages than English, you will have to 
 Check all sentences below that are correct:
 
 - A text is not data in itself, but can produce data if converted into numbers.
-- Part-of-Speech (POS) tagging can help identifying verbs, adjectives and nouns in a text.
+- Part-of-Speech (POS) tagging can help identifying verbs, adjectives and nouns in a text.*
 - A corpus is any collection of texts, independently of being related to each other or not.
 
 # Cleaning and Normalizing
@@ -78,9 +78,9 @@ Check all sentences below that are correct:
 
 - Stop words are useless for text analysis, therefore the first step in any project is to remove them from the text.
 
-- In text analysis, as in other types of data analysis, we usually want to cleanse the data in order to prepare it for the analysis. In text analysis, this process is called "text normalization" and can involve tasks such as removing undesired words and punctuation.
+- In any type of data analysis, we usually want to cleanse the data in order to prepare it for the analysis. In text analysis, this process is called "text normalization" and can involve tasks such as removing undesired words and punctuation.*
 
-- Textual alterations can potentially change the original intended meaning. Therefore, we must strive to work with the data exactly as it is in the source.
+- Textual alterations can potentially change the original intended meaning. Therefore, we must always strive to work with the data exactly as it is in the source.
 
 # Using the NLTK Corpus
 
@@ -198,7 +198,7 @@ If you are interested in this type of analysis, take a look at the `common_conte
 
 Check all sentences below that are correct:
 - The similar method brings a list of words that are similiar in writing, but not necessarily in meaning, like "whale" and "while".
-- Using the `concordance` method with a specific word, such as "whale", returns the words that surround "whale" in different sentences, helping us to get a glimpse of the contexts in which the word "whale" shows up.
+- Using the `concordance` method with a specific word, such as "whale", returns the words that surround "whale" in different sentences, helping us to get a glimpse of the contexts in which the word "whale" shows up.*
 
 # Positioning Words
 
@@ -229,9 +229,9 @@ text2.dispersion_plot(["husband", "wife"])
 ## Evaluation
 
 Check all sentences below that are correct:
-- You can get a visual representation of ocurrences of a word with the `dispersion_plot` method.
-- The `dispersion_plot` method allows you to input a list of strings, as long as you split them with commas.
-- Contrary to grammar rule, in a list of strings, the commas must come outside of the quotation marks.
+- You can get a visual representation of ocurrences of a word with the `dispersion_plot` method.*
+- The `dispersion_plot` method allows you to input a list of strings, as long as you split them with commas.*
+- Contrary to grammar rule, in a list of strings, the commas must come outside of the quotation marks.*
 
 # Types vs. tokens
 
@@ -296,9 +296,9 @@ If you feel like you are done playing with the loop, time to move to the next se
 
 Check all sentences below that are correct:
 - "Whale", "WHALE", and "whale" are all different tokens of the same type.
-- The `lower()` method returns the lowercase form of all of the alphabetical characters in a string.
+- The `lower()` method returns the lowercase form of all of the alphabetical characters in a string.*
 - The `isalpha()` method transforms integers in alphabetical strings.
-- The `append()` method adds an item to the end of the list.
+- The `append()` method adds an item to the end of the list.*
 
 # Length and unique words
 
@@ -383,9 +383,9 @@ len(set(text2_slice)) / len(text2_slice)
 ## Evaluation
 
 Check all sentences below that are correct:
-- The `len` method returns the length of the input, which can mean different things depending on its type. If it is a string, it will return the number of characters; if it is a list or dictionary, it will return the number of items.
+- The `len` method returns the length of the input, which can mean different things depending on its type. If it is a string, it will return the number of characters; if it is a list or dictionary, it will return the number of items.*
 - The lexical density measures the number of unique words per total word, and it is an objective measure of writing quality.
-- Comparing the lexical density between texts of different sizes can give a problematic result. A possible solution is to use list slice and compare parts of both texts of a similar size.
+- Comparing the lexical density between texts of different sizes can give a problematic result. A possible solution is to use list slice and compare parts of both texts of a similar size.*
 
 # Data Cleaning: Removing Stop Words
 
@@ -455,9 +455,9 @@ len(set(text1_stops))
 ## Evaluation
 
 Check all sentences below that are correct:
-- Stop words are words that usually don't contribute with much semantic content, like prepositions, determiners, etc.
+- Stop words are words that usually don't contribute with much semantic content, like prepositions, determiners, etc.*
 - To use stop words we need to import them from the nltk corpus, using the following code: `import stopwords from nltk.corpus`
-- List comprehensions are faster ways of iterating and creating lists when compared with for loops.
+- List comprehensions are faster ways of iterating and creating lists when compared with for loops.*
 
 # Data cleaning: Lemmatizing Words
 
@@ -536,8 +536,8 @@ sorted(set(text1_clean))[:30]
 ## Evaluation
 
 Check all sentences below that are correct:
-- Stemming and lemmatizing are different forms of reducing word variations to their roots.
-- `sorted(set(list_of_strings))` returns the unique items of `list_of_strings` in alphabetical order.
+- Stemming and lemmatizing are different forms of reducing word variations to their roots.*
+- `sorted(set(list_of_strings))` returns the unique items of `list_of_strings` in alphabetical order.*
 
 # Data cleaning: Stemming Words
 
@@ -597,8 +597,8 @@ A very different list of words is produced. This list is shorter than the list p
 ## Evaluation
 
 Check all sentences below that are correct:
-- Both Stemming and Lemmatizing are far from perfect, so they must be used with caution.
-- There is no obvious best choice between Stemmers and Lemmatizers, so the best way to go is experimenting and seeing what results better fit your goals.
+- Both Stemming and Lemmatizing are far from perfect, so they must be used with caution.*
+- There is no obvious best choice between Stemmers and Lemmatizers, so the best way to go is experimenting and seeing what results better fit your goals.*
 
 # Data Cleaning: Results
 
@@ -674,7 +674,7 @@ You can obviously do this with much larger lists and even compare entire novels 
 ## Evaluation
 
 Check all sentences below that are correct:
-- We can create a frequency distribution of a list of strings with `FreqDist` and plot it with the `plot` method.
+- We can create a frequency distribution of a list of strings with `FreqDist` and plot it with the `plot` method.*
 - `my_dist.most_common(50)` will check the first 50 words in the distribution and return you the most common one among them.
 
 # Make Your Own Corpus
@@ -812,9 +812,9 @@ If you want to spice your challenge up, do the first three operations _in a sing
 ## Evaluation
 
 Check all sentences below that are correct:
-- `urlopen` can save the contents of a webpage into a variable
-- To use NLTK functions on a string we have, we can transform it into a NLTK Text object.
-- NLTK let's you tokenize split a giant string into a list of substrings, considering punctuations and edge cases like `don't`.
+- `urlopen` can save the contents of a webpage into a variable.*
+- To use NLTK functions on a string, we can transform it into a NLTK Text object.*
+- NLTK let's you tokenize (split) a giant string into a list of substrings, considering punctuations and edge cases like `don't`.*
 
 # Part-of-Speech Tagging
 
@@ -890,5 +890,5 @@ Your result should show that NN is the most common tag. We can look up what NN m
 
 Which of the following are correct?
 - POS tagging does not work well with stop words, therefore you should always clean your text from stop words before using it.
-- Tuples are like lists, but you can't change their value once created.
-- `nltk.pos_tag` returns tuples of two values, the first being the word, and the second the tag.
+- Tuples are like lists, but you can't change their value once created.*
+- `nltk.pos_tag` returns tuples of two values, the first being the word, and the second the tag.*
