@@ -228,10 +228,9 @@ text2.dispersion_plot(["husband", "wife"])
 
 ## Evaluation
 
+Check all sentences below that are correct:
 - You can get a visual representation of ocurrences of a word with the dispersion_plot `method`.
-
 - The `dispersion_plot` method allows you to input a list of strings, as long as you split them with commas.
-
 - Contrary to grammar rule, in a list of strings, the commas must come outside of the quotation marks.
 
 # Types vs. tokens
