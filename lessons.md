@@ -236,7 +236,7 @@ text2.dispersion_plot(["husband", "wife"])
 
 # Types vs. tokens
 
-We will now turn our attention away from the NLTK library and work with our text using the /built-in Python functions/, the ones that come included with the Python language, rather than the NLTK library. (This difference is relevant because built-in python functions will work with any list of strings, while some of the functions that are specific to the NLTK library will require you to make your text "nltk ready". Don't worry about that now, we will show you how to do it later in this workshop).
+We will now turn our attention away from the NLTK library and work with our text using the _built-in Python functions_, the ones that come included with the Python language, rather than the NLTK library. (This difference is relevant because built-in python functions will work with any list of strings, while some of the functions that are specific to the NLTK library will require you to make your text "nltk ready". Don't worry about that now, we will show you how to do it later in this workshop).
 
 First, let's find out how many times a given word appears in the corpus. In this case (and all cases going forward), our text will be treated as a list of words. Therefore, we will use the `count` function. We could just as easily do this with a text editor, but performing this in Python allows us to save it to a variable and then utilize this statistic in other calculations (for example, if we want to know what percentage of words in a corpus are 'lol', we would need a count of the 'lol's). In the next cell, type:
 
@@ -259,16 +259,16 @@ What is clear here is that the `count` method is case-sensitive.
 
 This gets at a distinction between **type** and **token**. "Whale" and "whale" are different types (as of now) because they do not match identically. Every instance of "whale" in the corpus is another **token**—it is an instance of the type, "whale." Therefore, there are 906 tokens of "whale" in our corpus, 282 tokens of "Whale" and 38 tokens of "WHALE".
 
-But that's not what we want. Let's fix this by making all of the words lowercase. We will make a new list of words, and call it "text1_tokens". We will fill this list with all the words in text1, but in their lowercase form. Python has a built-in function, `lower()` that takes all letters and makes them lowercase. In this same step, we are going to do a kind of tricky move, and only keep the words that are alphabetical and pass over anything that is punctuation or numbers. There is a built-in function, `isalpha()`, that will allow us to save only those words that are made of letters. If `isalpha()` is true, we'll make the word lowercase, and keep the word. If not, we'll pass over it and move to the next one.
+But that's not what we want. Let's fix this by making all of the words lowercase. We will make a new list of words, and call it `text1_tokens`. We will fill this list with all the words in text1, but in their lowercase form. Python has a built-in function, `lower()` that takes all letters and makes them lowercase. In this same step, we are going to do a kind of tricky move, and only keep the words that are alphabetical and pass over anything that is punctuation or numbers. There is a built-in function, `isalpha()`, that will allow us to save only those words that are made of letters. If `isalpha()` is true, we'll make the word lowercase, and keep the word. If not, we'll pass over it and move to the next one.
 
-Type the following code into a new cell in your notebook. Pay special attention to the indentation, which must appear as below. (Note that in Jupyter Notebook, indentation usually comes automatically. If not, make sure to type the `space` key 4 times)
+Type the following code into a new cell in your notebook. Pay special attention to the indentation, which must appear as below. (Note that in Jupyter Notebook, indentation usually comes automatically. If not, make sure to type the <kbd>space</kbd> key 4 times)
 
 ```python
 text1_tokens = []
 for t in text1:
-  if t.isalpha():
-    t = t.lower()
-    text1_tokens.append(t)
+    if t.isalpha():
+        t = t.lower()
+        text1_tokens.append(t)
 ```
 
 If everything went right, you should get no output. Remember the "silent success?"
@@ -294,13 +294,9 @@ If you feel like you are done playing with the loop, time to move to the next se
 ## Evaluation
 
 Check all sentences below that are correct:
-
 - "Whale", "WHALE", and "whale" are all different tokens of the same type.
-
 - The `lower()` method returns the lowercase form of all of the alphabetical characters in a string.
-
 - The `isalpha()` method transforms integers in alphabetical strings.
-
 - The `append()` method adds an item to the end of the list.
 
 # Length and unique words
@@ -374,9 +370,9 @@ Remember to be aware of the ethical implications for the conclusions that we mig
 ```python
 text2_tokens = []
 for t in text2:
-  if t.isalpha():
-    t = t.lower()
-    text2_tokens.append(t)
+    if t.isalpha():
+        t = t.lower()
+        text2_tokens.append(t)
 
 text2_slice = text2_tokens[0:10000]
 
@@ -386,11 +382,8 @@ len(set(text2_slice)) / len(text2_slice)
 ## Evaluation
 
 Check all sentences below that are correct:
-
 - The `len` method returns the length of the input, which can mean different things depending on its type. If it is a string, it will return the number of characters; if it is a list or dictionary, it will return the number of items.
-
 - The lexical density measures the number of unique words per total word, and it is an objective measure of writing quality.
-
 - Comparing the lexical density between texts of different sizes can give a problematic result. A possible solution is to use list slice and compare parts of both texts of a similar size.
 
 # Data Cleaning: removing Stopwords
@@ -461,11 +454,8 @@ len(set(text1_stops))
 ## Evaluation
 
 Check all sentences below that are correct:
-
 - Stop words are words that usually don't contribute with much semantic content, like prepositions, determiners, etc.
-
 - To use stopwords we need to import them from the nltk corpus, using the following code: `import stopwords from nltk.corpus`
-
 - List comprehensions are faster ways of iterating and creating lists when compared with for loops.
 
 # Data cleaning: Lemmatizing Words
@@ -545,9 +535,7 @@ sorted(set(text1_clean))[:30]
 ## Evaluation
 
 Check all sentences below that are correct:
-
 - Stemming and Lemmatizing are different forms of reducing word variations to their roots.
-
 - `sorted(set(list_of_strings))` returns the unique items of `list_of_strings` in alphabetical order.
 
 # Data cleaning: Stemming Words
@@ -608,12 +596,10 @@ A very different list of words is produced. This list is shorter than the list p
 ## Evaluation
 
 Check all sentences below that are correct:
-
 - Both Stemming and Lemmatizing are far from perfect, so they must be used with caution.
-
 - There is no obvious best choice between Stemmers and Lemmatizers, so the best way to go is experimenting and seeing what results better fit your goals.
 
-# Data cleaning: results
+# Data Cleaning: Results
 
 Now that we've seen some of the differences between both, we will proceed using our lemmatized corpus, which we saved as "text1_clean":
 
@@ -668,33 +654,31 @@ You can obviously do this with much larger lists and even compare entire novels 
 
 ## Challenge
 
-a) Try to get the same result of the loop above (the one with "my_list"), but this time with a list comprehension. Save this other list as "my_list2".
+1. Try to get the same result of the loop above (the one with "my_list"), but this time with a list comprehension. Save this other list as "my_list2".
 
-b) Compare both lists to see if they are identical.
+2. Compare both lists to see if they are identical.
 
 ## Solution
 
-a)
-```python
-my_list2 = [word for word in b_words if word in text1_clean]
-```
+1. A solution using a list comprehension would look like this:
+    ```python
+    my_list2 = [word for word in b_words if word in text1_clean]
+    ```
 
-b)
-```python
-my_list == my_list2
-```
+2. To compare the lists, you could run the following command:
+    ```python
+    my_list == my_list2
+    ```
 
 ## Evaluation
 
 Check all sentences below that are correct:
-
 - We can create a frequency distribution of a list of strings with `FreqDist` and plot it with the `plot` method.
-
 - `my_dist.most_common(50)` will check the first 50 words in the distribution and return you the most common one among them.
 
 # Make Your Own Corpus
 
-Now that we have seen and implemented a series of text analysis techniques, let's go to the Internet to find a new text. You could use something such as historic newspapers, or Supreme Court proceedings, or use any txt file on your computer. Here we will use [Project Gutenberg](http://www.gutenberg.org). Project Gutenberg is an archive of public domain written works, available in a wide variety of formats, including .txt. You can download these to your computer or access them via the url. We'll use the `url method`. We found *Don Quixote* in the archive, and will work with that.
+Now that we have seen and implemented a series of text analysis techniques, let's go to the Internet to find a new text. You could use something such as historic newspapers, or Supreme Court proceedings, or use any txt file on your computer. Here we will use [Project Gutenberg](http://www.gutenberg.org). Project Gutenberg is an archive of public domain written works, available in a wide variety of formats, including .txt. You can download these to your computer or access them via the url. We'll use the `url method`. We found _Don Quixote_ in the archive, and will work with that.
 
 The Python package, urllib, comes installed with Python, but is inactive by default, so we still need to import it to utilize the functions. Since we are only going to use the urlopen function, we will just import that one.
 
@@ -794,45 +778,42 @@ Using the `dq_text` variable:
 - Remove capitalization
 - Lemmatize the words
 
-If you want to spice your challenge up, do the first three operations *in a single if statement*. Google "python nested if statements" for examples.
+If you want to spice your challenge up, do the first three operations _in a single if statement_. Google "python nested if statements" for examples.
 
 ## Solution
 
-1\. Lowercase, remove punctuation and stopwords
+1. Lowercase, remove punctuation and stopwords
 
-```python
-dq_clean = []
-for word in dq_text:
-    if word.isalpha():
-        if word.lower() not in stops:
-            dq_clean.append(word.lower())
-print(dq_clean[:50])
-```
+    ```python
+    dq_clean = []
+    for word in dq_text:
+        if word.isalpha():
+            if word.lower() not in stops:
+                dq_clean.append(word.lower())
+    print(dq_clean[:50])
+    ```
 
-2\. Lemmatize
+2. Lemmatize
 
-```python
-from nltk.stem import WordNetLemmatizer
-wordnet_lemmatizer = WordNetLemmatizer()
+    ```python
+    from nltk.stem import WordNetLemmatizer
+    wordnet_lemmatizer = WordNetLemmatizer()
 
-dq_lemmatized = []
-for t in dq_clean:
-    dq_lemmatized.append(wordnet_lemmatizer.lemmatize(t))
-```
+    dq_lemmatized = []
+    for t in dq_clean:
+        dq_lemmatized.append(wordnet_lemmatizer.lemmatize(t))
+    ```
 
 ## Evaluation
 
 Check all sentences below that are correct:
-
 - `urlopen` can save the contents of a webpage into a variable
-
 - To use NLTK functions on a string we have, we can transform it into a NLTK Text object.
-
 - NLTK let's you tokenize split a giant string into a list of substrings, considering punctuations and edge cases like `don't`.
 
 # Part-of-Speech Tagging
 
-*Note that we are going to use the pre-cleaned, `dq_text` object for this section.*
+_Note that we are going to use the pre-cleaned, `dq_text` object for this section._
 
 POS (Part-of-Speech) tagging is going through a text and identifying which part of speech each word belongs to (i.e., Noun, Verb, or Adjective). Every word belongs to a part of speech, but some words can be confusing.
 
