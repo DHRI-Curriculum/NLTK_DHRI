@@ -877,10 +877,15 @@ Now let's do it and find out what the most common tag is.
 tag_dict_sorted = sorted(tag_dict.items(),
 			 reverse=True,
 			 key=lambda kv: kv[1])
+```
+
+Now let's check out what we have: 
+
+```python
 print(tag_dict_sorted)
 ```
 
-Now check out what we have. It looks like NN is the most common tag. We can look up what NN means in the [Penn Tree Bank](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). Looks like NN is a Noun, singular or mass. Great! This information will likely help us with genre classification, or identifying the author of a text, or a variety of other functions.
+Your result should show that NN is the most common tag. We can look up what NN means in the [Penn Tree Bank](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). Looks like NN is a Noun, singular or mass. Great! This information will likely help us with genre classification, or identifying the author of a text, or a variety of other functions.
 
 ## Evaluation
 
