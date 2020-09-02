@@ -86,7 +86,7 @@ Check all sentences below that are correct:
 
 In the following sections, we are going to learn how to work with the NLTK Corpus and go through a series of methods that come built-in to NLTK that allow us to turn our words into numbers and visualizations.
 
-All of the code for this section is in a [Jupyter Notebook file](https://github.com/DHRI-Curriculum/text-analysis/blob/v2.0/TextAnalysisWalkthrough.ipynb?raw=true). You should download it and save it on your desired folder. Here, we are assuming you are saving in on the `text_analysis` folder.
+All of the code for this section is in a [Jupyter Notebook file](https://github.com/DHRI-Curriculum/text-analysis/blob/v2.0/TextAnalysisWalkthrough.ipynb?raw=true). You should download it and save it on your desired folder. Here, we are assuming you are saving in in the `text_analysis` folder.
 
 In this file you will find all of the workshop commands and the expected outputs. If you ever feel stuck or can't seem to be able to advance in the workshop, you can open this file and see how we did it. Feel free to open the file right now (click on it), take a peek at its contents if you want, and close it.
 
@@ -104,7 +104,7 @@ But those are only suggestions. Maybe they will work for you, maybe they won't, 
 
 ## Creating a Jupyter Notebook file
 
-Now you will create your Jupyter notebook file, in which you will run the workshop. Return to the Jupyter Home Tab in your Browser (or, if you closed it completely, launch the Jupyter Notebook again), and start a New Python3 Notebook using the `New` button in the upper right corner.
+Now you will create your Jupyter notebook file, in which you will run the workshop. Return to the Jupyter Home Tab in your Browser (or, if you closed it completely, launch the Jupyter Notebook again), and start a New Python Notebook using the `New` button in the upper right corner.
 
 Even though Jupyter Notebook doesn't force you to do so, it is very important to name your file, or you will end up later with a bunch of untitled files and you will have no idea what they are about. In the top left, click in the word `Untitled` and give your file a name such as "intro_nltk".
 
@@ -118,13 +118,13 @@ import nltk
 
 **Libraries** are sets of instructions that Python can use to perform specialized functions. The Natural Language ToolKit (`nltk`) is one such library. As the name suggests, its focus is on language processing.
 
-We will also need the matplotlib library later on, so import it now:
+We will also need the `matplotlib` library later on, so import it now:
 
 ```python
 import matplotlib
 ```
 
-`matplotlib` is a library for making graphs. In the middle of this tutorial, we are going to make a dispersion plot of words in our texts.
+matplotlib is a library for making graphs. In the middle of this tutorial, we are going to make a dispersion plot of words in our texts.
 
 Finally, because of a quirk of Jupyter notebooks, we need to specify that matplotlib should display its graphs in the notebook (as opposed to in a separate window), so we type this command (this is technically a Jupyter command, not Python):
 
@@ -132,7 +132,7 @@ Finally, because of a quirk of Jupyter notebooks, we need to specify that matplo
 %matplotlib inline
 ```
 
-All three of these commands can be written in the same cell and run all at once (`Shift + Enter`) or in different cells.
+All three of these commands can be written in the same cell and run all at once (<kbd>Shift</kbd> + <kbd>Enter</kbd>) or in different cells.
 
 ![Image showing that the three lines given above can be written in a single cell in the Jupyter notebook, one after another](images/imports.png)
 
@@ -148,7 +148,7 @@ The pre-loaded NLTK texts should appear again. These are preformatted data sets.
 
 ![Image showing a second cell with the output of "from nltk.book import *"](images/nltkbook.png)
 
-Notice that each of the texts already have a variable name. "Moby Dick" is `text1`, "Sense and Sensibility" is `text2`, and so on. When we want to work with those books, we will call them by their variable name, as you'll see soon.
+Notice that each of the texts already have a variable name. _Moby Dick_ is `text1`, _Sense and Sensibility_ is `text2`, and so on. When we want to work with those books, we will call them by their variable name, as you'll see soon.
 
 If you got any error messages, check the code and make sure you typed everything correctly. Even spaces before words matter!
 
@@ -174,7 +174,7 @@ Let's now see which words appear in similar contexts as the word "love." NLTK ha
 text1.similar("love")
 ```
 
-Behind the scenes, Python found all the contexts where the word "love" appears. It also finds similar environments, and then what words were common among the similar contexts. This gives a sense of what other words appear in similar contexts. This is somewhat interesting in itself, but more interesting if we compare it to something else. Let's take a look at another text. What about _Sense and Sensibility_ (text2)? Let's see what words are similar to "love" in Jane Austen's writing. In the next cell, type:
+Behind the scenes, Python found all the contexts where the word "love" appears. It also finds similar environments, and then what words were common among the similar contexts. This gives a sense of what other words appear in similar contexts. This is somewhat interesting in itself, but more interesting if we compare it to something else. Let's take a look at another text. What about _Sense and Sensibility_ (`text2`)? Let's see what words are similar to "love" in Jane Austen's writing. In the next cell, type:
 
 ```python
 text2.similar("love")
@@ -704,9 +704,9 @@ In the next cell, type:
 from urllib.request import urlopen
 ```
 
-The `urlopen` function allows your program to interact with files on the internet by opening them. It does not read them, however—they are just available to be read in the next line. This is the default behavior any time a file is opened and read by Python. One reason is that you might want to read a file in different ways. For example, if you have a **really** big file—think big data—you might want to read line-by-line rather than the whole thing at once.
+The `urlopen` function allows your program to interact with files on the internet by opening them. It does not read them, however—they are just available to be read in the next line. This is the default behavior any time a file is opened and read by Python. One reason is that you might want to read a file in different ways. For example, if you have a _really_ big file—think big data—you might want to read line-by-line rather than the whole thing at once.
 
-Now let's specify which URL we are going to use. Though you might be able to find _Don Quixote_ in the Project Gutenberg files, please type this in so that we are all using the same format (there are multiple .txt files on the site, one with utf-8 encoding, another with ascii encoding). We want the utf-8 encoded one. The difference between these is beyond the scope of this tutorial, but you can check out this [introduction to character encoding](https://www.w3.org/International/questions/qa-what-is-encoding) from The World Wide Web Consortium (W3C) if you are interested.
+Now let's specify which URL we are going to use. Though you might be able to find _Don Quixote_ in the Project Gutenberg files, please type this in so that we are all using the same format (there are multiple `.txt` files on the site, one with utf-8 encoding, another with ascii encoding). We want the utf-8 encoded one. The difference between these is beyond the scope of this tutorial, but you can check out this [introduction to character encoding](https://www.w3.org/International/questions/qa-what-is-encoding) from The World Wide Web Consortium (W3C) if you are interested.
 
 Set the URL we want to a variable:
 
