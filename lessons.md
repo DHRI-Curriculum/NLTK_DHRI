@@ -359,7 +359,7 @@ This is a much higher number, though the number itself is arbitrary. When compar
 
 ## Challenge
 
-Let's compare the lexical density of *Moby Dick* with *Sense and Sensibility*. Make sure to:
+Let's compare the lexical density of _Moby Dick_ with _Sense and Sensibility_. Make sure to:
 
 1. Make all the words lowercase and remove punctuation.
 2. Make a slice of the first 10,000 words.
@@ -522,7 +522,7 @@ print(len(set(text1_clean)))
 
 If everything went right, you should have the same length as before, but a smaller number of unique words. That makes sense since we did not remove any word, we only changed some of them.
 
-Now if we were to calculate lexical density, we would be looking at how many word stems with semantic content are represented in *Moby Dick*, which is a different question than the one in our first analysis of lexical density.
+Now if we were to calculate lexical density, we would be looking at how many word stems with semantic content are represented in _Moby Dick_, which is a different question than the one in our first analysis of lexical density.
 
 Why don't you try that by yourself? Try to remember how to calculate lexical density without looking back first. It is ok if you have forgotten.
 
@@ -532,12 +532,12 @@ Now let's have a look at the words Melville uses in _Moby Dick_. We'd like to lo
 sorted(set(text1_clean))[:30]
 ```
 
-`Sorted` + `set` should give us a list of list of all the words in *Moby Dick* in alphabetical order, but we only want to see the first ones. Notice how there are some words we wouldn't have expected, such as 'abandon', 'abandoned', 'abandonedly', and 'abandonment'. This process is far from perfect, but it is useful. However, depending on your goal, a different process, like `stemming` might be better.
+`sorted` combined with `set` should give us a list of all the unique words in _Moby Dick_ in alphabetical order, but we only want to see the first ones. Notice how there are some words we wouldn't have expected, such as 'abandon', 'abandoned', 'abandonedly', and 'abandonment'. This process is far from perfect, but it is useful. However, depending on your goal, a different process, like _stemming_ might be better.
 
 ## Evaluation
 
 Check all sentences below that are correct:
-- Stemming and Lemmatizing are different forms of reducing word variations to their roots.
+- Stemming and lemmatizing are different forms of reducing word variations to their roots.
 - `sorted(set(list_of_strings))` returns the unique items of `list_of_strings` in alphabetical order.
 
 # Data cleaning: Stemming Words
