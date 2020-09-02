@@ -846,12 +846,13 @@ Let's inspect what we have:
 print(dq_tagged[:10])
 ```
 
-This is a list of ordered tuples. (A tuple is like a list, but can't be changed once it is created.) Each element in the list is a pairing of `(word, POS-tag)`. (Tuples are denoted with parentheses, rather than square brackets.) This is great, but it is very detailed. I would like to know how many Nouns, Verbs, and Adjectives I have.
+This is a list of ordered _tuples_. The Python native type _tuple_ is similar to a list, but can't be changed once it is created. They are also denoted with parentheses, rather than square brackets. Each element in the list is a tuple—or a pairing—consisting of `(word, POS-tag)`. This is great, but it is very detailed. I would like to know how many nouns, verbs, and adjectives I have.
 
-First, I'll make an empty dictionary to hold my results. (If you don't know what a dictionary is and how they work, you can check a quick explanation [here](https://realpython.com/python-dicts/) ) Then I will go through this list of tuples and count the number of times each tag appears. Every time I encounter a new tag, I'll add it to a dictionary and then increment by one every time I encounter that tag again. Let's see what that looks like in code:
+First, I'll make an empty dictionary to hold my results. (If you don't know what a dictionary is and how they work, you can check a quick explanation [here](https://realpython.com/python-dicts/).) After that, I will go through this list of tuples and count the number of times each tag appears. Every time I encounter a new tag, I'll add it to a dictionary and then increment by one every time I encounter that tag again. Let's see what that looks like in code:
 
 ```python
 tag_dict = {}
+
 # For every word/tag pair in my list,
 for (word, tag) in dq_tagged:
     if tag in tag_dict:
