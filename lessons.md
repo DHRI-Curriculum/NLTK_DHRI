@@ -259,7 +259,7 @@ What is clear here is that the `count` method is case-sensitive.
 
 This gets at a distinction between **type** and **token**. "Whale" and "whale" are different types (as of now) because they do not match identically. Every instance of "whale" in the corpus is another **token**—it is an instance of the type, "whale." Therefore, there are 906 tokens of "whale" in our corpus, 282 tokens of "Whale" and 38 tokens of "WHALE".
 
-But that's not what we want. Let's fix this by making all of the words lowercase. We will make a new list of words, and call it `text1_tokens`. We will fill this list with all the words in text1, but in their lowercase form. Python has a built-in function, `lower()` that takes all letters and makes them lowercase. In this same step, we are going to do a kind of tricky move, and only keep the words that are alphabetical and pass over anything that is punctuation or numbers. There is a built-in function, `isalpha()`, that will allow us to save only those words that are made of letters. If `isalpha()` is true, we'll make the word lowercase, and keep the word. If not, we'll pass over it and move to the next one.
+But that's not what we want. Let's fix this by making all of the words lowercase. We will make a new list of words, and call it `text1_tokens`. We will fill this list with all the words in `text1`, but in their lowercase form. Python has a built-in function, `lower()` that takes all letters and makes them lowercase. In this same step, we are going to do a kind of tricky move, and only keep the words that are alphabetical and pass over anything that is punctuation or numbers. There is a built-in function, `isalpha()`, that will allow us to save only those words that are made of letters. If `isalpha()` is true, we'll make the word lowercase, and keep the word. If not, we'll pass over it and move to the next one.
 
 Type the following code into a new cell in your notebook. Pay special attention to the indentation, which must appear as below. (Note that in Jupyter Notebook, indentation usually comes automatically. If not, make sure to type the <kbd>space</kbd> key 4 times)
 
@@ -317,7 +317,7 @@ Now we want to know how many words there are in our corpus—that is, how many t
 len(text1_tokens)
 ```
 
-Just for comparison, check out how many words were in "text1"—before we removed the punctuation and the numbers.
+Just for comparison, check out how many words were in `text1`—before we removed the punctuation and the numbers.
 
 ```python
 len(text1)
@@ -603,7 +603,7 @@ Check all sentences below that are correct:
 
 # Data Cleaning: Results
 
-Now that we've seen some of the differences between both, we will proceed using our lemmatized corpus, which we saved as "text1_clean":
+Now that we've seen some of the differences between both, we will proceed using our lemmatized corpus, which we saved as `text1_clean`:
 
 ```python
 my_dist = FreqDist(text1_clean)
