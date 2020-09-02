@@ -388,9 +388,9 @@ Check all sentences below that are correct:
 - The lexical density measures the number of unique words per total word, and it is an objective measure of writing quality.
 - Comparing the lexical density between texts of different sizes can give a problematic result. A possible solution is to use list slice and compare parts of both texts of a similar size.
 
-# Data Cleaning: removing Stopwords
+# Data Cleaning: Removing Stop Words
 
-Thus far, we have been asking questions that take stopwords and grammatical features into account. For the most part, we want to exclude these features since they don't actually contribute very much semantic content to our models. Therefore, we will:
+Thus far, we have been asking questions that take stop words and grammatical features into account. For the most part, we want to exclude these features since they don't actually contribute very much semantic content to our models. Therefore, we will:
 
 1. Remove capitalization and punctuation (we've already done this).
 2. Remove stop words.
@@ -457,7 +457,7 @@ len(set(text1_stops))
 
 Check all sentences below that are correct:
 - Stop words are words that usually don't contribute with much semantic content, like prepositions, determiners, etc.
-- To use stopwords we need to import them from the nltk corpus, using the following code: `import stopwords from nltk.corpus`
+- To use stop words we need to import them from the nltk corpus, using the following code: `import stopwords from nltk.corpus`
 - List comprehensions are faster ways of iterating and creating lists when compared with for loops.
 
 # Data cleaning: Lemmatizing Words
@@ -775,7 +775,7 @@ But if we only need to use the built-in Python functions, we can just stick with
 
 Using the `dq_text` variable:
 
-- Remove the stopwords
+- Remove the stop words
 - Remove punctuation
 - Remove capitalization
 - Lemmatize the words
@@ -784,7 +784,7 @@ If you want to spice your challenge up, do the first three operations _in a sing
 
 ## Solution
 
-1. Lowercase, remove punctuation and stopwords
+1. Lowercase, remove punctuation and stop words:
 
     ```python
     dq_clean = []
@@ -795,7 +795,7 @@ If you want to spice your challenge up, do the first three operations _in a sing
     print(dq_clean[:50])
     ```
 
-2. Lemmatize
+2. Lemmatize:
 
     ```python
     from nltk.stem import WordNetLemmatizer
