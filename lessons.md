@@ -281,6 +281,8 @@ Don't worry too much about understanding the syntax of list comprehensions right
 text1_tokens = [t.lower() for t in text1 if t.isalpha()]
 ```
 
+## Take a breath!
+
 Let's take a breath, because this was a difficulty spike. For loops are weird and not super intuitive. It usually takes some time for us to get used to them.
 
 I suggest going back to the loop above, review it, try to understand why all indentations are where they are.
