@@ -40,6 +40,12 @@ Check all sentences below that are correct:
 - Part-of-Speech (POS) tagging can help identifying verbs, adjectives and nouns in a text.*
 - A corpus is any collection of texts, independently of being related to each other or not.
 
+## Keywords
+
+Do you remember the glossary terms from this section?
+
+- [NLTK](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/nltk.md)
+
 # Cleaning and Normalizing
 
 Generally, however, our questions are more about topics rather than writing style. So, once we have a corpus—whether that is one text or millions—we usually want to clean and normalize it. There are three terms we are going to need:
@@ -81,6 +87,13 @@ Check all sentences below that are correct:
 - In any type of data analysis, we usually want to cleanse the data in order to prepare it for the analysis. In text analysis, this process is called "text normalization" and can involve tasks such as removing undesired words and punctuation.*
 
 - Textual alterations can potentially change the original intended meaning. Therefore, we must always strive to work with the data exactly as it is in the source.
+
+## Keywords
+
+Do you remember the glossary terms from this section?
+
+- [Machine Learning](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/machine-learning.md)
+- [Text Normalization](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/text-normalization.md)
 
 # Using the NLTK Corpus
 
@@ -154,6 +167,15 @@ If you got any error messages, check the code and make sure you typed everything
 
 If you are sure you are running the code correctly, you probably have an installing issue, so you might have to go back to the instalation instructions to figure it out.
 
+## Keywords
+
+Do you remember the glossary terms from this section?
+
+- [Corpus](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/corpus.md)
+- [Jupyter Notebook](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/jupyter-notebook.md)
+- [Library](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/library.md)
+- [Matplotlib](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/matplotlib.md)
+
 # Searching for Words
 
 Let's start by analyzing _Moby Dick_, which is `text1` for NLTK.
@@ -199,6 +221,13 @@ If you are interested in this type of analysis, take a look at the `common_conte
 Check all sentences below that are correct:
 - The similar method brings a list of words that are similiar in writing, but not necessarily in meaning, like "whale" and "while".
 - Using the `concordance` method with a specific word, such as "whale", returns the words that surround "whale" in different sentences, helping us to get a glimpse of the contexts in which the word "whale" shows up.*
+
+## Keywords
+
+Do you remember the glossary terms from this section?
+
+- [Concordance](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/concordance.md)
+- [Phatic Language](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/phatic-language.md)
 
 # Positioning Words
 
@@ -299,6 +328,14 @@ Check all sentences below that are correct:
 - The `lower()` method returns the lowercase form of all of the alphabetical characters in a string.*
 - The `isalpha()` method transforms integers in alphabetical strings.
 - The `append()` method adds an item to the end of the list.*
+
+## Token
+
+Do you remember the glossary terms from this section?
+
+- [Token](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/token.md)
+- [Tokenizing](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/tokenizing.md)
+- [Type](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/type.md)
 
 # Length and unique words
 
@@ -459,6 +496,12 @@ Check all sentences below that are correct:
 - To use stop words we need to import them from the nltk corpus, using the following code: `import stopwords from nltk.corpus`
 - List comprehensions are faster ways of iterating and creating lists when compared with for loops.*
 
+## Keywords
+
+Do you remember the glossary terms from this section?
+
+- [Stop Words](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/stop-words.md)
+
 # Data cleaning: Lemmatizing Words
 
 Now that we've removed the stop words from our corpus, the next step is to stem or lemmatize the remaining words. This means that we will strip off the grammatical structure from the words. For example, `cats ⭢ cat`, and `walked ⭢ walk`. If that was all we had to do, we could stem the corpus and achieve the correct result, because stemming (as the name implies) really just means cutting off affixes to find the root (or the stem). Very quickly, however, this gets complicated, such as in the case of `men ⭢ man` and `sang ⭢ sing`. Lemmatization deals with this by looking up the word in a reference and finding the appropriate root (though note that this still is not entirely accurate). Lemmatization, therefore, takes a relatively long time, since each word must be looked up in a reference. NLTK comes with pre-built stemmers and lemmatizers.
@@ -539,6 +582,13 @@ Check all sentences below that are correct:
 - Stemming and lemmatizing are different forms of reducing word variations to their roots.*
 - `sorted(set(list_of_strings))` returns the unique items of `list_of_strings` in alphabetical order.*
 
+## Keywords
+
+Do you remember the glossary terms from this section?
+
+- [Lemmatization](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/lemmatization.md)
+- [Lexical Density](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/lexical-density.md)
+
 # Data cleaning: Stemming Words
 
 The code to implement this and view the output is below:
@@ -599,6 +649,12 @@ A very different list of words is produced. This list is shorter than the list p
 Check all sentences below that are correct:
 - Both Stemming and Lemmatizing are far from perfect, so they must be used with caution.*
 - There is no obvious best choice between Stemmers and Lemmatizers, so the best way to go is experimenting and seeing what results better fit your goals.*
+
+## Keywords
+
+Do you remember the glossary terms from this section?
+
+- [Stemming](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/stemming.md)
 
 # Data Cleaning: Results
 
@@ -816,6 +872,13 @@ Check all sentences below that are correct:
 - To use NLTK functions on a string, we can transform it into a NLTK Text object.*
 - NLTK let's you tokenize (split) a giant string into a list of substrings, considering punctuations and edge cases like `don't`.*
 
+## Keywords
+
+Do you remember the glossary terms from this section?
+
+- [Metadata](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/metadata.md)
+- [Regular Expressions](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/regular-expressions.md)
+
 # Part-of-Speech Tagging
 
 _Note that we are going to use the pre-cleaned, `dq_text` object for this section._
@@ -892,3 +955,11 @@ Which of the following are correct?
 - POS tagging does not work well with stop words, therefore you should always clean your text from stop words before using it.
 - Tuples are like lists, but you can't change their value once created.*
 - `nltk.pos_tag` returns tuples of two values, the first being the word, and the second the tag.*
+
+## Keywords
+
+Do you remember the glossary terms from this section?
+
+- [part-of-speech (POS) tagging](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/part-of-speech.md)
+- [Dictionaries](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/dictionaries.md)
+- [Tuples](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/tuples.md)
