@@ -1,6 +1,8 @@
-[<<< Previous](02-text_as_data.md) | [Next >>>](04-preparing.md)
+← [Text as Data](01-text-as-data.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Using the NLTK Corpus](03-using-the-nltk-corpus.md) →
 
-# Cleaning and Normalizing
+---
+
+# 2. Cleaning and Normalizing
 
 Generally, however, our questions are more about topics rather than writing style. So, once we have a corpus—whether that is one text or millions—we usually want to clean and normalize it. There are three terms we are going to need:
 
@@ -24,10 +26,31 @@ The first has more information about tense, and which house in particular, but t
 
 In going from the first sentence to the normalized words, we removed the stop words (_the_ and _is_), and removed punctuation and case, and lemmatized what was left (_burning_ becomes _burn_—though we might have stemmed this, its impossible to tell from the example). This results in what is essentially a "bag of words," or a corpus of words without any structure. Because normalizing your text reduces the number of words (and therefore the number of dimensions in your data), and keeps only the words that contribute meaning to the document, this cleaning is usually desirable.
 
-Again, this will be covered more in depth in the Machine Learning Tutorial, but for the time being, we just need to know that there is "clean" and "dirty" versions of text data. Sometimes our questions are about the clean data, but sometimes our questions are in the "dirt."
+This is a very important topic in Machine Learning tutorials. For the time being, we just need to know that there is "clean" and "dirty" versions of text data. Sometimes our questions are about the clean data, but sometimes our questions are in the "dirt."
 
-## Words into numbers
+## A Note on Ethics
 
-In the next section, we are going to go through a series of methods that come built-in to NLTK that allow us to turn our words into numbers and visualizations. This is just scratching the surface, but should give you an idea of what is possible beyond just counting words.
+The act of cleaning/normalizing subscribes text to predetermined categories of meaning, forcing meaning into existing "boxes," so to speak. This doesn't mean that we should avoid cleaning or normalizing text, but that we should be aware of how some textual reductions have the potential to affect meaning. How does quantification reinforce differences or stratifications within our data? We have to be careful about the kinds of questions we are asking, and how we might be reproducing some of our assumptions in our inquiry.
 
-[<<< Previous](02-text_as_data.md) | [Next >>>](04-preparing.md)
+To read more about ethics and text analysis, see Lauren Klein's "[Distant Reading After Moretti](https://arcade.stanford.edu/blogs/distant-reading-after-moretti)," where she questions, "Instead of first asking what can be modeled—what phenomena we can track at scale—we might instead ask: what might be hidden in this corpus?”
+
+## Evaluation
+
+Check all sentences below that are correct:
+
+- Stop words are useless for text analysis, therefore the first step in any project is to remove them from the text.
+
+- In any type of data analysis, we usually want to cleanse the data in order to prepare it for the analysis. In text analysis, this process is called "text normalization" and can involve tasks such as removing undesired words and punctuation.*
+
+- Textual alterations can potentially change the original intended meaning. Therefore, we must always strive to work with the data exactly as it is in the source.
+
+## Keywords
+
+Do you remember the glossary terms from this section?
+
+- [Machine Learning](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/machine-learning.md)
+- [Text Normalization](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/text-normalization.md)
+
+---
+
+← [Text as Data](01-text-as-data.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Using the NLTK Corpus](03-using-the-nltk-corpus.md) →
