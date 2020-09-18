@@ -44,7 +44,7 @@ In this workshop, you will learn skills like:
 
 ## Before you get started
 
-If you do not have experience or basic knowledge of the following workshops, you may want to look into those before you start with Introduction to Text Analysis with Python and NLTK:
+If you do not have experience or basic knowledge of the following workshops, you may want to look into those before you start with Text Analysis with Python and NLTK:
 
 - [Introduction to Python](https://github.com/DHRI-Curriculum/python) workshop (required)
 - [Introduction to the Command Line](https://github.com/DHRI-Curriculum/command-line) workshop (recommended)
@@ -52,14 +52,14 @@ If you do not have experience or basic knowledge of the following workshops, you
 
 ### Ethical Considerations
 
-Before you start the Introduction to Text Analysis with Python and NLTK workshop, we want to remind you of some ethical considerations to take into account when you read through the lessons of this workshop:
+Before you start the Text Analysis with Python and NLTK workshop, we want to remind you of some ethical considerations to take into account when you read through the lessons of this workshop:
 
 - In working with massive amounts of text, it is natural to lose the original context. We must be aware of that and be careful when analizing it.
 - It is important to constantly question our assumptions and the indexes we are using. Numbers and graphs do not tell the story, our analysis does. We must be careful not to draw hasty and simplistic conclusions for things that are complex. Just because we found out that author A uses more unique words than author B, does it mean that A is a better writer than B?
 
 ### Pre-reading suggestions
 
-Before you start the Introduction to Text Analysis with Python and NLTK workshop, you may want to read a couple of our pre-reading suggestions:
+Before you start the Text Analysis with Python and NLTK workshop, you may want to read a couple of our pre-reading suggestions:
 
 - [A Beginner’s Tutorial to Jupyter Notebooks](https://towardsdatascience.com/a-beginners-tutorial-to-jupyter-notebooks-1b2f8705888a)
 - [What is text analysis](https://www.scribbr.com/methodology/textual-analysis/)
