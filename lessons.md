@@ -22,7 +22,7 @@ has one pronoun, one verb, one determiner, one adjective, and one noun.
 
 NLTK uses the [Penn Tree Bank Tag Set](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). This is a very detailed tag list that goes far beyond just nouns, verbs, and adjectives, but gives insight into different types of nouns, prepositions, and verbs as well. Virtually all POS taggers will create a list of (word, POS) pairs. If newspaper articles have a higher ratio of function words (prepositions, auxiliaries, determiners, etc.) to semantic words (nouns, verbs, adjectives), than tweets, then we have one piece of evidence supporting our hypothesis. It's important to note here that we must use either ratios or otherwise normalized data (in the sense that raw numbers will not work). Because of the way that language works (function words are often repeated, for example), a sample of 100 words will have more unique words than a sample of 1,000. Therefore, to compare different data types (articles vs. tweets), this fact should be taken into account.
 
-## A note about languages
+## A Note About Languages
 
 Even though in this workshop we will use the English language in the examples, NLTK does support many other languages, due to amazing contributions from the Python Text Analysis community. The support, however, varies according to the desired task. Not all functions and tools will be available for all the supported languages. The good news is that the available tools keep growing in quantity and quality.
 
@@ -111,7 +111,7 @@ For the best possible experience, we suggest/encourage you to:
 
 But those are only suggestions. Maybe they will work for you, maybe they won't, so feel free to do as it best suit you. You are in charge here!
 
-## Creating a Jupyter Notebook file
+## Creating a Jupyter Notebook File
 
 Now you will create your Jupyter notebook file, in which you will run the workshop. Return to the Jupyter Home Tab in your Browser (or, if you closed it completely, launch the Jupyter Notebook again), and start a New Python Notebook using the `New` button in the upper right corner.
 
@@ -133,15 +133,15 @@ We will also need the `matplotlib` library later on, so import it now:
 import matplotlib
 ```
 
-matplotlib is a library for making graphs. In the middle of this tutorial, we are going to make a dispersion plot of words in our texts.
+`matplotlib` is a library for making graphs. In the middle of this tutorial, we are going to make a dispersion plot of words in our texts.
 
-Finally, because of a quirk of Jupyter notebooks, we need to specify that matplotlib should display its graphs in the notebook (as opposed to in a separate window), so we type this command (this is technically a Jupyter command, not Python):
+Finally, because of a quirk of Jupyter notebooks, we need to specify that `matplotlib` should display its graphs in the notebook (as opposed to in a separate window), so we type this command (this is technically a Jupyter command, not Python):
 
 ```python
 %matplotlib inline
 ```
 
-All three of these commands can be written in the same cell and run all at once (<kbd>Shift</kbd> + <kbd>Enter</kbd>) or in different cells.
+All three of these commands can be written in the same cell and run all at once (<kbd>shift</kbd> + <kbd>enter</kbd>) or in different cells.
 
 ![Image showing that the three lines given above can be written in a single cell in the Jupyter notebook, one after another](images/imports.png)
 
@@ -258,7 +258,7 @@ Check all sentences below that are correct:
 - The `dispersion_plot` method allows you to input a list of strings, as long as you split them with commas.*
 - Contrary to grammar rule, in a list of strings, the commas must come outside of the quotation marks.*
 
-# Types vs. tokens
+# Types vs. Tokens
 
 We will now turn our attention away from the NLTK library and work with our text using the _built-in Python functions_, the ones that come included with the Python language, rather than the NLTK library. (This difference is relevant because built-in python functions will work with any list of strings, while some of the functions that are specific to the NLTK library will require you to make your text "nltk ready". Don't worry about that now, we will show you how to do it later in this workshop).
 
@@ -305,7 +305,7 @@ Don't worry too much about understanding the syntax of list comprehensions right
 text1_tokens = [t.lower() for t in text1 if t.isalpha()]
 ```
 
-## Take a breath!
+## Take a Breath
 
 Let's take a breath, because this was a difficulty spike. For loops are weird and not super intuitive. It usually takes some time for us to get used to them.
 
@@ -333,7 +333,7 @@ Do you remember the glossary terms from this section?
 - [Tokenizing](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/tokenizing.md)
 - [Type](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/type.md)
 
-# Length and unique words
+# Length and Unique Words
 
 Great! Now `text1_tokens` is a list of all of the tokens in our corpus, with the punctuation removed, and all the words in lowercase. Let's check it:
 
@@ -365,7 +365,7 @@ So let's find out the length of our set. just like in math, we can also nest our
 len(set(text1_tokens))
 ```
 
-# Lexical density
+# Lexical Density
 
 Now we can calculate the **lexical density**, the number of unique words per total words. [Statistical studies](https://pdfs.semanticscholar.org/c2a8/56959d7f5880c98ccd4cfeb4b4f5b7133ec7.pdf) have shown that lexical density is a good metric to approximate lexical diversity—the range of vocabulary an author uses. For our first pass at lexical density, we will simply divide the number of unique words by the total number of words:
 
@@ -498,7 +498,7 @@ Do you remember the glossary terms from this section?
 
 - [Stop Words](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/stop-words.md)
 
-# Data cleaning: Lemmatizing Words
+# Data Cleaning: Lemmatizing Words
 
 Now that we've removed the stop words from our corpus, the next step is to stem or lemmatize the remaining words. This means that we will strip off the grammatical structure from the words. For example, `cats ⭢ cat`, and `walked ⭢ walk`. If that was all we had to do, we could stem the corpus and achieve the correct result, because stemming (as the name implies) really just means cutting off affixes to find the root (or the stem). Very quickly, however, this gets complicated, such as in the case of `men ⭢ man` and `sang ⭢ sing`. Lemmatization deals with this by looking up the word in a reference and finding the appropriate root (though note that this still is not entirely accurate). Lemmatization, therefore, takes a relatively long time, since each word must be looked up in a reference. NLTK comes with pre-built stemmers and lemmatizers.
 
@@ -585,7 +585,7 @@ Do you remember the glossary terms from this section?
 - [Lemmatization](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/lemmatization.md)
 - [Lexical Density](https://github.com/DHRI-Curriculum/glossary/blob/v2.0/terms/lexical-density.md)
 
-# Data cleaning: Stemming Words
+# Data Cleaning: Stemming Words
 
 The code to implement this and view the output is below:
 
@@ -666,7 +666,7 @@ If nothing happened, that is normal. Check to make sure it is there by calling f
 type(my_dist)
 ```
 
-The result should say it is a nltk probability distribution (`nltk.probability.FreqDist`). It doesn't matter too much right now what that is, only that it worked. We can now plot this with the matplotlib function, `plot`. We want to plot the first 20 entries of the my_dist object.
+The result should say it is a nltk probability distribution (`nltk.probability.FreqDist`). It doesn't matter too much right now what that is, only that it worked. We can now plot this with `matplotlib`'s function called `plot`. We want to plot the first 20 entries of the `my_dist` object.
 
 ```python
 my_dist.plot(20)
@@ -930,7 +930,7 @@ tag_dict
 
 This would be better with some order to it, but dictionaries are made to be unordered. When we google "sort dictionaries python" we find a solution in our great friend [_Stack Overflow_](https://stackoverflow.com/a/613218). Even though we cannot sort a dictionary, we can get a representation of a dictionary that is sorted.
 
-Don't worry too much about understanding the following code, as it uses things we have not discussed, and are out of the scope of this course. It is useful to learn to reuse pieces of code even when we don't fully understand them.
+Don't worry too much about understanding the following code, as it uses functions and methods we have not discussed, and are out of the scope of this course. It is useful to learn to reuse pieces of code even when we don't fully understand them.
 
 Now let's do it and find out what the most common tag is.
 
