@@ -1,8 +1,8 @@
-← [Positioning Words](05-positioning-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Length and unique words](07-length-and-unique-words.md) →
+← [Positioning Words](05-positioning-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Length and Unique Words](07-length-and-unique-words.md) →
 
 ---
 
-# 6. Types vs. tokens
+# 6. Types vs. Tokens
 
 We will now turn our attention away from the NLTK library and work with our text using the _built-in Python functions_, the ones that come included with the Python language, rather than the NLTK library. (This difference is relevant because built-in python functions will work with any list of strings, while some of the functions that are specific to the NLTK library will require you to make your text "nltk ready". Don't worry about that now, we will show you how to do it later in this workshop).
 
@@ -49,7 +49,7 @@ Don't worry too much about understanding the syntax of list comprehensions right
 text1_tokens = [t.lower() for t in text1 if t.isalpha()]
 ```
 
-## Take a breath!
+## Take a Breath
 
 Let's take a breath, because this was a difficulty spike. For loops are weird and not super intuitive. It usually takes some time for us to get used to them.
 
@@ -79,4 +79,4 @@ Do you remember the glossary terms from this section?
 
 ---
 
-← [Positioning Words](05-positioning-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Length and unique words](07-length-and-unique-words.md) →
+← [Positioning Words](05-positioning-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Length and Unique Words](07-length-and-unique-words.md) →

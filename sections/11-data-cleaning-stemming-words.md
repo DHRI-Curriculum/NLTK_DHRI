@@ -1,8 +1,8 @@
-← [Data cleaning: Lemmatizing Words](10-data-cleaning-lemmatizing-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Results](12-data-cleaning-results.md) →
+← [Data Cleaning: Lemmatizing Words](10-data-cleaning-lemmatizing-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Results](12-data-cleaning-results.md) →
 
 ---
 
-# 11. Data cleaning: Stemming Words
+# 11. Data Cleaning: Stemming Words
 
 The code to implement this and view the output is below:
 
@@ -71,4 +71,4 @@ Do you remember the glossary terms from this section?
 
 ---
 
-← [Data cleaning: Lemmatizing Words](10-data-cleaning-lemmatizing-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Results](12-data-cleaning-results.md) →
+← [Data Cleaning: Lemmatizing Words](10-data-cleaning-lemmatizing-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Results](12-data-cleaning-results.md) →

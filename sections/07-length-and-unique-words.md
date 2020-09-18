@@ -1,8 +1,8 @@
-← [Types vs. tokens](06-types-vs.-tokens.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Lexical density](08-lexical-density.md) →
+← [Types vs. Tokens](06-types-vs.-tokens.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Lexical Density](08-lexical-density.md) →
 
 ---
 
-# 7. Length and unique words
+# 7. Length and Unique Words
 
 Great! Now `text1_tokens` is a list of all of the tokens in our corpus, with the punctuation removed, and all the words in lowercase. Let's check it:
 
@@ -36,4 +36,4 @@ len(set(text1_tokens))
 
 ---
 
-← [Types vs. tokens](06-types-vs.-tokens.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Lexical density](08-lexical-density.md) →
+← [Types vs. Tokens](06-types-vs.-tokens.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Lexical Density](08-lexical-density.md) →

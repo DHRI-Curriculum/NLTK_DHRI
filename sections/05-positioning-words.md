@@ -1,4 +1,4 @@
-← [Searching for Words](04-searching-for-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Types vs. tokens](06-types-vs.-tokens.md) →
+← [Searching for Words](04-searching-for-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Types vs. Tokens](06-types-vs.-tokens.md) →
 
 ---
 
@@ -37,4 +37,4 @@ Check all sentences below that are correct:
 
 ---
 
-← [Searching for Words](04-searching-for-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Types vs. tokens](06-types-vs.-tokens.md) →
+← [Searching for Words](04-searching-for-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Types vs. Tokens](06-types-vs.-tokens.md) →

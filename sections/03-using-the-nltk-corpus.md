@@ -22,7 +22,7 @@ For the best possible experience, we suggest/encourage you to:
 
 But those are only suggestions. Maybe they will work for you, maybe they won't, so feel free to do as it best suit you. You are in charge here!
 
-## Creating a Jupyter Notebook file
+## Creating a Jupyter Notebook File
 
 Now you will create your Jupyter notebook file, in which you will run the workshop. Return to the Jupyter Home Tab in your Browser (or, if you closed it completely, launch the Jupyter Notebook again), and start a New Python Notebook using the `New` button in the upper right corner.
 
@@ -44,15 +44,15 @@ We will also need the `matplotlib` library later on, so import it now:
 import matplotlib
 ```
 
-matplotlib is a library for making graphs. In the middle of this tutorial, we are going to make a dispersion plot of words in our texts.
+`matplotlib` is a library for making graphs. In the middle of this tutorial, we are going to make a dispersion plot of words in our texts.
 
-Finally, because of a quirk of Jupyter notebooks, we need to specify that matplotlib should display its graphs in the notebook (as opposed to in a separate window), so we type this command (this is technically a Jupyter command, not Python):
+Finally, because of a quirk of Jupyter notebooks, we need to specify that `matplotlib` should display its graphs in the notebook (as opposed to in a separate window), so we type this command (this is technically a Jupyter command, not Python):
 
 ```python
 %matplotlib inline
 ```
 
-All three of these commands can be written in the same cell and run all at once (<kbd>Shift</kbd> + <kbd>Enter</kbd>) or in different cells.
+All three of these commands can be written in the same cell and run all at once (<kbd>shift</kbd> + <kbd>enter</kbd>) or in different cells.
 
 ![Image showing that the three lines given above can be written in a single cell in the Jupyter notebook, one after another](../images/imports.png)
 

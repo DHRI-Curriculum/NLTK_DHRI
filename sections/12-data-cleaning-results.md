@@ -1,4 +1,4 @@
-← [Data cleaning: Stemming Words](11-data-cleaning-stemming-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Make Your Own Corpus](13-make-your-own-corpus.md) →
+← [Data Cleaning: Stemming Words](11-data-cleaning-stemming-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Make Your Own Corpus](13-make-your-own-corpus.md) →
 
 ---
 
@@ -16,7 +16,7 @@ If nothing happened, that is normal. Check to make sure it is there by calling f
 type(my_dist)
 ```
 
-The result should say it is a nltk probability distribution (`nltk.probability.FreqDist`). It doesn't matter too much right now what that is, only that it worked. We can now plot this with the matplotlib function, `plot`. We want to plot the first 20 entries of the my_dist object.
+The result should say it is a nltk probability distribution (`nltk.probability.FreqDist`). It doesn't matter too much right now what that is, only that it worked. We can now plot this with `matplotlib`'s function called `plot`. We want to plot the first 20 entries of the `my_dist` object.
 
 ```python
 my_dist.plot(20)
@@ -84,4 +84,4 @@ Check all sentences below that are correct:
 
 ---
 
-← [Data cleaning: Stemming Words](11-data-cleaning-stemming-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Make Your Own Corpus](13-make-your-own-corpus.md) →
+← [Data Cleaning: Stemming Words](11-data-cleaning-stemming-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Make Your Own Corpus](13-make-your-own-corpus.md) →

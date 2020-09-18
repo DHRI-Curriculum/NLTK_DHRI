@@ -1,4 +1,4 @@
-← [Lexical density](08-lexical-density.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data cleaning: Lemmatizing Words](10-data-cleaning-lemmatizing-words.md) →
+← [Lexical Density](08-lexical-density.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Lemmatizing Words](10-data-cleaning-lemmatizing-words.md) →
 
 ---
 
@@ -82,4 +82,4 @@ Do you remember the glossary terms from this section?
 
 ---
 
-← [Lexical density](08-lexical-density.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data cleaning: Lemmatizing Words](10-data-cleaning-lemmatizing-words.md) →
+← [Lexical Density](08-lexical-density.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Lemmatizing Words](10-data-cleaning-lemmatizing-words.md) →

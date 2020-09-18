@@ -54,7 +54,7 @@ tag_dict
 
 This would be better with some order to it, but dictionaries are made to be unordered. When we google "sort dictionaries python" we find a solution in our great friend [_Stack Overflow_](https://stackoverflow.com/a/613218). Even though we cannot sort a dictionary, we can get a representation of a dictionary that is sorted.
 
-Don't worry too much about understanding the following code, as it uses things we have not discussed, and are out of the scope of this course. It is useful to learn to reuse pieces of code even when we don't fully understand them.
+Don't worry too much about understanding the following code, as it uses functions and methods we have not discussed, and are out of the scope of this course. It is useful to learn to reuse pieces of code even when we don't fully understand them.
 
 Now let's do it and find out what the most common tag is.
 

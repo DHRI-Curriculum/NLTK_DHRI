@@ -1,8 +1,8 @@
-← [Data Cleaning: Removing Stop Words](09-data-cleaning-removing-stop-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data cleaning: Stemming Words](11-data-cleaning-stemming-words.md) →
+← [Data Cleaning: Removing Stop Words](09-data-cleaning-removing-stop-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Stemming Words](11-data-cleaning-stemming-words.md) →
 
 ---
 
-# 10. Data cleaning: Lemmatizing Words
+# 10. Data Cleaning: Lemmatizing Words
 
 Now that we've removed the stop words from our corpus, the next step is to stem or lemmatize the remaining words. This means that we will strip off the grammatical structure from the words. For example, `cats ⭢ cat`, and `walked ⭢ walk`. If that was all we had to do, we could stem the corpus and achieve the correct result, because stemming (as the name implies) really just means cutting off affixes to find the root (or the stem). Very quickly, however, this gets complicated, such as in the case of `men ⭢ man` and `sang ⭢ sing`. Lemmatization deals with this by looking up the word in a reference and finding the appropriate root (though note that this still is not entirely accurate). Lemmatization, therefore, takes a relatively long time, since each word must be looked up in a reference. NLTK comes with pre-built stemmers and lemmatizers.
 
@@ -91,4 +91,4 @@ Do you remember the glossary terms from this section?
 
 ---
 
-← [Data Cleaning: Removing Stop Words](09-data-cleaning-removing-stop-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data cleaning: Stemming Words](11-data-cleaning-stemming-words.md) →
+← [Data Cleaning: Removing Stop Words](09-data-cleaning-removing-stop-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Stemming Words](11-data-cleaning-stemming-words.md) →

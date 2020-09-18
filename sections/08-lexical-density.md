@@ -1,8 +1,8 @@
-← [Length and unique words](07-length-and-unique-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Removing Stop Words](09-data-cleaning-removing-stop-words.md) →
+← [Length and Unique Words](07-length-and-unique-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Removing Stop Words](09-data-cleaning-removing-stop-words.md) →
 
 ---
 
-# 8. Lexical density
+# 8. Lexical Density
 
 Now we can calculate the **lexical density**, the number of unique words per total words. [Statistical studies](https://pdfs.semanticscholar.org/c2a8/56959d7f5880c98ccd4cfeb4b4f5b7133ec7.pdf) have shown that lexical density is a good metric to approximate lexical diversity—the range of vocabulary an author uses. For our first pass at lexical density, we will simply divide the number of unique words by the total number of words:
 
@@ -59,4 +59,4 @@ Check all sentences below that are correct:
 
 ---
 
-← [Length and unique words](07-length-and-unique-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Removing Stop Words](09-data-cleaning-removing-stop-words.md) →
+← [Length and Unique Words](07-length-and-unique-words.md)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Data Cleaning: Removing Stop Words](09-data-cleaning-removing-stop-words.md) →
