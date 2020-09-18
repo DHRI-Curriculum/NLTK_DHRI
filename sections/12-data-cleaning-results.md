@@ -64,11 +64,13 @@ You can obviously do this with much larger lists and even compare entire novels 
 ## Solution
 
 1. A solution using a list comprehension would look like this:
+
     ```python
     my_list2 = [word for word in b_words if word in text1_clean]
     ```
 
 2. To compare the lists, you could run the following command:
+
     ```python
     my_list == my_list2
     ```
@@ -76,6 +78,7 @@ You can obviously do this with much larger lists and even compare entire novels 
 ## Evaluation
 
 Check all sentences below that are correct:
+
 - We can create a frequency distribution of a list of strings with `FreqDist` and plot it with the `plot` method.*
 - `my_dist.most_common(50)` will check the first 50 words in the distribution and return you the most common one among them.
 

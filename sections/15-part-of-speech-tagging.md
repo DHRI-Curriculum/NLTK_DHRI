@@ -64,7 +64,7 @@ tag_dict_sorted = sorted(tag_dict.items(),
 			 key=lambda kv: kv[1])
 ```
 
-Now let's check out what we have: 
+Now let's check out what we have:
 
 ```python
 print(tag_dict_sorted)
@@ -75,6 +75,7 @@ Your result should show that NN is the most common tag. We can look up what NN m
 ## Evaluation
 
 Which of the following are correct?
+
 - POS tagging does not work well with stop words, therefore you should always clean your text from stop words before using it.
 - Tuples are like lists, but you can't change their value once created.*
 - `nltk.pos_tag` returns tuples of two values, the first being the word, and the second the tag.*
