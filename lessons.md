@@ -99,16 +99,16 @@ Do you remember the glossary terms from this section?
 
 In the following sections, we are going to learn how to work with the NLTK Corpus and go through a series of methods that come built-in to NLTK that allow us to turn our words into numbers and visualizations.
 
-All of the code for this section is in a [Jupyter Notebook file](https://github.com/DHRI-Curriculum/text-analysis/blob/v2.0/TextAnalysisWalkthrough.ipynb?raw=true). You should download it and save it on your desired folder. Here, we are assuming you are saving in in the `text_analysis` folder.
+All of the code for this section is in a [Jupyter Notebook file](https://raw.githubusercontent.com/DHRI-Curriculum/text-analysis/v2.0/files/TextAnalysisWalkthrough.ipynb). You should download it and save it on your desired folder. Here, we are assuming you are saving in in the `files` folder inside the `text-analysis` folder.
 
 In this file you will find all of the workshop commands and the expected outputs. If you ever feel stuck or can't seem to be able to advance in the workshop, you can open this file and see how we did it. Feel free to open the file right now (click on it), take a peek at its contents if you want, and close it.
 
-To do it, open your Jupyter Notebook, and navigate to the `text_analysis` directory. Click on the `TextAnalysisWalkthrough.ipynb` file. Once you are done, just close the tab.
+To do it, open your Jupyter Notebook, and navigate to the `files` folder inside the `text-analysis` folder. Click on the `TextAnalysisWalkthrough.ipynb` file. Once you are done, just close the tab.
 
-![image of jupyter notebook walkthrough](images/TextAnalysisWalkthrough.png)
+![image of the Jupyter Notebook for this workshop](images/TextAnalysisWalkthrough.png)
 
 For the best possible experience, we suggest/encourage you to:
-- Create an ipynb file and follow the workshop typing all the code yourself.
+- Create an `.ipynb` file and follow the workshop typing all the code yourself.
 - Avoid copying/pasting the code. Much of learning has to do with you typing yourself.
 - Only check the `TextAnalysisWalkthrough.ipynb` file if you get lost or if you are not able to get the right output. Before opening it, put some time trying to figure out by yourself why it isn't working. A big part of coding is learning to identify what we are doing wrong.
 - I would also caution you against working with both files open at the same time. It is easy to get confused and start modifying the wrong one.
