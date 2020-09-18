@@ -8,7 +8,7 @@ In this workshop, you will:
 In this workshop, you will learn skills like:
 
 - How to prepare texts for computational analysis, including strategies for transforming texts into numbers
-- How to use NLTK methods such as `concordance` and `similar` 
+- How to use NLTK methods such as `concordance` and `similar`
 - How to clean and standardize your data, including powerful tools such as stemmers and lemmatizers
 - Compare frequency distribution of words in a text to quantify the narrative arc
 - Understand stop words and how to remove them when needed.
@@ -46,9 +46,9 @@ In this workshop, you will learn skills like:
 
 If you do not have experience or basic knowledge of the following workshops, you may want to look into those before you start with Introduction to Text Analysis with Python and NLTK:
 
-- Intro to Python workshop (required)
-- Command Line workshop (recommended)
-- Basic knowledge on Jupyter Notebook (recommended)
+- [Introduction to Python](https://github.com/DHRI-Curriculum/python) workshop (required)
+- [Introduction to the Command Line](https://github.com/DHRI-Curriculum/command-line) workshop (recommended)
+- [Short introduction to Jupyter Notebooks](https://github.com/DHRI-Curriculum/insights/blob/v2.0/pages/jupyter-notebooks.md) (recommended)
 
 ### Ethical Considerations
 
@@ -62,13 +62,13 @@ Before you start the Introduction to Text Analysis with Python and NLTK workshop
 Before you start the Introduction to Text Analysis with Python and NLTK workshop, you may want to read a couple of our pre-reading suggestions:
 
 - [A Beginner’s Tutorial to Jupyter Notebooks](https://towardsdatascience.com/a-beginners-tutorial-to-jupyter-notebooks-1b2f8705888a)
-- [What is text analysis](https://www.scribbr.com/methodology/textual-analysis/) <!--- I don't love this one, but haven't found a better one yet -->
+- [What is text analysis](https://www.scribbr.com/methodology/textual-analysis/)
 
 ### Projects that use these skills
 
 You may also want to check out a couple of projects that use the skills discussed in this workshop:
 
-- [Short list of academic Text & Data mining projects](https://libguides.bc.edu/textdatamining/projects) 
+- [Short list of academic Text & Data mining projects](https://libguides.bc.edu/textdatamining/projects)
 - [Building a Simple Chatbot from Scratch in Python](https://github.com/parulnith/Building-a-Simple-Chatbot-in-Python-using-NLTK)
 - [Classifying personality type by social media posts](https://github.com/TGDivy/MBTI-Personality-Classifier)
 

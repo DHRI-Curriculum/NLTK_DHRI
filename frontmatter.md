@@ -9,7 +9,7 @@ Digital technologies have made vast amounts of text available to researchers, an
 In this workshop, you will learn skills like:
 
 - How to prepare texts for computational analysis, including strategies for transforming texts into numbers
-- How to use NLTK methods such as `concordance` and `similar` 
+- How to use NLTK methods such as `concordance` and `similar`
 - How to clean and standardize your data, including powerful tools such as stemmers and lemmatizers
 - Compare frequency distribution of words in a text to quantify the narrative arc
 - Understand stop words and how to remove them when needed.
@@ -23,9 +23,9 @@ In this workshop, you will learn skills like:
 
 ## Prerequisites
 
-- Intro to Python workshop (required)
-- Command Line workshop (recommended)
-- Basic knowledge on Jupyter Notebook (recommended)
+- [Introduction to Python](https://github.com/DHRI-Curriculum/python) workshop (required)
+- [Introduction to the Command Line](https://github.com/DHRI-Curriculum/command-line) workshop (recommended)
+- [Short introduction to Jupyter Notebooks](https://github.com/DHRI-Curriculum/insights/blob/v2.0/pages/jupyter-notebooks.md) (recommended)
 
 
 ## Contexts
@@ -33,11 +33,11 @@ In this workshop, you will learn skills like:
 ### Pre-reading suggestions
 
 - [A Beginner’s Tutorial to Jupyter Notebooks](https://towardsdatascience.com/a-beginners-tutorial-to-jupyter-notebooks-1b2f8705888a)
-- [What is text analysis](https://www.scribbr.com/methodology/textual-analysis/) <!--- I don't love this one, but haven't found a better one yet -->
+- [What is text analysis](https://www.scribbr.com/methodology/textual-analysis/)
 
 ### Projects that use these skills
 
-- [Short list of academic Text & Data mining projects](https://libguides.bc.edu/textdatamining/projects) 
+- [Short list of academic Text & Data mining projects](https://libguides.bc.edu/textdatamining/projects)
 - [Building a Simple Chatbot from Scratch in Python](https://github.com/parulnith/Building-a-Simple-Chatbot-in-Python-using-NLTK)
 - [Classifying personality type by social media posts](https://github.com/TGDivy/MBTI-Personality-Classifier)
 
@@ -48,9 +48,10 @@ In this workshop, you will learn skills like:
 
 ## Resources
 
-- [Installing Anaconda](https://github.com/DHRI-Curriculum/install/blob/master/sections/python.md)
-- [Installing NLTK](https://github.com/DHRI-Curriculum/install/blob/master/sections/nltk.md)
+- [Installing Python (and Anaconda)](https://github.com/DHRI-Curriculum/install/blob/v2.0/guides/python.md)
+- [Installing NLTK](https://github.com/DHRI-Curriculum/install/blob/v2.0/guides/nltk.md)
 - [Jupyter Notebook shortcuts, tips and tricks](http://maxmelnick.com/2016/04/19/python-beginner-tips-and-tricks.html)
+- [Short introduction to Jupyter Notebooks](https://github.com/DHRI-Curriculum/insights/blob/v2.0/pages/jupyter-notebooks.md) (recommended)
 
 ## Acknowledgements
 
