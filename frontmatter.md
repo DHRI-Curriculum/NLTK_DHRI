@@ -23,10 +23,9 @@ In this workshop, you will learn skills like:
 
 ## Prerequisites
 
-- [Introduction to Python](https://github.com/DHRI-Curriculum/python) workshop (required)
-- [Introduction to the Command Line](https://github.com/DHRI-Curriculum/command-line) workshop (recommended)
+- [Introduction to Python](https://github.com/DHRI-Curriculum/python) (required)
+- [Introduction to the Command Line](https://github.com/DHRI-Curriculum/command-line) (recommended)
 - [Short introduction to Jupyter Notebooks](https://github.com/DHRI-Curriculum/insights/blob/v2.0/pages/jupyter-notebooks.md) (recommended)
-
 
 ## Contexts
 
