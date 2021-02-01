@@ -46,9 +46,11 @@ In this workshop, you will learn skills like:
 
 If you do not have experience or basic knowledge of the following workshops, you may want to look into those before you start with Text Analysis with Python and NLTK:
 
-- [Introduction to Python](https://github.com/DHRI-Curriculum/python) workshop (required)
-- [Introduction to the Command Line](https://github.com/DHRI-Curriculum/command-line) workshop (recommended)
+- [Introduction to Python](https://github.com/DHRI-Curriculum/python) (required)
+- [Introduction to the Command Line](https://github.com/DHRI-Curriculum/command-line) (recommended)
 - [Short introduction to Jupyter Notebooks](https://github.com/DHRI-Curriculum/insights/blob/v2.0/pages/jupyter-notebooks.md) (recommended)
+- [Installing Python (and Anaconda)](https://github.com/DHRI-Curriculum/install/blob/v2.0/guides/python.md) (required) This workshop uses Python and you will need to have a Python installation. If you choose to install a different version of Python, make sure it is version 3 as other versions will not work with our workshop.
+- [Installing NLTK](https://github.com/DHRI-Curriculum/install/blob/v2.0/guides/nltk.md) (required) You will need to install NLTK for the purposes of this workshop.
 
 ### Ethical Considerations
 
