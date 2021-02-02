@@ -15,7 +15,7 @@ In this workshop, you will learn skills like:
 - Understand stop words and how to remove them when needed.
 - Utilize Part-of-Speech tagging to gather insights about a text
 - Transform any document that you have (or have access to) in a .txt format into a text that can be analyzed computationally
-- How to tokenize your data and put it in nltk compatible format.
+- How to tokenize your data and put it in a format compatible with Natural Language Toolkit.
 
 ## Estimated time
 
@@ -27,7 +27,7 @@ In this workshop, you will learn skills like:
 - [Introduction to the Command Line](https://github.com/DHRI-Curriculum/command-line) (recommended)
 - [Short introduction to Jupyter Notebooks](https://github.com/DHRI-Curriculum/insights/blob/v2.0/pages/jupyter-notebooks.md) (recommended)
 - [Installing Python (and Anaconda)](https://github.com/DHRI-Curriculum/install/blob/v2.0/guides/python.md) (required) This workshop uses Python and you will need to have a Python installation. If you choose to install a different version of Python, make sure it is version 3 as other versions will not work with our workshop.
-- [Installing NLTK](https://github.com/DHRI-Curriculum/install/blob/v2.0/guides/nltk.md) (required) You will need to install NLTK for the purposes of this workshop.
+- [Installing Natural Language Toolkit](https://github.com/DHRI-Curriculum/install/blob/v2.0/guides/nltk.md) (required) You will need to install NLTK for the purposes of this workshop.
 
 ## Contexts
 
