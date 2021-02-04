@@ -23,11 +23,11 @@ In this workshop, you will learn skills like:
 
 ## Prerequisites
 
-- [Introduction to Python](https://github.com/DHRI-Curriculum/python) (required)
-- [Introduction to the Command Line](https://github.com/DHRI-Curriculum/command-line) (recommended)
-- [Short introduction to Jupyter Notebooks](https://github.com/DHRI-Curriculum/insights/blob/v2.0/pages/jupyter-notebooks.md) (recommended)
+- [Introduction to Python](https://github.com/DHRI-Curriculum/python) (required) This workshop relies heavily on concepts from the Python workshop, and having a basic understanding of how to use the commands discussed in the workshop will be central for anyone who wants to learn about text analysis with Python and NLTK.
+- [Introduction to the Command Line](https://github.com/DHRI-Curriculum/command-line) (recommended) This workshop makes some reference to concepts from the Command Line workshop, and having basic knowledge about how to use the command line will be central for anyone who wants to learn about text analysis with Python and NLTK.
+- [Short introduction to Jupyter Notebooks](https://github.com/DHRI-Curriculum/insights/blob/v2.0/pages/jupyter-notebooks.md) (recommended) This workshop uses Jupyter Notebooks to process the Python commands in a clear and visual way. Anyone who wants to follow along in the workshop on text analysis with Python and NLTK should read this very short introduction to how to use Notebooks.
 - [Installing Python (and Anaconda)](https://github.com/DHRI-Curriculum/install/blob/v2.0/guides/python.md) (required) This workshop uses Python and you will need to have a Python installation. If you choose to install a different version of Python, make sure it is version 3 as other versions will not work with our workshop.
-- [Installing Natural Language Toolkit](https://github.com/DHRI-Curriculum/install/blob/v2.0/guides/nltk.md) (required) You will need to install NLTK for the purposes of this workshop.
+- [Installing Natural Language Toolkit](https://github.com/DHRI-Curriculum/install/blob/v2.0/guides/nltk.md) (required) You will need to install the NLTK package into your Python packages for the purposes of this workshop. This guide will help you along the way.
 
 ## Contexts
 
