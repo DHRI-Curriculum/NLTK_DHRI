@@ -1,10 +1,11 @@
 # Theory to Practice
 
-Congratulations! You are done with the Text Analysis workshop!
-As you may expect, this course was only the beginning of your jorney. NLTK is a vast and ever expanding world. The possibilies are numerous, with exciting new things coming everyday.
-
-Our goal was to show some of those possibilities, and equip you with enough tools/knowledge/skills to be able to keep advancing. In this page we suggest you further readings and other tutorials for which we feel you might be ready. Don't be afraid to try! It is also useful to come back to this workshop with fresh eyes after a while. It will help you solidify some of the knowledge and make some things more clear.
-
+Congratulations! You are done with the Text Analysis workshop!  
+  
+As you may expect, this course was only the beginning of your jorney. NLTK is a vast and ever expanding world. The possibilies are numerous, with exciting new things coming everyday.  
+  
+Our goal was to show some of those possibilities, and equip you with enough tools/knowledge/skills to be able to keep advancing. In this page we suggest you further readings and other tutorials for which we feel you might be ready. Don't be afraid to try! It is also useful to come back to this workshop with fresh eyes after a while. It will help you solidify some of the knowledge and make some things more clear.  
+  
 Have a happy journey!
 
 
