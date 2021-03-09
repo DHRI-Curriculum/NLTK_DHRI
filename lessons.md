@@ -30,7 +30,7 @@ If you are planning to work with other languages than English, you will have to 
 
 ## Evaluation
 
-Check all sentences below that are correct:
+Which of the following sentences is correct:
 
 - A text is not data in itself, but can produce data if converted into numbers.
 - Part-of-Speech (POS) tagging can help identifying verbs, adjectives and nouns in a text.*
@@ -76,12 +76,9 @@ To read more about ethics and text analysis, see Lauren Klein's "[Distant Readin
 
 ## Evaluation
 
-Check all sentences below that are correct:
-
+Which one of the following sentences is correct:
 - Stop words are useless for text analysis, therefore the first step in any project is to remove them from the text.
-
 - In any type of data analysis, we usually want to cleanse the data in order to prepare it for the analysis. In text analysis, this process is called "text normalization" and can involve tasks such as removing undesired words and punctuation.*
-
 - Textual alterations can potentially change the original intended meaning. Therefore, we must always strive to work with the data exactly as it is in the source.
 
 ## Keywords
@@ -214,7 +211,7 @@ If you are interested in this type of analysis, take a look at the `common_conte
 
 ## Evaluation
 
-Check all sentences below that are correct:
+Which one of the following sentences is correct?
 - The similar method brings a list of words that are similiar in writing, but not necessarily in meaning, like "whale" and "while".
 - Using the `concordance` method with a specific word, such as "whale", returns the words that surround "whale" in different sentences, helping us to get a glimpse of the contexts in which the word "whale" shows up.*
 
@@ -727,7 +724,7 @@ You can obviously do this with much larger lists and even compare entire novels 
 
 ## Evaluation
 
-Check all sentences below that are correct:
+Which one of the following sentences is correct:
 
 - We can create a frequency distribution of a list of strings with `FreqDist` and plot it with the `plot` method.*
 - `my_dist.most_common(50)` will check the first 50 words in the distribution and return you the most common one among them.
