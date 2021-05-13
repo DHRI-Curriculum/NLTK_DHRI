@@ -47,7 +47,7 @@ In this workshop, you will learn skills like:
 - In working with massive amounts of text, it is natural to lose the original context. We must be aware of that and be careful when analizing it.
 - It is important to constantly question our assumptions and the indexes we are using. Numbers and graphs do not tell the story, our analysis does. We must be careful not to draw hasty and simplistic conclusions for things that are complex. Just because we found out that author A uses more unique words than author B, does it mean that A is a better writer than B?
 
-## Resources
+### Cheat Sheets
 
 - [Jupyter Notebook shortcuts, tips and tricks](http://maxmelnick.com/2016/04/19/python-beginner-tips-and-tricks.html)
 
